@@ -15,7 +15,7 @@
     {"name":"inst_44F6AC25_1_1","path":"rooms/rm_malachi_2/rm_malachi_2.yy",},
     {"name":"inst_616F8120","path":"rooms/rm_malachi_2/rm_malachi_2.yy",},
     {"name":"inst_450C8A63","path":"rooms/rm_malachi_2/rm_malachi_2.yy",},
-    {"name":"inst_2761E736","path":"rooms/rm_malachi_2/rm_malachi_2.yy",},
+    {"name":"inst_2A2F1D00","path":"rooms/rm_malachi_2/rm_malachi_2.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -36,7 +36,7 @@
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Triggers","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_450C8A63","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_malachi_cut_05","path":"objects/obj_malachi_cut_05/obj_malachi_cut_05.yy",},"properties":[],"rotation":0.0,"scaleX":10.0,"scaleY":1.0,"x":160.0,"y":640.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2761E736","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_room_trans_white","path":"objects/obj_room_trans_white/obj_room_trans_white.yy",},"properties":[],"rotation":0.0,"scaleX":4.0,"scaleY":2.0,"x":192.0,"y":-96.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2A2F1D00","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_room_trans_white","path":"objects/obj_room_trans_white/obj_room_trans_white.yy",},"properties":[],"rotation":0.0,"scaleX":4.0,"scaleY":2.0,"x":192.0,"y":-96.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Bubbles","depth":500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Player","depth":600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[

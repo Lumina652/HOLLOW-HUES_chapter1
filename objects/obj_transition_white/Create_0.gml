@@ -10,7 +10,14 @@ enum TRANS_MODE_WHITE {
 	RESTART,
 	INTRO
 }
+
+
 mode = TRANS_MODE_WHITE.INTRO;
+style = TRANS_STYLE.WHITEFADE;
 percent = 1;
 target = room;
-percent_target = 6.86 * room_speed;
+percent_target = 1.15;
+
+white_alpha = 0;
+white_duration = audio_sound_length(msc_rising_up) * room_speed;
+white_stop = 1;

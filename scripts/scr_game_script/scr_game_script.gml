@@ -37,6 +37,7 @@ function scr_game_script(_text_id){
 		
 		case "Inv_Test":
 			scr_text("You got a key! It's not very usefull...", "Sal");
+			scr_text("Nice job Sal!", "Rose - normal", 1);
 			break;
 		
 		case "HUB_portal0":

@@ -1,1 +1,1 @@
-draw_text(50, 50, "THIS IS A TEST ROOOM");
+//draw_text(50, 50, string(audio_sound_length(msc_rising_up)));
