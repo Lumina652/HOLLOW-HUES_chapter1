@@ -1,0 +1,1 @@
+alarm[1] = 55 * room_speed;

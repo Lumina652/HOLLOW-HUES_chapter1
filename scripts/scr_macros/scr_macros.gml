@@ -1,0 +1,1 @@
+#macro GAME_FPS = 60;
