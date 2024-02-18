@@ -106,9 +106,27 @@ if (image_index == 1) || (image_index == 3) {
 	}
 }
 #endregion
-#region INVENTORY 
+#region INVENTORY
 //if (key_inventory) && (inInventory == false) {
 	//hasControl = false;
 	//inInventory = true;
 //}
+#endregion
+#region PARTY
+if (x != xprevious) || (y != yprevious) {
+	for (var i = party_pos_array_size - 1; i > 0; i--) {
+		party_pos_x[i] = party_pos_x[i-1];
+		party_pos_y[i] = party_pos_y[i-1];
+		
+		to_record_spr[i] = to_record_spr[i-1];
+		//to_record_x_scale[i] = to_record_x_scale[i-1];
+		
+	}
+	
+	party_pos_x[0] = x;
+	party_pos_y[0] = y;
+	to_record_spr[0] = faceDir;
+	//to_record_x_scale[0] = image_xscale
+	
+}
 #endregion
