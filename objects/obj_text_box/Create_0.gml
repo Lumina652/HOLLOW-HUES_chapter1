@@ -39,6 +39,16 @@ text_pause_time = 16;
 snd_delay = 3;
 snd_count = snd_delay;
 #endregion
+#region name textbox parameters
+nametext_width = 7;
+nametext_height = 1.5;
+nametext_spd = 6 / room_speed;
+nametext_img = 0;
+nametext_border = 70;
+nametext_x_left = camera_get_view_x(view_camera[0]) + 20;
+nametext_y = camera_get_view_y(view_camera[0]) + 280;
+nametext_x_right = camera_get_view_x(view_camera[0]) + 480;
+#endregion
 
 //show_debug_message(page);
 //show_debug_message(page_number);

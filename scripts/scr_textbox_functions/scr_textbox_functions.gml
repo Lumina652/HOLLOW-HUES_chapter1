@@ -101,6 +101,7 @@ if (argument_count > 1) {
 			speaker_sprite[page_number] = spr_portrait_malachi;
 			textb_spr[page_number] = spr_text_box_malachi;
 			snd[page_number] = snd_malachi;
+			name_text[page_number] = "Malachi";
 			break;
 		
 		//Sal Narrator
@@ -115,6 +116,7 @@ if (argument_count > 1) {
 			speaker_sprite[page_number] = spr_portrait_test_a;
 			textb_spr[page_number] = spr_text_box_aster;
 			snd[page_number] = snd_sal;
+			name_text[page_number] = "Aster";
 			break;
 		
 		//Rose 
@@ -122,6 +124,7 @@ if (argument_count > 1) {
 			speaker_sprite[page_number] = spr_portrait_test_r;
 			textb_spr[page_number] = spr_text_box_rose;
 			snd[page_number] = snd_sal;
+			name_text[page_number] = "Rose";
 			break;
 		
 		//Hazel
@@ -129,6 +132,7 @@ if (argument_count > 1) {
 			speaker_sprite[page_number] = spr_portrait_test_h;
 			textb_spr[page_number] = spr_text_box_hazel;
 			snd[page_number] = snd_sal;
+			name_text[page_number] = "Hazel";
 			break;
 	}
 }

@@ -137,20 +137,36 @@ textb_img += textb_img_speed;
 textb_spr_w = sprite_get_width(textb_spr[page]);
 textb_spr_h = sprite_get_height(textb_spr[page]);
 
+nametext_img += nametext_spd;
+
 if (speaker_sprite[page] != noone) {
 	sprite_index = speaker_sprite[page];
 	if (draw_char == text_length[page]) {
 		image_index = 0;	
 	}
+	
 	var _speaker_x = textbox_x + portrait_x_offset[page];
+	var _nametext_side = nametext_x_left;
 	
 	//right
 	if (speaker_side[page] == -1) {
 		_speaker_x += sprite_width;
+		_nametext_side = nametext_x_right;
 	}
+	
+	//nametext_line_width = _nametext_side - nametext_border * 2
 	
 	draw_sprite_ext(textb_spr[page], textb_img, textbox_x + portrait_x_offset[page], textbox_y, sprite_width/textb_spr_w, sprite_height/textb_spr_h, 0, c_white, 1);
 	draw_sprite_ext(sprite_index, image_index, _speaker_x, textbox_y, speaker_side[page], 1, 0, c_white, 1);
+	draw_sprite_ext(textb_spr[page], nametext_img, _nametext_side, nametext_y, nametext_width, nametext_height, 0, c_white, 1);
+	
+	if (name_text[page] != noone) {
+	//draw_text_ext_color(_nametext_side, nametext_y, name_text[page], nametext_line_sep, nametext_line_width, c_white, c_white, c_white, c_white, 1);
+		draw_set_halign(fa_center);
+		draw_text(_nametext_side + nametext_border, nametext_y + 9, name_text[page]);
+	}
+	
+	draw_set_halign(fa_left);
 	
 }
 
