@@ -30,4 +30,6 @@ hp = 100;
 alarm[0] = 1 * room_speed;
 
 instance_create_layer(x, y, "Player", obj_interact);
+instance_create_layer(x, y, "Player", obj_rose_follower);
+instance_create_layer(x, y, "Player", obj_hazel_follower);
 #endregion
