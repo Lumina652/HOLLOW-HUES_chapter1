@@ -10,7 +10,7 @@ if (hasControl) {
 	else {
 		key_sprint = 0;
 	}
-	//key_inventory = keyboard_check_pressed(global.controls_inventory);
+	key_inventory = keyboard_check_pressed(global.controls_inventory);
 }
 else {
 	key_left = 0;
@@ -107,8 +107,5 @@ if (image_index == 1) || (image_index == 3) {
 }
 #endregion
 #region INVENTORY
-//if (key_inventory) && (inInventory == false) {
-	//hasControl = false;
-	//inInventory = true;
-//}
+
 #endregion

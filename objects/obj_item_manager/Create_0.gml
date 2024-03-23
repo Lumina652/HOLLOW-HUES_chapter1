@@ -79,8 +79,9 @@ global.item_list = {
 //create the inventory
 inv = array_create(0);
 
-inv_max = 16;
+inv_max = 20;
 selected_item = -1;
 
-sep = 24;
-screen_border = 16;
+sep = 30;
+screen_border_y = 20;
+screen_border_x = 40;
