@@ -82,12 +82,12 @@ else {
 #endregion
 #region COLLISION
 //Horizontal Collision
-if (place_meeting(x + xspd, y, obj_collidable)) || (place_meeting(x + xspd, y, obj_interactable)) {
+if (place_meeting(x + xspd, y, obj_collidable)) || (place_meeting(x + xspd, y, obj_interactable)) || (place_meeting(x + xspd, y, obj_item_parent)) {
 	xspd = 0;	
 }
 
 //Vertical Collision
-if (place_meeting(x, y + yspd, obj_collidable)) || (place_meeting(x, y + yspd, obj_interactable)) {
+if (place_meeting(x, y + yspd, obj_collidable)) || (place_meeting(x, y + yspd, obj_interactable)) || (place_meeting(x, y + yspd, obj_item_parent)) {
 	yspd = 0;	
 }
 

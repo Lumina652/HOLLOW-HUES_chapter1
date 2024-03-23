@@ -36,8 +36,22 @@ function scr_game_script(_text_id){
 			break;
 		
 		case "Inv_Test":
-			scr_text("You got a key! It's not very usefull...", "Sal");
+			scr_text("You got a burger! It's not very usefull...", "Sal");
 			scr_text("Nice job Sal!", "Rose - normal", 1);
+			break;
+		
+		case "Inv_Test2":
+			scr_text("You got COCA COLA ESPUMAAAAAA", "Sal");
+			scr_text("Nice job Sal!", "Rose - normal", 1);
+			break;
+		
+		case "Inv_Key_Test":
+			scr_text("You got...a key? I think?", "Sal");
+			break;
+			
+		case "Inv_Key_Test_USED":
+			scr_text("You used the key, the strange wall in front of you started to dissapear.", "Sal");
+			scr_text("What the fuck", "Hazel - normal");
 			break;
 		
 		case "HUB_portal0":

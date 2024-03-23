@@ -1,0 +1,1 @@
+item = global.item_list.test_key;

@@ -23,8 +23,7 @@ hasControl = true;
 canRun = true;
 whatCutscene = -1;
 in_cutscene = false;
-
-global.inventory = [-1];
+hp = 100;
 
 #endregion
 #region OTHER
