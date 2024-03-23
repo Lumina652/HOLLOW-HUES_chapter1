@@ -1,15 +1,14 @@
 {
-  "FolderOrderSettings": [
+  "FolderOrderSettings":[
     {"name":"CHP0-OCEAN","order":5,"path":"folders/Objects/CHP0-OCEAN.yy",},
     {"name":"MANAGERS","order":1,"path":"folders/Objects/MANAGERS.yy",},
     {"name":"MUSIC","order":2,"path":"folders/Sounds/MUSIC.yy",},
     {"name":"SFX","order":3,"path":"folders/Sounds/SFX.yy",},
     {"name":"VOICES","order":1,"path":"folders/Sounds/VOICES.yy",},
   ],
-  "ResourceOrderSettings": [
+  "ResourceOrderSettings":[
     {"name":"spr_collidable","order":1,"path":"sprites/spr_collidable/spr_collidable.yy",},
     {"name":"spr_text_box_aster","order":36,"path":"sprites/spr_text_box_aster/spr_text_box_aster.yy",},
-    {"name":"obj_rose","order":12,"path":"objects/obj_rose/obj_rose.yy",},
     {"name":"spr_interact","order":29,"path":"sprites/spr_interact/spr_interact.yy",},
     {"name":"snd_sand_1","order":3,"path":"sounds/snd_sand_1/snd_sand_1.yy",},
     {"name":"obj_malachi_cut_01","order":4,"path":"objects/obj_malachi_cut_01/obj_malachi_cut_01.yy",},
