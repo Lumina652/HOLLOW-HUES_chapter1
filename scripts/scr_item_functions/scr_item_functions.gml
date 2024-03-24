@@ -2,8 +2,8 @@
 function scr_item_add(_item) {
 	var _added = false;
 	
-	if (array_length(obj_item_manager.inv_item) < obj_item_manager.inv_max) {
-		array_push(obj_item_manager.inv_item, _item);
+	if (array_length(global.inv_item) < obj_item_manager.inv_max) {
+		array_push(global.inv_item, _item);
 		_added = true;
 	}
 	

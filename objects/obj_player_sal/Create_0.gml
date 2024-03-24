@@ -25,6 +25,8 @@ whatCutscene = -1;
 in_cutscene = false;
 in_inv = false;
 hp = 100;
+global.follower_count = 0;
+party_position = 0;
 
 #endregion
 #region OTHER
@@ -32,4 +34,15 @@ alarm[0] = 1 * room_speed;
 
 instance_create_layer(x, y, "Player", obj_interact);
 instance_create_layer(x, y, "Player", obj_rose_follower);
+instance_create_layer(x, y, "Player", obj_hazel_follower);
+#endregion
+
+#region FOLLOWERS
+
+if (instance_exists(obj_rose_follower)) {
+	global.follower_count ++;
+}
+if (instance_exists(obj_hazel_follower)) {
+	global.follower_count ++;
+}
 #endregion

@@ -1,0 +1,1 @@
+scr_make_inventory_menu();

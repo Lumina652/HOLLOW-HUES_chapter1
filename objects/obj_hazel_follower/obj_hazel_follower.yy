@@ -1,18 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"obj_item_manager",
+  "%Name":"obj_hazel_follower",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":12,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_item_manager",
+  "name":"obj_hazel_follower",
   "overriddenProperties":[],
   "parent":{
-    "name":"MANAGERS",
-    "path":"folders/Objects/MANAGERS.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
-  "persistent":true,
+  "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
@@ -29,7 +31,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_hazel_walk_down",
+    "path":"sprites/spr_hazel_walk_down/spr_hazel_walk_down.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

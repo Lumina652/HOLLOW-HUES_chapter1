@@ -6,3 +6,5 @@ y_spd = 0;
 depth = obj_player_sal.depth;
 under_depth = depth + 1;
 over_depth = depth - 1;
+
+party_position = 1;
