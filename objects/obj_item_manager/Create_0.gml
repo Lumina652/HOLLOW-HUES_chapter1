@@ -26,7 +26,7 @@ global.item_list = {
 		function() {
 			obj_player_sal.hp += 10;
 			//delete item
-			array_delete(inv, selected_item, 1);
+			array_delete(inv_item, selected_item, 1);
 			
 			//add the burger why not lol
 			//array_insert(inv, selected_item, global.item_list.burger);
@@ -43,7 +43,7 @@ global.item_list = {
 		function() {
 			obj_player_sal.hp -= 10;
 			//delete item
-			array_delete(inv, selected_item, 1);
+			array_delete(inv_item, selected_item, 1);
 		}
 	),
 	
@@ -67,7 +67,7 @@ global.item_list = {
 				}
 			}
 			if (_used == true) {
-				array_delete(inv, selected_item, 1);	
+				array_delete(inv_item, selected_item, 1);	
 			}
 			
 		}
@@ -77,11 +77,14 @@ global.item_list = {
 
 
 //create the inventory
-inv = array_create(0);
+inv_item = array_create(0);
 
 inv_max = 20;
 selected_item = -1;
 
+inv_item_step = -1;
+
 sep = 30;
-screen_border_y = 20;
-screen_border_x = 40;
+screen_border_y = 10;
+screen_border_x = 80;
+next_column_offset = 140;

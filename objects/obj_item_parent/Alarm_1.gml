@@ -1,0 +1,1 @@
+scr_create_textbox("no_space");

@@ -1,7 +1,7 @@
 //get selected item
 selected_item = -1;
 
-for (var i = 0; i < array_length(inv); i++) {
+for (var i = 0; i < array_length(inv_item); i++) {
 	var _xx = camera_get_view_x(view_camera[0]) + screen_border_x;
 	var _yy = camera_get_view_y(view_camera[0]) + screen_border_y + sep * i;
 	
@@ -13,11 +13,11 @@ for (var i = 0; i < array_length(inv); i++) {
 if (selected_item != -1) {
 	//use an item
 	if (mouse_check_button_pressed(mb_left)) {
-		inv[selected_item].effect();	
+		inv_item[selected_item].effect();	
 	}
 	
 	//drop the item
-	if (mouse_check_button_pressed(mb_right)) && (inv[selected_item].can_drop == true) {
-		array_delete(inv, selected_item, 1);	
+	if (mouse_check_button_pressed(mb_right)) && (inv_item[selected_item].can_drop == true) {
+		array_delete(inv_item, selected_item, 1);	
 	}
 }

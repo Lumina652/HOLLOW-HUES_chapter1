@@ -35,6 +35,10 @@ function scr_game_script(_text_id){
 			scr_text("It's a red ball. It has a pretty cute smile on it!", "Sal");
 			break;
 		
+		case "no_space":
+			scr_text("You tried to pick up an item, but you are carrying too much.", "Sal");
+			break;
+		
 		case "Inv_Test":
 			scr_text("You got a burger! It's not very usefull...", "Sal");
 			scr_text("Nice job Sal!", "Rose - normal", 1);
