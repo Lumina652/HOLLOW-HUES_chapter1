@@ -21,9 +21,3 @@ if (selected_item != -1) {
 		array_delete(global.inv_item, global.inv_item.selected_item, 1);	
 	}
 }
-
-if (keyboard_key_press(global.controls_back)) {
-	obj_player_sal.in_inv = false;
-	obj_player_sal.hasControl = true;
-	instance_destroy();
-}

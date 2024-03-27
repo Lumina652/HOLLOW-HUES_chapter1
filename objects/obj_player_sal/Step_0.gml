@@ -1,5 +1,5 @@
 #region INPUT
-if (hasControl) && (!in_inv) {
+if (hasControl) && (in_inv == 0) {
 	key_left = keyboard_check(global.controls_left);
 	key_right = keyboard_check(global.controls_right);
 	key_up = keyboard_check(global.controls_up);
@@ -18,9 +18,9 @@ else {
 	key_down = 0;
 	key_sprint = 0;
 }
-
-key_inventory = keyboard_check_pressed(global.controls_inventory);
-
+if (hasControl) {
+	key_inventory = keyboard_check_pressed(global.controls_inventory);
+}
 #endregion
 #region MOVEMENT
 x = x + xspd;
@@ -108,7 +108,22 @@ if (image_index == 1) || (image_index == 3) {
 }
 #endregion
 #region INVENTORY
-if (key_inventory) && (in_inv == false) {
-	instance_create_depth(x, y, -9999, obj_item_menu);	
+if (key_inventory) {
+	in_inv++;
 }
+
+if (in_inv == 1) {
+	if (opened_inv == false) {
+		instance_create_depth(x, y, -9999, obj_item_menu);
+		opened_inv = true;
+	}
+}
+
+
+if (in_inv > 1) {
+	in_inv = 0;
+	instance_destroy(obj_item_menu);
+	opened_inv = false;
+}
+
 #endregion

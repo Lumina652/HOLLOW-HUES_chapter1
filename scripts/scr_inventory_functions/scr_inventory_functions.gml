@@ -19,31 +19,31 @@ function scr_make_inventory_menu() {
 	var _xx3 = camera_get_view_x(view_camera[0]) + screen_border_x + (next_column_offset * 2);
 	var _xx4 = camera_get_view_x(view_camera[0]) + screen_border_x + (next_column_offset * 3);
 	var _yy1 = camera_get_view_y(view_camera[0]) + screen_border_y;
-	var _sep = camera_get_view_y(view_camera[0]) + sep;
+	var _sep = sep;
 
-	draw_sprite(bg_sprite, bg_img, _xx1, _yy1 + _sep * 0);
-	draw_sprite(bg_sprite, bg_img, _xx1, _yy1 + _sep * 1);
-	draw_sprite(bg_sprite, bg_img, _xx1, _yy1 + _sep * 2);
-	draw_sprite(bg_sprite, bg_img, _xx1, _yy1 + _sep * 3);
-	draw_sprite(bg_sprite, bg_img, _xx1, _yy1 + _sep * 4);
+	draw_sprite(bg_sprite, bg_img, _xx1, _yy1);
+	draw_sprite(bg_sprite, bg_img, _xx1, _yy1 + _sep);
+	draw_sprite(bg_sprite, bg_img, _xx1, _yy1 + _sep + _sep);
+	draw_sprite(bg_sprite, bg_img, _xx1, _yy1 + _sep + _sep + _sep);
+	draw_sprite(bg_sprite, bg_img, _xx1, _yy1 + _sep + _sep + _sep + _sep);
 
-	draw_sprite(bg_sprite, bg_img, _xx2, _yy1 + _sep * 0);
-	draw_sprite(bg_sprite, bg_img, _xx2, _yy1 + _sep * 1);
-	draw_sprite(bg_sprite, bg_img, _xx2, _yy1 + _sep * 2);
-	draw_sprite(bg_sprite, bg_img, _xx2, _yy1 + _sep * 3);
-	draw_sprite(bg_sprite, bg_img, _xx2, _yy1 + _sep * 4);
+	draw_sprite(bg_sprite, bg_img, _xx2, _yy1);
+	draw_sprite(bg_sprite, bg_img, _xx2, _yy1 + _sep);
+	draw_sprite(bg_sprite, bg_img, _xx2, _yy1 + _sep + _sep);
+	draw_sprite(bg_sprite, bg_img, _xx2, _yy1 + _sep + _sep + _sep);
+	draw_sprite(bg_sprite, bg_img, _xx2, _yy1 + _sep + _sep + _sep + _sep);
 
-	draw_sprite(bg_sprite, bg_img, _xx3, _yy1 + _sep * 0);
-	draw_sprite(bg_sprite, bg_img, _xx3, _yy1 + _sep * 1);
-	draw_sprite(bg_sprite, bg_img, _xx3, _yy1 + _sep * 2);
-	draw_sprite(bg_sprite, bg_img, _xx3, _yy1 + _sep * 3);
-	draw_sprite(bg_sprite, bg_img, _xx3, _yy1 + _sep * 4);
+	draw_sprite(bg_sprite, bg_img, _xx3, _yy1);
+	draw_sprite(bg_sprite, bg_img, _xx3, _yy1 + _sep);
+	draw_sprite(bg_sprite, bg_img, _xx3, _yy1 + _sep + _sep);
+	draw_sprite(bg_sprite, bg_img, _xx3, _yy1 + _sep + _sep + _sep);
+	draw_sprite(bg_sprite, bg_img, _xx3, _yy1 + _sep + _sep + _sep + _sep);
 
-	draw_sprite(bg_sprite, bg_img, _xx4, _yy1 + _sep * 0);
-	draw_sprite(bg_sprite, bg_img, _xx4, _yy1 + _sep * 1);
-	draw_sprite(bg_sprite, bg_img, _xx4, _yy1 + _sep * 2);
-	draw_sprite(bg_sprite, bg_img, _xx4, _yy1 + _sep * 3);
-	draw_sprite(bg_sprite, bg_img, _xx4, _yy1 + _sep * 4);
+	draw_sprite(bg_sprite, bg_img, _xx4, _yy1);
+	draw_sprite(bg_sprite, bg_img, _xx4, _yy1 + _sep);
+	draw_sprite(bg_sprite, bg_img, _xx4, _yy1 + _sep + _sep);
+	draw_sprite(bg_sprite, bg_img, _xx4, _yy1 + _sep + _sep + _sep);
+	draw_sprite(bg_sprite, bg_img, _xx4, _yy1 + _sep + _sep + _sep + _sep);
 
 	//names bg
 	draw_sprite_ext(bg_sprite, bg_img, _xx1+ sep, _yy1 + _sep * 0, name_bg_width, 1, 0, c_white, 1);
@@ -117,7 +117,7 @@ function scr_make_inventory_menu() {
 		var _xx3 = camera_get_view_x(view_camera[0]) + screen_border_x + (next_column_offset * 2);
 		var _xx4 = camera_get_view_x(view_camera[0]) + screen_border_x + (next_column_offset * 3);
 	 	var _yy1 = camera_get_view_y(view_camera[0]) + screen_border_y;
-		var _sep = camera_get_view_y(view_camera[0]) + sep;
+		var _sep = sep;
 		var _col = c_white
 	
 		//get "selected" color

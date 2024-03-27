@@ -30,9 +30,9 @@ button_width = 2.5;
 button_height = 1.5;
 button_x = 10 + camera_get_view_x(view_camera[0]);
 button_item_y = 20 + camera_get_view_y(view_camera[0]);
-button_weapon_y = button_item_y + 50 + camera_get_view_y(view_camera[0]);
-button_armor_y = button_item_y + 100 + camera_get_view_y(view_camera[0]);
-button_key_y = button_item_y + 150 + camera_get_view_y(view_camera[0]);
+button_weapon_y = button_item_y + 50;
+button_armor_y = button_item_y + 100;
+button_key_y = button_item_y + 150;
 
 button_item_icon = spr_inv_icon_item;
 button_weapon_icon = spr_inv_icon_weapon;
@@ -67,6 +67,3 @@ hazel_x_3 = 512 + camera_get_view_x(view_camera[0]);
 
 portrait_y = 160 + camera_get_view_y(view_camera[0]);
 portrait_scale = 2.5;
-
-obj_player_sal.in_inv = true;
-obj_player_sal.hasControl = false;
