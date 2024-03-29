@@ -9,7 +9,7 @@ screen_border_y = 10;
 screen_border_x = 80;
 next_column_offset = 140;
 
-//ui
+//ui - ITEMS
 bg_width = 32;
 bg2_width = 3.5
 bg_height = 11;

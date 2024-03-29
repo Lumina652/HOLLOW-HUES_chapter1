@@ -1,1 +1,1 @@
-scr_make_inventory_menu();
+scr_make_inventory_menu_items();

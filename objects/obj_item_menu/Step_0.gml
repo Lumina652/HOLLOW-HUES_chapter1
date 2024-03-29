@@ -1,4 +1,4 @@
-//get selected item
+//get selected item //selected_item = i;
 selected_item = -1;
 
 for (var i = 0; i < array_length(global.inv_item); i++) {
@@ -12,12 +12,13 @@ for (var i = 0; i < array_length(global.inv_item); i++) {
 
 if (selected_item != -1) {
 	//use an item
-	if (mouse_check_button_pressed(mb_left)) {
-		global.inv_item[selected_item].effect();	
+	if (keyboard_check_pressed(global.controls_interact)) {
+		scr_create_textbox(global.inv_item[selected_item].used_text);
+		global.inv_item[selected_item].effect();
 	}
 	
 	//drop the item
-	if (mouse_check_button_pressed(mb_right)) && (global.inv_item[selected_item].can_drop == true) {
-		array_delete(global.inv_item, global.inv_item.selected_item, 1);	
+	if (keyboard_check_pressed(global.controls_back)) && (global.inv_item[selected_item].can_drop == true) {
+		array_delete(global.inv_item, global.inv_item[selected_item], 1);
 	}
 }

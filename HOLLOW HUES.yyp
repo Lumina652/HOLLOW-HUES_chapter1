@@ -41,7 +41,6 @@
   "resources":[
     {"id":{"name":"fnt_pause","path":"fonts/fnt_pause/fnt_pause.yy",},},
     {"id":{"name":"fnt_pixel","path":"fonts/fnt_pixel/fnt_pixel.yy",},},
-    {"id":{"name":"BUGS","path":"notes/BUGS/BUGS.yy",},},
     {"id":{"name":"obj_ball","path":"objects/obj_ball/obj_ball.yy",},},
     {"id":{"name":"obj_collidable","path":"objects/obj_collidable/obj_collidable.yy",},},
     {"id":{"name":"obj_cutscene_parent","path":"objects/obj_cutscene_parent/obj_cutscene_parent.yy",},},

@@ -1,4 +1,4 @@
-function scr_make_inventory_menu() {
+function scr_make_inventory_menu_items() {
 	//drawing the inventory
 	draw_set_font(global.font_main);
 
@@ -106,7 +106,7 @@ function scr_make_inventory_menu() {
 	}
 
 	#endregion
-
+	
 	#region items, weapons, armor and key items
 	
 	//items

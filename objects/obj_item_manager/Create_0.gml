@@ -1,17 +1,20 @@
 depth = -9999;
 
+//create the inventory arrays
+global.inv_item = array_create(0);
+global.inv_weapon = array_create(0);
+
 //item constructor
-function scr_create_item(_name, _desc, _icon, _spr, _candrop, _text, _effect) constructor {
+function scr_create_item(_name, _desc, _icon, _spr, _candrop, _text, _used_text, _effect) constructor {
 	name = _name;
 	description = _desc;
 	icon = _icon;
 	ov_sprite = _spr;
 	can_drop = _candrop;
 	dialogue = _text;
+	used_text = _used_text;
 	effect = _effect;
 }
-
-//pizza = new create_item("Pizza", " o cholera czy to FREDDY FAZBEAR?? URURURURURUR", spr_test_burger);
 
 //create the items
 
@@ -22,6 +25,7 @@ global.item_list = {
 		spr_test_burger, 
 		spr_test_inv,
 		true,
+		"Inv_Test",
 		"Inv_Test",
 		function() {
 			obj_player_sal.hp += 10;
@@ -40,6 +44,7 @@ global.item_list = {
 		spr_ball,
 		true,
 		"Inv_Test2",
+		"Inv_Test2",
 		function() {
 			obj_player_sal.hp -= 10;
 			//delete item
@@ -54,15 +59,14 @@ global.item_list = {
 		spr_test_key,
 		false,
 		"Inv_Key_Test",
+		"Inv_Key_Test_USED",
 		function() {
 			var _used = false;
 			if instance_exists(obj_door_test) {
 				with (obj_door_test) {
 					if distance_to_object(obj_player_sal) < 20 {
-						obj_player_sal.hasControl = false;
 						instance_destroy();
 						_used = true
-						scr_create_textbox("Inv_Key_Test_USED");
 					}
 				}
 			}
@@ -75,77 +79,8 @@ global.item_list = {
 }
 
 
-
-//create the inventory
-global.inv_item = array_create(0);
-
 inv_max = 20
 
 selected_item = -1;
-/*
-inv_item_step = -1;
 
-sep = 30;
-screen_border_y = 10;
-screen_border_x = 80;
-next_column_offset = 140;
-
-//ui
-bg_width = 32;
-bg2_width = 3.5
-bg_height = 11;
-bg_img = 0; //frame of the pause box 
-bg_speed = 6 / room_speed; //how fast the pause box 
-bg_sprite = spr_text_box_inv;
-frame_sprite = spr_inv_frame;
-
-name_bg_width = 5;
-
-description_bg_width = 10.5;
-description_bg_height = 2.5;
-
-button_selected = spr_text_box_selected;
-button_unselected = spr_text_box_sal;
-button_bg = button_unselected;
-button_width = 2.5;
-button_height = 1.5;
-button_x = 10 + camera_get_view_x(view_camera[0]);
-button_item_y = 20 + camera_get_view_y(view_camera[0]);
-button_weapon_y = button_item_y + 50 + camera_get_view_y(view_camera[0]);
-button_armor_y = button_item_y + 100 + camera_get_view_y(view_camera[0]);
-button_key_y = button_item_y + 150 + camera_get_view_y(view_camera[0]);
-
-button_item_icon = spr_inv_icon_item;
-button_weapon_icon = spr_inv_icon_weapon;
-button_armor_icon = spr_inv_icon_armor;
-button_key_icon = spr_inv_icon_key;
-
-portrait_hazel = spr_text_box_hazel;
-portrait_rose = spr_text_box_rose;
-
-portrait_sal_sprite = spr_inv_portrait_sal;
-portrait_hazel_sprite = spr_inv_portrait_hazel;
-portrait_rose_sprite = spr_inv_portrait_rose;
-
-//portraits = 1
-portrait_sal_x_1 = 440 + camera_get_view_x(view_camera[0]);
-sal_x_1 = 452 + camera_get_view_x(view_camera[0]);
-portrait_people_y = 163 + camera_get_view_y(view_camera[0]);
-
-//portraits = 2
-portrait_sal_x_2 = 420 + camera_get_view_x(view_camera[0]);
-portrait_other_x_2 = 480 + camera_get_view_x(view_camera[0]);
-sal_x_2 = 432 + camera_get_view_x(view_camera[0]);
-rose_x_2 = 492 + camera_get_view_x(view_camera[0]);
-
-//portraits = 3
-portrait_sal_x_3 = 380 + camera_get_view_x(view_camera[0]);
-portrait_other_x_3 = 440 + camera_get_view_x(view_camera[0]);
-portrait_other2_x_3 = 500 + camera_get_view_x(view_camera[0]);
-sal_x_3 = 392 + camera_get_view_x(view_camera[0]);
-rose_x_3 = 452 + camera_get_view_x(view_camera[0]);
-hazel_x_3 = 512 + camera_get_view_x(view_camera[0]);
-
-portrait_y = 160 + camera_get_view_y(view_camera[0]);
-portrait_scale = 2.5;
-*/
+used_item = 0;
