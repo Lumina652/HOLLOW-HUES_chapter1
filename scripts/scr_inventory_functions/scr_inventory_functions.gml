@@ -98,7 +98,6 @@ function scr_make_inventory_menu_items() {
 	#endregion
 	
 	#region items, weapons, armor and key items
-	
 	//items
 	for (var i = 0; i < array_length(global.inv_item); i++) {
 		inv_item_step = i;
@@ -111,11 +110,14 @@ function scr_make_inventory_menu_items() {
 		var _col = c_white
 	
 		//get "selected" color
-		if (selected_item == i) {
+		if (i == item_move_vertical) {
 			_col = c_yellow;
 		}
 		draw_set_color(_col);
-	
+		
+		//SELECTION FRAME
+		draw_sprite(item_selection_frame_spr, bg_img, item_selection_frame_x, item_selection_frame_y);
+		
 		#region icon and name position
 		if (inv_item_step <= 4) {
 			//draw the icon
@@ -148,7 +150,7 @@ function scr_make_inventory_menu_items() {
 		#endregion
 	
 		//description
-		if (selected_item == i) {
+		if (i == item_move_vertical) {
 			draw_text_ext(_xx1 + 6, _yy1 + _sep * 5 + 6, global.inv_item[i].description, 12, 190);
 		}
 	

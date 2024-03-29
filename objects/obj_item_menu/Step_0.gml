@@ -73,25 +73,42 @@ if (keyboard_check_pressed(global.controls_esc)) {
 //ITEMS
 if (menu_button == 0) {
 	//items
+	item_move_vertical += keyboard_check_pressed(global.controls_down) - keyboard_check_pressed(global.controls_up);
+	item_move_vertical = clamp(item_move_vertical, 0, array_length(global.inv_item) - 1);
+	
 	for (var i = 0; i < array_length(global.inv_item); i++) {
 		var _xx = camera_get_view_x(view_camera[0]) + screen_border_x;
-		var _yy = camera_get_view_y(view_camera[0]) + screen_border_y + sep * i;
-	
-		if (mouse_x > _xx && mouse_x < _xx + 20 && mouse_y > _yy && mouse_y < _yy + 20) {
-			selected_item = i;
+		var _yy = camera_get_view_y(view_camera[0]) + screen_border_y;
+		if (item_move_vertical <= 4) {
+			item_selection_frame_x = _xx
+			item_selection_frame_y = _yy + sep * item_move_vertical;
 		}
+		if (item_move_vertical > 4) && (item_move_vertical <= 9) {
+			item_selection_frame_x = _xx + next_column_offset;
+			item_selection_frame_y = _yy + sep * (item_move_vertical - 5);
+		}
+		if (item_move_vertical > 9) && (item_move_vertical <= 14) {
+			item_selection_frame_x = _xx + (next_column_offset * 2);
+			item_selection_frame_y = _yy + sep * (item_move_vertical - 10);
+		}
+		if (item_move_vertical > 14) {
+			item_selection_frame_x = _xx + (next_column_offset * 3);
+			item_selection_frame_y = _yy + sep * (item_move_vertical - 15);
+		}
+		
+		selected_item = item_move_vertical;
+		
 	}
 
 	if (selected_item != -1) {
 		//use an item
-		if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) {
-			scr_create_textbox(global.inv_item[selected_item].used_text);
-			global.inv_item[selected_item].effect();
+		if (keyboard_check_pressed(global.controls_use)) && (obj_player_sal.in_text == 0) {
+			global.inv_item[item_move_vertical].effect();
 		}
 	
 		//drop the item
-		if (keyboard_check_pressed(global.controls_back)) && (global.inv_item[selected_item].can_drop == true) && (obj_player_sal.in_text == 0) {
-			array_delete(global.inv_item, global.inv_item[selected_item], 1);
+		if (keyboard_check_pressed(global.controls_back)) && (global.inv_item[item_move_vertical].can_drop == true) && (obj_player_sal.in_text == 0) {
+			array_delete(global.inv_item, global.inv_item[item_move_vertical], 1);
 		}
 	}
 }

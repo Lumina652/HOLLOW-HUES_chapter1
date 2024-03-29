@@ -11,3 +11,4 @@ global.controls_inventory = ord("C");
 global.controls_interact = ord("Z");
 global.controls_back = vk_backspace;
 global.controls_esc = ord("X");
+global.controls_use = vk_enter;

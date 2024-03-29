@@ -4,11 +4,12 @@ selected_item = -1;
 
 inv_item_step = -1;
 inv_weapon_step = -1;
-
 menu_button = -1;
 selected_menu = 0;
 menu_button_pos = 0;
 made_draw_menu = 0;
+
+item_move_vertical = 0;
 
 sep = 30;
 screen_border_y = 10;
@@ -78,3 +79,8 @@ hazel_x_3 = 512 + camera_get_view_x(view_camera[0]);
 
 portrait_y = 160 + camera_get_view_y(view_camera[0]);
 portrait_scale = 2.5;
+
+
+item_selection_frame_spr = spr_inv_frame_selected;
+item_selection_frame_x = 0;
+item_selection_frame_y = 0;

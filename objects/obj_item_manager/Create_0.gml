@@ -39,7 +39,8 @@ global.item_list = {
 		function() {
 			obj_player_sal.hp += 10;
 			//delete item
-			array_delete(global.inv_item, selected_item, 1);
+			array_delete(global.inv_item, obj_item_menu.item_move_vertical, 1);
+			scr_create_textbox("Inv_Test");
 			
 			//add the burger why not lol
 			//array_insert(inv, selected_item, global.item_list.burger);
@@ -57,7 +58,8 @@ global.item_list = {
 		function() {
 			obj_player_sal.hp -= 10;
 			//delete item
-			array_delete(global.inv_item, selected_item, 1);
+			array_delete(global.inv_item, obj_item_menu.item_move_vertical, 1);
+			scr_create_textbox("Inv_Test2");
 		}
 	),
 	
@@ -74,13 +76,14 @@ global.item_list = {
 			if instance_exists(obj_door_test) {
 				with (obj_door_test) {
 					if distance_to_object(obj_player_sal) < 20 {
+						scr_create_textbox("Inv_Key_Test_USED");
 						instance_destroy();
 						_used = true
 					}
 				}
 			}
 			if (_used == true) {
-				array_delete(global.inv_item, selected_item, 1);	
+				array_delete(global.inv_item, obj_item_menu.item_move_vertical, 1);	
 			}
 			
 		}
