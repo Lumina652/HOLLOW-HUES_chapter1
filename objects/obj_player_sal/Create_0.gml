@@ -25,6 +25,7 @@ whatCutscene = -1;
 in_cutscene = false;
 in_inv = 0;
 opened_inv = false;
+in_text = 0;
 hp = 100;
 global.follower_count = 0;
 party_position = 0;

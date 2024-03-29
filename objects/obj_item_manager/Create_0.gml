@@ -16,6 +16,15 @@ function scr_create_item(_name, _desc, _icon, _spr, _candrop, _text, _used_text,
 	effect = _effect;
 }
 
+function scr_create_weapon(_name, _desc, _icon, _spr, _text, _dmg) constructor {
+	w_name = _name;
+	w_description = _desc;
+	w_icon = _icon;
+	w_ov_sprite = _spr;
+	w_dialogue = _text;
+	w_dmg = _dmg;
+}
+
 //create the items
 
 global.item_list = {
@@ -77,10 +86,24 @@ global.item_list = {
 		}
 	),
 }
+	
+global.weapon_list = {
+	Bachi : new scr_create_weapon(
+		"Bachi",
+		"Used for taiko drumming. Packs a punch!\nDMG - 99",
+		spr_test_burger,
+		spr_ball,
+		"Bachi_Test",
+		99,
+	),
+}
+
+
 
 
 inv_max = 20
 
 selected_item = -1;
+selected_weapon = -1;
 
 used_item = 0;

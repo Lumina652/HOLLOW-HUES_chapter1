@@ -3,6 +3,12 @@ depth = -9999;
 selected_item = -1;
 
 inv_item_step = -1;
+inv_weapon_step = -1;
+
+menu_button = -1;
+selected_menu = 0;
+menu_button_pos = 0;
+made_draw_menu = 0;
 
 sep = 30;
 screen_border_y = 10;
@@ -16,6 +22,8 @@ bg_height = 11;
 bg_img = 0; //frame of the pause box 
 bg_speed = 6 / room_speed; //how fast the pause box 
 bg_sprite = spr_text_box_inv;
+other_bg_sprite = spr_text_box_inv;
+other_frame_sprite = spr_inv_frame;
 frame_sprite = spr_inv_frame;
 
 name_bg_width = 5;
@@ -25,7 +33,10 @@ description_bg_height = 2.5;
 
 button_selected = spr_text_box_selected;
 button_unselected = spr_text_box_sal;
-button_bg = button_unselected;
+button_bg_item = button_unselected;
+button_bg_weapon = button_unselected;
+button_bg_armor = button_unselected;
+button_bg_key = button_unselected;
 button_width = 2.5;
 button_height = 1.5;
 button_x = 10 + camera_get_view_x(view_camera[0]);

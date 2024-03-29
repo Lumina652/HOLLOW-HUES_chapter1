@@ -10,3 +10,4 @@ global.controls_sprint = vk_shift;
 global.controls_inventory = ord("C");
 global.controls_interact = ord("Z");
 global.controls_back = vk_backspace;
+global.controls_esc = ord("X");

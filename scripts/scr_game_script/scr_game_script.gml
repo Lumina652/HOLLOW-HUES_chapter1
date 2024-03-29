@@ -58,6 +58,10 @@ function scr_game_script(_text_id){
 			scr_text("What the fuck", "Hazel - normal", -1);
 			break;
 		
+		case "Bachi_Test":
+			scr_text("You got Bachi! Wack some bitches with em`!", "Sal");
+			break;
+		
 		case "HUB_portal0":
 			scr_text("Before entering the portal, make sure you save and explore this part of the city!", "Sal");
 			scr_text("You won't be able to return for a long time after you go in!", "Sal");

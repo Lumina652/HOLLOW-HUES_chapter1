@@ -2,6 +2,8 @@ depth = -99999;
 
 //scr_text("sram");
 
+obj_player_sal.in_text = 1;
+
 #region textbox parameters
 textbox_width = 440;
 textbox_height = 140;

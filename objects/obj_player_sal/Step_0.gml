@@ -83,12 +83,15 @@ else {
 #endregion
 #region COLLISION
 //Horizontal Collision
-if (place_meeting(x + xspd, y, obj_collidable)) || (place_meeting(x + xspd, y, obj_interactable)) || (place_meeting(x + xspd, y, obj_item_parent)) {
+var _x_coll = place_meeting(x + xspd, y, obj_collidable) || place_meeting(x + xspd, y, obj_interactable) || place_meeting(x + xspd, y, obj_item_parent) || place_meeting(x + xspd, y, obj_weapon_parent);
+var _y_coll = (place_meeting(x, y + yspd, obj_collidable)) || (place_meeting(x, y + yspd, obj_interactable)) || (place_meeting(x, y + yspd, obj_item_parent)) || (place_meeting(x, y + yspd, obj_weapon_parent));
+
+if (_x_coll) {
 	xspd = 0;	
 }
 
 //Vertical Collision
-if (place_meeting(x, y + yspd, obj_collidable)) || (place_meeting(x, y + yspd, obj_interactable)) || (place_meeting(x, y + yspd, obj_item_parent)) {
+if (_y_coll) {
 	yspd = 0;	
 }
 
