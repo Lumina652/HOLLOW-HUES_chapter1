@@ -30,6 +30,13 @@ hp = 100;
 global.follower_count = 0;
 party_position = 0;
 
+dmg = 0;
+def = 0;
+weapon_selected = -1;
+
+weapon_equiped = noone;
+armor_equiped = noone;
+
 #endregion
 #region OTHER
 alarm[0] = 1 * room_speed;

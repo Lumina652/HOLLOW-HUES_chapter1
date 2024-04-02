@@ -1,0 +1,1 @@
+key = global.key_list.test_key;

@@ -108,26 +108,48 @@ else {
 
 #region ----------go through pages ----------
 
-if (accept_key) {
-	if (draw_char == text_length[page]) {
-		if (page < page_number - 1) {
-			page++;
-			draw_char = 0;
+if (instance_exists(obj_item_menu)) {
+	if (accept_key) && (obj_item_menu.pressed_interact_timer == 0) {
+		if (draw_char == text_length[page]) {
+			if (page < page_number - 1) {
+				page++;
+				draw_char = 0;
+			}
+			else {
+				//link text for options
+				if (option_number > 0) {
+					scr_create_textbox(option_link_id[option_pos]);	
+				}
+			
+				instance_destroy();
+			}
 		}
 		else {
-			//link text for options
-			if (option_number > 0) {
-				scr_create_textbox(option_link_id[option_pos]);	
-			}
-			
-			instance_destroy();
+			draw_char = text_length[page];
 		}
 	}
-	else {
-		draw_char = text_length[page];
+}
+else {
+	if (accept_key) {
+		if (draw_char == text_length[page]) {
+			if (page < page_number - 1) {
+				page++;
+				draw_char = 0;
+			}
+			else {
+				//link text for options
+				if (option_number > 0) {
+					scr_create_textbox(option_link_id[option_pos]);	
+				}
+			
+				instance_destroy();
+			}
+		}
+		else {
+			draw_char = text_length[page];
+		}
 	}
 }
-
 #endregion
 
 #region  ----------draw textbox ----------

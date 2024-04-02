@@ -18,7 +18,7 @@ else {
 	key_down = 0;
 	key_sprint = 0;
 }
-if (hasControl) && (global.chapter != 0) {
+if (hasControl) && (global.chapter != 0) && (in_text == 0) {
 	key_inventory = keyboard_check_pressed(global.controls_inventory);
 }
 else {
@@ -86,8 +86,8 @@ else {
 #endregion
 #region COLLISION
 //Horizontal Collision
-var _x_coll = place_meeting(x + xspd, y, obj_collidable) || place_meeting(x + xspd, y, obj_interactable) || place_meeting(x + xspd, y, obj_item_parent) || place_meeting(x + xspd, y, obj_weapon_parent);
-var _y_coll = (place_meeting(x, y + yspd, obj_collidable)) || (place_meeting(x, y + yspd, obj_interactable)) || (place_meeting(x, y + yspd, obj_item_parent)) || (place_meeting(x, y + yspd, obj_weapon_parent));
+var _x_coll = place_meeting(x + xspd, y, obj_collidable) || place_meeting(x + xspd, y, obj_interactable) || place_meeting(x + xspd, y, obj_item_parent) || place_meeting(x + xspd, y, obj_armor_parent) || place_meeting(x + xspd, y, obj_weapon_parent) || place_meeting(x + xspd, y, obj_key_parent);
+var _y_coll = (place_meeting(x, y + yspd, obj_collidable)) || (place_meeting(x, y + yspd, obj_interactable)) || (place_meeting(x, y + yspd, obj_item_parent)) || (place_meeting(x, y + yspd, obj_weapon_parent)) || (place_meeting(x, y + yspd, obj_armor_parent)) || (place_meeting(x, y + yspd, obj_key_parent));
 
 if (_x_coll) {
 	xspd = 0;	

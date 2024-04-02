@@ -36,7 +36,7 @@ function scr_game_script(_text_id){
 			break;
 		
 		case "no_space":
-			scr_text("You tried to pick up an item, but you are carrying too much.", "Sal");
+			scr_text("You tried to pick up an item, but you are carrying too much...", "Sal");
 			break;
 		
 		case "Inv_Test":
@@ -62,6 +62,10 @@ function scr_game_script(_text_id){
 			scr_text("You got Bachi! Wack some bitches with em`!", "Sal");
 			break;
 		
+		case "Garnek_Test":
+			scr_text("ZUPAAAAA!!!! OBIADDDDD!!!!", "Sal");
+			break;
+		
 		case "HUB_portal0":
 			scr_text("Before entering the portal, make sure you save and explore this part of the city!", "Sal");
 			scr_text("You won't be able to return for a long time after you go in!", "Sal");
@@ -79,7 +83,7 @@ function scr_game_script(_text_id){
 		#region Chapter 0
 		case "Malachi0_1":
 			scr_text("You have arrived.", "Malachi", -1);
-			scr_text("That means it worked.", "Malachi");
+			scr_text("That means it worked.", "Malachi", -1);
 			scr_text("Welcome, my name is Malachi. You are welcome, for this gift you are about to receive.", "Malachi", -1);
 			scr_text("The perfect gift for someone like you, a gift that you will cherish, love, and respect, even in your darkest moments in this very, very interesting world.", "Malachi", -1);
 			scr_text("A body, a mind, a soul and a will, to become a real person like the rest, enjoying this very interesting world you have built together.", "Malachi", -1);
@@ -92,7 +96,9 @@ function scr_game_script(_text_id){
 		case "Malachi0_2":
 			scr_text("Firstly, you will be given a body, the empty shell of you. Treat it as a template for what you want to become during your life.", "Malachi", -1);
 			scr_text("Second, you will be given a mind, to think, make your own decisions, impacting how this world will play out.", "Malachi", -1);
+			//REWRITE JAK TO BRZMI LMFAO
 			scr_text("Next, you will be given a personality, you will like how certain things will happen, and you will not like how others do. It is up for you to decide.", "Malachi", -1);
+			//ZROB THEY RED
 			scr_text("As a bonus, they have made you look...different.", "Malachi", -1);
 				scr_text_color(38, 48, c_yellow, c_yellow, c_yellow, c_yellow);
 			scr_text("Finally, embrace yourself, for who you are, and will be. You are to be loved, to be accepted and most importantly, to be who you want to be.", "Malachi", -1);
@@ -112,6 +118,7 @@ function scr_game_script(_text_id){
 					scr_text("Step forward.", "Malachi", -1);
 					break;
 				case "Malachi0_3 No":
+					//THEY NA RED
 					scr_text("Understood. Whatever you think, it does not matter, you cannot change what they want. Our time together is nearing its end.", "Malachi", -1);
 					scr_text("Step forward.", "Malachi", -1);
 						scr_text_color(75, 83, c_red, c_red, c_red, c_red);
@@ -166,11 +173,11 @@ function scr_game_script(_text_id){
 			scr_text("Of course not, though I still hope this won't take too long, we're supposed to only entertain the city, not do...this.", "Hazel - normal", -1);
 			scr_text("Um...I'm sure it will be a quick mission! Nothing to worry about sis.", "Rose - normal", -1);
 			scr_text("We'll see I guess. Whatever, let's just make sure we remember what to do...", "Hazel - normal", -1);
-			scr_text("When we arrive at out destination, we will get an update on where the signal is coming from.", "Hazel - normal", -1);
-			scr_text("Then we just make our way over there, avoiding anything blocking our path, see what's causing the issue with your singals and make it stop, right?", "Hazel - normal", -1);
+			scr_text("When we arrive at our destination, we will get an update on where the signal is coming from.", "Hazel - normal", -1);
+			scr_text("Then we just make our way over there, avoiding anything blocking our path, see what's causing the issue with your signals and make it stop, right?", "Hazel - normal", -1);
 			scr_text("Precisely! Remember, if you're in trouble just let me know and I'll find a way to help you.", "Aster - normal", -1);
 			scr_text("Boss? What happens if we aren't able to do it today? What if this is a bigger problem we have on our hands, will we get more people involved?", "Rose - normal", -1);
-			scr_text("I'm hoping we don't have too, but if the situation is a lot more problematic I will figure something out, don't worry!", "Aster - normal", -1);
+			scr_text("I'm hoping we don't have to, but if the situation is a lot more problematic I will figure something out, don't worry!", "Aster - normal", -1);
 			scr_text("Fine, let's just get going so we have time to relax later, I don't wanna do this all day you know.", "Hazel - normal", -1);
 			scr_text("Alright...wish us luck!", "Rose - normal", -1);
 			scr_text("I'm sure you can do it, you two! I'll be on my way to the office to be in contact with you!", "Aster - normal", -1);

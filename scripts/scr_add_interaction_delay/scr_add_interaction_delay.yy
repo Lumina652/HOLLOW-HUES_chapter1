@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_add_interaction_delay",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_add_interaction_delay",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

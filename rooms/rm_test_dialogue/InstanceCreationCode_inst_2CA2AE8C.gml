@@ -1,1 +1,0 @@
-text_id = "HUB_portal0";

@@ -22,10 +22,12 @@ if (made_draw_menu == 0) {
 			other_bg_sprite = spr_clear;
 			break;
 		case 2:
+			scr_make_inventory_menu_armor();
 			other_frame_sprite = spr_clear;
 			other_bg_sprite = spr_clear;
 			break;
 		case 3:
+			scr_make_inventory_menu_key();
 			other_frame_sprite = spr_clear;
 			other_bg_sprite = spr_clear;
 			break;

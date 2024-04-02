@@ -2,8 +2,14 @@ depth = -9999;
 
 selected_item = -1;
 
+//INTERACTION DELAY
+pressed_interact_timer = 0;
+pressed_interact_time = 10;
+
 inv_item_step = -1;
 inv_weapon_step = -1;
+inv_armor_step = -1;
+inv_key_step = -1;
 menu_button = -1;
 selected_menu = 0;
 menu_button_pos = 0;
@@ -84,3 +90,36 @@ portrait_scale = 2.5;
 item_selection_frame_spr = spr_inv_frame_selected;
 item_selection_frame_x = 0;
 item_selection_frame_y = 0;
+
+weapon_selection_frame_x = 0;
+weapon_selection_frame_y = 0;
+armor_selection_frame_x = 0;
+armor_selection_frame_y = 0;
+key_selection_frame_x = 0;
+key_selection_frame_y = 0;
+
+party_select_inv = -1;
+party_select_frame_alpha = 0;
+party_select_frame_x = 0;
+
+picking_item_for_party = 0;
+picking_weapon_for_party = 0;
+picking_armor_for_party = 0;
+picked_item = 0;
+picked_weapon = 0;
+picked_armor = 0;
+
+
+//WEAPON ICONS FOR PORTRAITS
+sal_weapon_x_1 = 440;
+sal_weapon_x_2 = 420;
+sal_weapon_x_3 = 380;
+
+armor_offset_x = 30;
+
+rose_weapon_x_2 = 480;
+rose_weapon_x_3 = 440;
+
+hazel_weapon_x_3 = 500;
+
+weapon_icon_y = 190;

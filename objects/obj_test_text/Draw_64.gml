@@ -1,1 +1,0 @@
-//draw_text(50, 50, string(audio_sound_length(msc_rising_up)));
