@@ -1,6 +1,9 @@
 global.font_main = fnt_pixel;
 global.font_pause = fnt_pause;
 
+global.music_channel = 0;
+global.sound_channel = 0;
+
 //CONTROLS
 global.controls_up = ord("W");
 global.controls_down = ord("S");

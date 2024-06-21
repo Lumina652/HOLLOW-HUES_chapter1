@@ -5,7 +5,7 @@
   "managed":true,
   "name":"obj_door_test",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_collidable","path":"objects/obj_collidable/obj_collidable.yy",},"propertyId":{"name":"image_alpha","path":"objects/obj_collidable/obj_collidable.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_collidable","path":"objects/obj_collidable/obj_collidable.yy",},"propertyId":{"name":"image_alpha","path":"objects/obj_collidable/obj_collidable.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
   ],
   "parent":{
     "name":"Objects",

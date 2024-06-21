@@ -65,7 +65,8 @@ if (keyboard_check_pressed(global.controls_interact)) || (keyboard_check_pressed
 			instance_destroy();	
 			break;
 		case 1:
-			//settings stuff
+			instance_create_depth(0, 0, -99999, obj_settings_menu);
+			instance_destroy();
 			break;
 		case 2:
 			//inventory stuff

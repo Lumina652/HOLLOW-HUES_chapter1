@@ -26,8 +26,8 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"","%Name":"x_diff","filters":[],"listItems":[],"multiselect":false,"name":"x_diff","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"x -  camera_get_view_x(view_camera[0]);","varType":0,},
-    {"$GMObjectProperty":"","%Name":"y_diff","filters":[],"listItems":[],"multiselect":false,"name":"y_diff","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"y -  camera_get_view_y(view_camera[0]);","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"x_diff","filters":[],"listItems":[],"multiselect":false,"name":"x_diff","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":null,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"x -  camera_get_view_x(view_camera[0]);","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"y_diff","filters":[],"listItems":[],"multiselect":false,"name":"y_diff","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":null,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"y -  camera_get_view_y(view_camera[0]);","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

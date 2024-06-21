@@ -10,7 +10,7 @@ pausebox_x = camera_get_view_x(view_camera[0]) + pausebox_x_offset;
 pausebox_y = camera_get_view_y(view_camera[0]) + pausebox_y_offset;
 pausebox_img = 0; //frame of the pause box 
 pausebox_speed = 6 / room_speed; //how fast the pause box 
-pausebox_sprite = spr_text_box_sal;
+pausebox_sprite = spr_text_box_inv;
 
 //OVERLAY VARIABLES
 pauseoverlay_sprite = spr_ocean_overlay2;

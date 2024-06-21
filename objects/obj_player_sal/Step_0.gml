@@ -18,7 +18,9 @@ else {
 	key_down = 0;
 	key_sprint = 0;
 }
-if (hasControl) && (global.chapter != 0) && (in_text == 0) {
+
+//&& (global.chapter != 0)
+if (hasControl) && (in_text == 0) {
 	key_inventory = keyboard_check_pressed(global.controls_inventory);
 }
 else {
