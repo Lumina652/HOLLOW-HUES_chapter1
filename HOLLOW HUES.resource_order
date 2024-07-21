@@ -143,6 +143,7 @@
     {"name":"spr_text_box","order":2,"path":"sprites/spr_text_box/spr_text_box.yy",},
     {"name":"spr_text_box2","order":8,"path":"sprites/spr_text_box2/spr_text_box2.yy",},
     {"name":"spr_textbox_arrow","order":4,"path":"sprites/spr_textbox_arrow/spr_textbox_arrow.yy",},
+    {"name":"spr_tred","order":74,"path":"sprites/spr_tred/spr_tred.yy",},
     {"name":"spr_trigger_perm","order":12,"path":"sprites/spr_trigger_perm/spr_trigger_perm.yy",},
     {"name":"spr_trigger","order":11,"path":"sprites/spr_trigger/spr_trigger.yy",},
     {"name":"t_ocean_tile","order":1,"path":"tilesets/t_ocean_tile/t_ocean_tile.yy",},

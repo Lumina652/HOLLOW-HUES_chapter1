@@ -35,7 +35,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.4.1.152",
+    "IDEVersion":"2024.6.2.162",
   },
   "name":"HOLLOW HUES",
   "resources":[
@@ -186,6 +186,7 @@
     {"id":{"name":"spr_text_box","path":"sprites/spr_text_box/spr_text_box.yy",},},
     {"id":{"name":"spr_text_box2","path":"sprites/spr_text_box2/spr_text_box2.yy",},},
     {"id":{"name":"spr_textbox_arrow","path":"sprites/spr_textbox_arrow/spr_textbox_arrow.yy",},},
+    {"id":{"name":"spr_tred","path":"sprites/spr_tred/spr_tred.yy",},},
     {"id":{"name":"spr_trigger_perm","path":"sprites/spr_trigger_perm/spr_trigger_perm.yy",},},
     {"id":{"name":"spr_trigger","path":"sprites/spr_trigger/spr_trigger.yy",},},
     {"id":{"name":"t_ocean_tile","path":"tilesets/t_ocean_tile/t_ocean_tile.yy",},},

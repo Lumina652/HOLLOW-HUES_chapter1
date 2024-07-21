@@ -26,12 +26,15 @@ in_cutscene = false;
 in_inv = 0;
 opened_inv = false;
 in_text = 0;
-hp = 100;
+
 global.follower_count = 0;
 party_position = 0;
 
+//STATS
 dmg = 0;
 def = 0;
+hp = 100;
+
 weapon_selected = -1;
 
 weapon_equiped = noone;
@@ -42,7 +45,7 @@ armor_equiped = noone;
 alarm[0] = 1 * room_speed;
 
 instance_create_layer(x, y, "Player", obj_interact);
-//instance_create_layer(x, y, "Player", obj_rose_follower);
+instance_create_layer(x, y, "Player", obj_rose_follower);
 //instance_create_layer(x, y, "Player", obj_hazel_follower);
 #endregion
 

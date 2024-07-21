@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_draw_set_text",
   "isCompatibility":false,
   "isDnD":false,
