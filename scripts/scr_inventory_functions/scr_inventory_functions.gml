@@ -5,12 +5,12 @@ function scr_make_inventory_portraits() {
 		draw_sprite(portrait_sal_sprite, 0, sal_x_1, portrait_people_y);
 		
 		//WEAPON ICON
-		if (obj_player_sal.weapon_equiped != noone) {
-			draw_sprite_ext(obj_player_sal.weapon_equiped, 0, sal_weapon_x_1, weapon_icon_y, 1, 1, 0, c_white, 1);	
+		if (obj_sal_stats.weapon_equiped != noone) {
+			draw_sprite_ext(obj_sal_stats.weapon_equiped, 0, sal_weapon_x_1, weapon_icon_y, 1, 1, 0, c_white, 1);	
 		}
 		//ARMOR ICON
-		if (obj_player_sal.armor_equiped != noone) {
-			draw_sprite_ext(obj_player_sal.armor_equiped, 0, sal_weapon_x_1 + armor_offset_x, weapon_icon_y, 1, 1, 0, c_white, 1);
+		if (obj_sal_stats.armor_equiped != noone) {
+			draw_sprite_ext(obj_sal_stats.armor_equiped, 0, sal_weapon_x_1 + armor_offset_x, weapon_icon_y, 1, 1, 0, c_white, 1);
 		}
 	}
 	if (global.follower_count == 1) {
@@ -21,22 +21,22 @@ function scr_make_inventory_portraits() {
 		
 		//SAL
 		//WEAPON ICON
-		if (obj_player_sal.weapon_equiped != noone) {
-			draw_sprite_ext(obj_player_sal.weapon_equiped, 0, sal_weapon_x_2, weapon_icon_y, 1, 1, 0, c_white, 1);	
+		if (obj_sal_stats.weapon_equiped != noone) {
+			draw_sprite_ext(obj_sal_stats.weapon_equiped, 0, sal_weapon_x_1, weapon_icon_y, 1, 1, 0, c_white, 1);	
 		}
 		//ARMOR ICON
-		if (obj_player_sal.armor_equiped != noone) {
-			draw_sprite_ext(obj_player_sal.armor_equiped, 0, sal_weapon_x_2 + armor_offset_x, weapon_icon_y, 1, 1, 0, c_white, 1);
+		if (obj_sal_stats.armor_equiped != noone) {
+			draw_sprite_ext(obj_sal_stats.armor_equiped, 0, sal_weapon_x_1 + armor_offset_x, weapon_icon_y, 1, 1, 0, c_white, 1);
 		}
 		
 		//ROSE
 		//WEAPON ICON
-		if (obj_rose_follower.weapon_equiped != noone) {
-			draw_sprite_ext(obj_rose_follower.weapon_equiped, 0, rose_weapon_x_2, weapon_icon_y, 1, 1, 0, c_white, 1);	
+		if (obj_rose_stats.weapon_equiped != noone) {
+			draw_sprite_ext(obj_rose_stats.weapon_equiped, 0, sal_weapon_x_1, weapon_icon_y, 1, 1, 0, c_white, 1);	
 		}
 		//ARMOR ICON
-		if (obj_rose_follower.armor_equiped != noone) {
-			draw_sprite_ext(obj_rose_follower.armor_equiped, 0, rose_weapon_x_2 + armor_offset_x, weapon_icon_y, 1, 1, 0, c_white, 1);
+		if (obj_rose_stats.armor_equiped != noone) {
+			draw_sprite_ext(obj_rose_stats.armor_equiped, 0, sal_weapon_x_1 + armor_offset_x, weapon_icon_y, 1, 1, 0, c_white, 1);
 		}
 	}
 	if (global.follower_count == 2) {
@@ -49,38 +49,40 @@ function scr_make_inventory_portraits() {
 		
 		//SAL
 		//WEAPON ICON
-		if (obj_player_sal.weapon_equiped != noone) {
-			draw_sprite_ext(obj_player_sal.weapon_equiped, 0, sal_weapon_x_3, weapon_icon_y, 1, 1, 0, c_white, 1);	
+		if (obj_sal_stats.weapon_equiped != noone) {
+			draw_sprite_ext(obj_sal_stats.weapon_equiped, 0, sal_weapon_x_1, weapon_icon_y, 1, 1, 0, c_white, 1);	
 		}
 		//ARMOR ICON
-		if (obj_player_sal.armor_equiped != noone) {
-			draw_sprite_ext(obj_player_sal.armor_equiped, 0, sal_weapon_x_3 + armor_offset_x, weapon_icon_y, 1, 1, 0, c_white, 1);
+		if (obj_sal_stats.armor_equiped != noone) {
+			draw_sprite_ext(obj_sal_stats.armor_equiped, 0, sal_weapon_x_1 + armor_offset_x, weapon_icon_y, 1, 1, 0, c_white, 1);
 		}
 		
 		//ROSE
 		//WEAPON ICON
-		if (obj_rose_follower.weapon_equiped != noone) {
-			draw_sprite_ext(obj_rose_follower.weapon_equiped, 0, rose_weapon_x_3, weapon_icon_y, 1, 1, 0, c_white, 1);	
+		if (obj_rose_stats.weapon_equiped != noone) {
+			draw_sprite_ext(obj_rose_stats.weapon_equiped, 0, sal_weapon_x_1, weapon_icon_y, 1, 1, 0, c_white, 1);	
 		}
 		//ARMOR ICON
-		if (obj_rose_follower.armor_equiped != noone) {
-			draw_sprite_ext(obj_rose_follower.armor_equiped, 0, rose_weapon_x_3 + armor_offset_x, weapon_icon_y, 1, 1, 0, c_white, 1);
+		if (obj_rose_stats.armor_equiped != noone) {
+			draw_sprite_ext(obj_rose_stats.armor_equiped, 0, sal_weapon_x_1 + armor_offset_x, weapon_icon_y, 1, 1, 0, c_white, 1);
 		}
 		
-		//HAZEL
+		//ROSE
 		//WEAPON ICON
-		if (obj_hazel_follower.weapon_equiped != noone) {
-			draw_sprite_ext(obj_hazel_follower.weapon_equiped, 0, hazel_weapon_x_3, weapon_icon_y, 1, 1, 0, c_white, 1);	
+		if (obj_hazel_stats.weapon_equiped != noone) {
+			draw_sprite_ext(obj_hazel_stats.weapon_equiped, 0, sal_weapon_x_1, weapon_icon_y, 1, 1, 0, c_white, 1);	
 		}
 		//ARMOR ICON
-		if (obj_hazel_follower.armor_equiped != noone) {
-			draw_sprite_ext(obj_hazel_follower.armor_equiped, 0, hazel_weapon_x_3 + armor_offset_x, weapon_icon_y, 1, 1, 0, c_white, 1);
+		if (obj_hazel_stats.armor_equiped != noone) {
+			draw_sprite_ext(obj_hazel_stats.armor_equiped, 0, sal_weapon_x_1 + armor_offset_x, weapon_icon_y, 1, 1, 0, c_white, 1);
 		}
 		
 	}	
 }
 
 function scr_make_inventory_menu_items() {
+	bg_img -= bg_speed;
+	
 	//drawing the inventory
 	draw_set_font(global.font_main);
 
@@ -92,8 +94,10 @@ function scr_make_inventory_menu_items() {
 	bg_sprite = spr_text_box_inv_items;
 	
 	bg_img += bg_speed; //make the animation run
-	draw_sprite_ext(bg_sprite, bg_img, _bgx, _bgy, bg_width, bg_height, 0, c_white, 0.5);
-	draw_sprite_ext(bg_sprite, bg_img, _bgx, _bgy, bg2_width, bg_height, 0, c_white, 0.5);
+	draw_sprite_ext(other_bg_sprite_stats, bg_img, _bgx, _bgy, bg_width, bg_height, 0, c_white, 0.7);
+	draw_sprite_ext(other_bg_sprite_stats, bg_img, _bgx, _bgy, bg2_width, bg_height, 0, c_white, 0.7);
+	draw_sprite_ext(bg_sprite, bg_img, _bgx, _bgy, bg_width, bg_height, 0, c_white, 0.7);
+	draw_sprite_ext(bg_sprite, bg_img, _bgx, _bgy, bg2_width, bg_height, 0, c_white, 0.7);
 	draw_sprite_ext(frame_sprite, 0, _bgx, _bgy, bg_width, bg_height, 0, c_white, 0.5);
 	draw_sprite_ext(frame_sprite, 0, _bgx, _bgy, bg2_width, bg_height, 0, c_white, 0.5);
 
@@ -231,6 +235,8 @@ function scr_make_inventory_menu_items() {
 }
 
 function scr_make_inventory_menu_weapons() {
+	bg_img -= bg_speed;
+	
 	//drawing the inventory
 	draw_set_font(global.font_main);
 
@@ -242,8 +248,10 @@ function scr_make_inventory_menu_weapons() {
 	bg_sprite = spr_text_box_inv_weapons;
 	
 	bg_img += bg_speed; //make the animation run
-	draw_sprite_ext(bg_sprite, bg_img, _bgx, _bgy, bg_width, bg_height, 0, c_white, 0.5);
-	draw_sprite_ext(bg_sprite, bg_img, _bgx, _bgy, bg2_width, bg_height, 0, c_white, 0.5);
+	draw_sprite_ext(other_bg_sprite_stats, bg_img, _bgx, _bgy, bg_width, bg_height, 0, c_white, 0.7);
+	draw_sprite_ext(other_bg_sprite_stats, bg_img, _bgx, _bgy, bg2_width, bg_height, 0, c_white, 0.7);
+	draw_sprite_ext(bg_sprite, bg_img, _bgx, _bgy, bg_width, bg_height, 0, c_white, 0.7);
+	draw_sprite_ext(bg_sprite, bg_img, _bgx, _bgy, bg2_width, bg_height, 0, c_white, 0.7);
 	draw_sprite_ext(frame_sprite, 0, _bgx, _bgy, bg_width, bg_height, 0, c_white, 0.5);
 	draw_sprite_ext(frame_sprite, 0, _bgx, _bgy, bg2_width, bg_height, 0, c_white, 0.5);
 
@@ -379,6 +387,8 @@ function scr_make_inventory_menu_weapons() {
 }
 	
 function scr_make_inventory_menu_armor() {
+	bg_img -= bg_speed;
+	
 	//drawing the inventory
 	draw_set_font(global.font_main);
 
@@ -390,8 +400,10 @@ function scr_make_inventory_menu_armor() {
 	bg_sprite = spr_text_box_inv_armor;
 	
 	bg_img += bg_speed; //make the animation run
-	draw_sprite_ext(bg_sprite, bg_img, _bgx, _bgy, bg_width, bg_height, 0, c_white, 0.5);
-	draw_sprite_ext(bg_sprite, bg_img, _bgx, _bgy, bg2_width, bg_height, 0, c_white, 0.5);
+	draw_sprite_ext(other_bg_sprite_stats, bg_img, _bgx, _bgy, bg_width, bg_height, 0, c_white, 0.7);
+	draw_sprite_ext(other_bg_sprite_stats, bg_img, _bgx, _bgy, bg2_width, bg_height, 0, c_white, 0.7);
+	draw_sprite_ext(bg_sprite, bg_img, _bgx, _bgy, bg_width, bg_height, 0, c_white, 0.7);
+	draw_sprite_ext(bg_sprite, bg_img, _bgx, _bgy, bg2_width, bg_height, 0, c_white, 0.7);
 	draw_sprite_ext(frame_sprite, 0, _bgx, _bgy, bg_width, bg_height, 0, c_white, 0.5);
 	draw_sprite_ext(frame_sprite, 0, _bgx, _bgy, bg2_width, bg_height, 0, c_white, 0.5);
 
@@ -526,6 +538,8 @@ function scr_make_inventory_menu_armor() {
 }	
 	
 function scr_make_inventory_menu_key() {
+	bg_img -= bg_speed;
+	
 	//drawing the inventory
 	draw_set_font(global.font_main);
 
@@ -537,8 +551,10 @@ function scr_make_inventory_menu_key() {
 	bg_sprite = spr_text_box_inv_key;
 	
 	bg_img += bg_speed; //make the animation run
-	draw_sprite_ext(bg_sprite, bg_img, _bgx, _bgy, bg_width, bg_height, 0, c_white, 0.5);
-	draw_sprite_ext(bg_sprite, bg_img, _bgx, _bgy, bg2_width, bg_height, 0, c_white, 0.5);
+	draw_sprite_ext(other_bg_sprite_stats, bg_img, _bgx, _bgy, bg_width, bg_height, 0, c_white, 0.7);
+	draw_sprite_ext(other_bg_sprite_stats, bg_img, _bgx, _bgy, bg2_width, bg_height, 0, c_white, 0.7);
+	draw_sprite_ext(bg_sprite, bg_img, _bgx, _bgy, bg_width, bg_height, 0, c_white, 0.7);
+	draw_sprite_ext(bg_sprite, bg_img, _bgx, _bgy, bg2_width, bg_height, 0, c_white, 0.7);
 	draw_sprite_ext(frame_sprite, 0, _bgx, _bgy, bg_width, bg_height, 0, c_white, 0.5);
 	draw_sprite_ext(frame_sprite, 0, _bgx, _bgy, bg2_width, bg_height, 0, c_white, 0.5);
 
@@ -695,7 +711,7 @@ function scr_select_party_item() {
 			}
 					
 			if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_item == 1) && (pressed_interact_timer == 0) {
-				global.inv_item[item_move_vertical].effect(obj_player_sal);
+				global.inv_item[item_move_vertical].effect(obj_sal_stats);
 				picking_item_for_party = 0;
 				party_select_frame_alpha = 0;
 				scr_add_interaction_delay()
@@ -716,7 +732,7 @@ function scr_select_party_item() {
 			}
 					
 			if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_item == 1) && (pressed_interact_timer == 0) {
-				global.inv_item[item_move_vertical].effect(obj_rose_follower);
+				global.inv_item[item_move_vertical].effect(obj_rose_stats);
 				picking_item_for_party = 0;
 				party_select_frame_alpha = 0;
 				scr_add_interaction_delay()
@@ -730,7 +746,7 @@ function scr_select_party_item() {
 			picked_item = 1;
 			
 			if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_item == 1) && (pressed_interact_timer == 0) {
-				global.inv_item[item_move_vertical].effect(obj_hazel_follower);
+				global.inv_item[item_move_vertical].effect(obj_hazel_stats);
 				picking_item_for_party = 0;
 				party_select_frame_alpha = 0;
 				scr_add_interaction_delay()
@@ -764,8 +780,8 @@ function scr_select_party_weapon() {
 			}
 					
 			if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_weapon == 1) && (pressed_interact_timer == 0) {
-				obj_player_sal.weapon_equiped = global.inv_weapon[item_move_vertical].w_icon;
-				global.inv_weapon[item_move_vertical].w_effect(obj_player_sal);
+				obj_sal_stats.weapon_equiped = global.inv_weapon[item_move_vertical].w_icon;
+				global.inv_weapon[item_move_vertical].w_effect(obj_sal_stats);
 				picking_weapon_for_party = 0;
 				party_select_frame_alpha = 0;
 				scr_add_interaction_delay()
@@ -786,8 +802,8 @@ function scr_select_party_weapon() {
 			}
 					
 			if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_weapon == 1) && (pressed_interact_timer == 0) {
-				obj_rose_follower.weapon_equiped = global.inv_weapon[item_move_vertical].w_icon;
-				global.inv_weapon[item_move_vertical].w_effect(obj_rose_follower);
+				obj_rose_stats.weapon_equiped = global.inv_weapon[item_move_vertical].w_icon;
+				global.inv_weapon[item_move_vertical].w_effect(obj_rose_stats);
 				picking_weapon_for_party = 0;
 				party_select_frame_alpha = 0;
 				scr_add_interaction_delay()
@@ -801,8 +817,8 @@ function scr_select_party_weapon() {
 			picked_weapon = 1;
 			
 			if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_weapon == 1) && (pressed_interact_timer == 0) {
-				obj_hazel_follower.weapon_equiped = global.inv_weapon[item_move_vertical].w_icon;
-				global.inv_weapon[item_move_vertical].w_effect(obj_hazel_follower);
+				obj_hazel_stats.weapon_equiped = global.inv_weapon[item_move_vertical].w_icon;
+				global.inv_weapon[item_move_vertical].w_effect(obj_hazel_stats);
 				picking_weapon_for_party = 0;
 				scr_add_interaction_delay()
 				party_select_frame_alpha = 0;
@@ -836,8 +852,8 @@ function scr_select_party_armor() {
 			}
 					
 			if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_armor == 1) && (pressed_interact_timer == 0) {
-				obj_player_sal.armor_equiped = global.inv_armor[item_move_vertical].a_icon;
-				global.inv_armor[item_move_vertical].a_effect(obj_player_sal);
+				obj_sal_stats.armor_equiped = global.inv_armor[item_move_vertical].a_icon;
+				global.inv_armor[item_move_vertical].a_effect(obj_sal_stats);
 				picking_armor_for_party = 0;
 				party_select_frame_alpha = 0;
 				scr_add_interaction_delay()
@@ -858,8 +874,8 @@ function scr_select_party_armor() {
 			}
 					
 			if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_armor == 1) && (pressed_interact_timer == 0) {
-				obj_rose_follower.armor_equiped = global.inv_armor[item_move_vertical].a_icon;
-				global.inv_armor[item_move_vertical].a_effect(obj_rose_follower);
+				obj_rose_stats.armor_equiped = global.inv_armor[item_move_vertical].a_icon;
+				global.inv_armor[item_move_vertical].a_effect(obj_rose_stats);
 				picking_armor_for_party = 0;
 				party_select_frame_alpha = 0;
 				scr_add_interaction_delay()
@@ -873,8 +889,8 @@ function scr_select_party_armor() {
 			picked_armor = 1;
 			
 			if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_armor == 1) && (pressed_interact_timer == 0) {
-				obj_hazel_follower.armor_equiped = global.inv_armor[item_move_vertical].a_icon;
-				global.inv_armor[item_move_vertical].a_effect(obj_hazel_follower);
+				obj_hazel_stats.armor_equiped = global.inv_armor[item_move_vertical].a_icon;
+				global.inv_armor[item_move_vertical].a_effect(obj_hazel_stats);
 				picking_armor_for_party = 0;
 				party_select_frame_alpha = 0;
 				scr_add_interaction_delay()

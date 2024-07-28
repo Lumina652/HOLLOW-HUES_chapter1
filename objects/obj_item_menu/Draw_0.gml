@@ -3,10 +3,13 @@ var _bgx = camera_get_view_x(view_camera[0]);
 var _bgy = camera_get_view_y(view_camera[0]);
 
 bg_img += bg_speed; //make the animation run
-draw_sprite_ext(other_bg_sprite, bg_img, _bgx, _bgy, bg_width, bg_height, 0, c_white, 0.5);
-draw_sprite_ext(other_bg_sprite, bg_img, _bgx, _bgy, bg2_width, bg_height, 0, c_white, 0.5);
+draw_sprite_ext(other_bg_sprite, bg_img, _bgx, _bgy, bg_width, bg_height, 0, c_white, 0.7);
+draw_sprite_ext(other_bg_sprite, bg_img, _bgx, _bgy, bg2_width, bg_height, 0, c_white, 0.7);
 draw_sprite_ext(other_frame_sprite, 0, _bgx, _bgy, bg_width, bg_height, 0, c_white, 0.5);
 draw_sprite_ext(other_frame_sprite, 0, _bgx, _bgy, bg2_width, bg_height, 0, c_white, 0.5);
+
+//make stats of characters
+scr_make_inventory_stats();
 
 //Actual items or weapons ect.
 if (made_draw_menu == 0) {

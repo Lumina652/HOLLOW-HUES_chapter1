@@ -133,7 +133,7 @@ switch (menu_button) {
 			}
 	
 			//drop the item
-			if (keyboard_check_pressed(global.controls_back)) && (global.inv_item[item_move_vertical].can_drop == true) && (obj_player_sal.in_text == 0) && (pressed_interact_timer == 0) {
+			if (keyboard_check_pressed(global.controls_test)) && (global.inv_item[item_move_vertical].can_drop == true) && (obj_player_sal.in_text == 0) && (pressed_interact_timer == 0) {
 				array_delete(global.inv_item, global.inv_item[item_move_vertical], 1);
 				scr_add_interaction_delay()
 				picking_item_for_party = 0;
@@ -183,7 +183,7 @@ switch (menu_button) {
 			}
 	
 			//drop the item
-			if (keyboard_check_pressed(global.controls_back)) && (obj_player_sal.in_text == 0) && (pressed_interact_timer == 0) {
+			if (keyboard_check_pressed(global.controls_test)) && (obj_player_sal.in_text == 0) && (pressed_interact_timer == 0) {
 				array_delete(global.inv_weapon, global.inv_weapon[item_move_vertical], 1);
 				scr_add_interaction_delay()
 				picking_weapon_for_party = 0;
@@ -233,7 +233,7 @@ switch (menu_button) {
 			}
 	
 			//drop the item
-			if (keyboard_check_pressed(global.controls_back)) && (obj_player_sal.in_text == 0) && (pressed_interact_timer == 0) {
+			if (keyboard_check_pressed(global.controls_test)) && (obj_player_sal.in_text == 0) && (pressed_interact_timer == 0) {
 				array_delete(global.inv_armor, global.inv_armor[item_move_vertical], 1);
 				scr_add_interaction_delay()
 				picking_armor_for_party = 0;
@@ -245,6 +245,7 @@ switch (menu_button) {
 		}
 		break;
 	case 3:
+		//key items
 		item_move_vertical += keyboard_check_pressed(global.controls_down) - keyboard_check_pressed(global.controls_up);
 		item_move_vertical = clamp(item_move_vertical, 0, array_length(global.inv_key) - 1);
 	
@@ -280,7 +281,7 @@ switch (menu_button) {
 			}
 	
 			//drop the item
-			if (keyboard_check_pressed(global.controls_back)) && (global.inv_key[item_move_vertical].k_can_drop == true) && (obj_player_sal.in_text == 0) && (pressed_interact_timer == 0) {
+			if (keyboard_check_pressed(global.controls_test)) && (global.inv_key[item_move_vertical].k_can_drop == true) && (obj_player_sal.in_text == 0) && (pressed_interact_timer == 0) {
 				scr_add_interaction_delay()
 				array_delete(global.inv_key, global.inv_key[item_move_vertical], 1);
 			}

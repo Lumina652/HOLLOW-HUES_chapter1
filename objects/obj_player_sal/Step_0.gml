@@ -26,6 +26,9 @@ if (hasControl) && (in_text == 0) {
 else {
 	key_inventory = 0;	
 }
+
+
+
 #endregion
 #region MOVEMENT
 x = x + xspd;
@@ -83,6 +86,10 @@ if (xspd == 0) && (yspd == 0) {
 }
 else {
 	sprite_index = sprite[faceDir];
+}
+
+if (image_speed != 0) && (image_index == 3) || (image_index == 1) {
+	global.encounter_counter ++;
 }
 
 #endregion

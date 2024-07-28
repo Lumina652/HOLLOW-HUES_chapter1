@@ -14,3 +14,4 @@ global.controls_inventory = ord("C");
 global.controls_interact = ord("Z");
 global.controls_back = ord("X");
 global.controls_esc = vk_escape;
+global.controls_test = ord("O");

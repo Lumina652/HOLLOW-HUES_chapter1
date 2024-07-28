@@ -30,7 +30,9 @@ bg_img = 0; //frame of the pause box
 bg_speed = 6 / room_speed; //how fast the pause box 
 bg_sprite = spr_text_box_inv;
 other_bg_sprite = spr_text_box_inv;
+other_bg_sprite_stats = spr_text_box_inv;
 other_frame_sprite = spr_inv_frame;
+other_frame_sprite_stats = spr_inv_frame;
 frame_sprite = spr_inv_frame;
 
 name_bg_width = 5;
@@ -123,3 +125,69 @@ rose_weapon_x_3 = 440;
 hazel_weapon_x_3 = 500;
 
 weapon_icon_y = 190;
+
+
+//STATS
+//portraits = 1
+stats_portrait_sal_x = 80 + camera_get_view_x(view_camera[0]);
+stats_sal_x = 92 + camera_get_view_x(view_camera[0]);
+stats_sal_y = 13 + camera_get_view_y(view_camera[0]);
+stats_portrait_sal_y = 10 + camera_get_view_y(view_camera[0]);
+
+//portraits = 2
+stats_portrait_rose_x = 80 + camera_get_view_x(view_camera[0]);
+stats_rose_x = 92 + camera_get_view_x(view_camera[0]);
+stats_rose_y = 83 + camera_get_view_y(view_camera[0]);
+stats_portrait_rose_y = 80 + camera_get_view_y(view_camera[0]);
+
+//portraits = 3
+stats_portrait_hazel_x = 80 + camera_get_view_x(view_camera[0]);
+stats_hazel_x = 92 + camera_get_view_x(view_camera[0]);
+stats_hazel_y = 153 + camera_get_view_y(view_camera[0]);
+stats_portrait_hazel_y = 150 + camera_get_view_y(view_camera[0]);
+
+//STATS BARS - RIMS
+rim_sprite_bars = spr_inv_frame;
+rim_width = 5.7;
+rim_height = 0.7;
+rim_x = 175 + camera_get_view_x(view_camera[0]);
+
+rim_hp_sal_y = 8 + camera_get_view_y(view_camera[0]);
+rim_mana_sal_y = 28 + camera_get_view_y(view_camera[0]);
+
+rim_hp_rose_y = 78 + camera_get_view_y(view_camera[0]);
+rim_mana_rose_y = 98 + camera_get_view_y(view_camera[0]);
+
+rim_hp_hazel_y = 148 + camera_get_view_y(view_camera[0]);
+rim_mana_hazel_y = 168 + camera_get_view_y(view_camera[0]);
+
+//STATS BARS - HP
+hp_sprite = spr_health;
+hp_width = 110;
+hp_x = 177 + camera_get_view_x(view_camera[0]);
+
+hp_sal_y = 10 + camera_get_view_y(view_camera[0]);
+
+hp_rose_y = 80 + camera_get_view_y(view_camera[0]);
+
+hp_hazel_y = 150 + camera_get_view_y(view_camera[0]);
+
+//STATS BARS - MANA
+mana_sprite = spr_mana;
+mana_width = 110;
+mana_x = 177 + camera_get_view_x(view_camera[0]);
+
+mana_sal_y = 30 + camera_get_view_y(view_camera[0]);
+
+mana_rose_y = 100 + camera_get_view_y(view_camera[0]);
+
+mana_hazel_y = 170 + camera_get_view_y(view_camera[0]);
+
+//WEAPON ICONS FOR STATS PORTRAITS
+stats_sal_weapon_y = 40;
+
+stats_rose_weapon_y = 110;
+
+stats_hazel_weapon_y = 180;
+
+stats_weapon_icon_x = 80;

@@ -61,11 +61,12 @@ global.item_list = {
 		"Inv_Test",
 		"Inv_Test",
 		function(_party) {
-			_party.hp += 10;
-			//delete item
+			with (_party) {
+				hp += 10;
+			}
+				//delete item
 			array_delete(global.inv_item, obj_item_menu.item_move_vertical, 1);
 			scr_create_textbox("Inv_Test");
-			
 			//add the burger why not lol
 			//array_insert(inv, selected_item, global.item_list.burger);
 		}
@@ -80,7 +81,9 @@ global.item_list = {
 		"Inv_Test2",
 		"Inv_Test2",
 		function(_party) {
-			_party.hp -= 10;
+			with (_party) {
+				hp -= 10;	
+			}
 			//delete item
 			array_delete(global.inv_item, obj_item_menu.item_move_vertical, 1);
 			scr_create_textbox("Inv_Test2");
@@ -97,7 +100,9 @@ global.weapon_list = {
 		"Bachi_Test",
 		99,
 		function(_party) {
-			_party.dmg += 99;
+			with (_party) {
+				dmg += 99;	
+			}
 			//delete item
 			array_delete(global.inv_weapon, obj_item_menu.item_move_vertical, 1);
 			scr_create_textbox("Inv_Test2");
@@ -114,7 +119,9 @@ global.armor_list = {
 		"Garnek_Test",
 		99,
 		function(_party) {
-			_party.def += 99;
+			with (_party) {
+				def += 99;	
+			}
 			//delete item
 			array_delete(global.inv_armor, obj_item_menu.item_move_vertical, 1);
 			scr_create_textbox("Inv_Test2");
