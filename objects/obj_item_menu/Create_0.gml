@@ -191,3 +191,45 @@ stats_rose_weapon_y = 110;
 stats_hazel_weapon_y = 180;
 
 stats_weapon_icon_x = 80;
+
+//ATTACK AND DEFENSE MENU
+attdef_sal_x = 133 + camera_get_view_x(view_camera[0]);
+attdef_sal_y = 10 + camera_get_view_y(view_camera[0]);
+attdef_sal_width = 1.7;
+attdef_sal_height = 2.5;
+
+attdef_sal_attack_x = 142;
+attdef_sal_attack_y = 14;
+attdef_sal_attack_scale = 0.7;
+attdef_sal_attack_val_x = 144;
+attdef_sal_attack_val_y = 24;
+attdef_sal_defense_y = 38;
+attdef_sal_defense_val_y = 48;
+
+attdef_rose_y = 80 + camera_get_view_y(view_camera[0]);
+attdef_rose_attack_y = 84;
+attdef_rose_attack_val_y = 94;
+attdef_rose_defense_y = 108;
+attdef_rose_defense_val_y = 118;
+
+attdef_hazel_y = 150 + camera_get_view_y(view_camera[0]);
+attdef_hazel_attack_y = 154;
+attdef_hazel_attack_val_y = 164;
+attdef_hazel_defense_y = 178;
+attdef_hazel_defense_val_y = 188;
+
+//HP AND MANA TEXT
+// "/"
+stats_slash_x = 307;
+stats_slash_w = 13;
+stats_slash_sal_y = 10;
+stats_slash_mana_offset = 20;
+stats_slash_rose_y = 80;
+stats_slash_hazel_y = 150;
+
+//MAX COUNTER
+stats_maxcounter_x = 313;
+stats_maxcounter_w = 25;
+
+//CURRENT COUNTER
+stats_currentcounter_x = 290;

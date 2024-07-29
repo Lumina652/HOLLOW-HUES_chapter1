@@ -101,10 +101,15 @@ global.weapon_list = {
 		99,
 		function(_party) {
 			with (_party) {
+				dmg = 0;
 				dmg += 99;	
 			}
 			//delete item
 			array_delete(global.inv_weapon, obj_item_menu.item_move_vertical, 1);
+			if (_party.last_equiped_weapon != -1) {
+				array_insert(global.inv_weapon, obj_item_menu.item_move_vertical, _party.last_equiped_weapon);
+			}
+			_party.last_equiped_weapon = global.weapon_list.Bachi;
 			scr_create_textbox("Inv_Test2");
 		}
 	),
@@ -120,10 +125,37 @@ global.armor_list = {
 		99,
 		function(_party) {
 			with (_party) {
+				def = 0;
 				def += 99;	
 			}
 			//delete item
 			array_delete(global.inv_armor, obj_item_menu.item_move_vertical, 1);
+			if (_party.last_equiped_armor != -1) {
+				array_insert(global.inv_armor, obj_item_menu.item_move_vertical, _party.last_equiped_armor);
+			}
+			_party.last_equiped_armor = global.armor_list.Garnek;
+			scr_create_textbox("Inv_Test2");
+		}
+	),
+	
+	Scarf : new scr_create_armor(
+		"Scarf",
+		"LOL\nDEFENSE - 13",
+		spr_test_armor_1,
+		spr_ball,
+		"Garnek_Test",
+		13,
+		function(_party) {
+			with (_party) {
+				def = 0;
+				def += 13;	
+			}
+			//delete item
+			array_delete(global.inv_armor, obj_item_menu.item_move_vertical, 1);
+			if (_party.last_equiped_armor != -1) {
+				array_insert(global.inv_armor, obj_item_menu.item_move_vertical, _party.last_equiped_armor);
+			}
+			_party.last_equiped_armor = global.armor_list.Scarf;
 			scr_create_textbox("Inv_Test2");
 		}
 	),
@@ -160,8 +192,3 @@ global.key_list = {
 inv_max = 20
 
 selected_item = -1;
-selected_weapon = -1;
-selected_armor = -1;
-selected_key = -1;
-
-used_item = 0;

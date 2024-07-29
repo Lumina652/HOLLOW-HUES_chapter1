@@ -1,0 +1,1 @@
+armor = global.armor_list.Garnek;

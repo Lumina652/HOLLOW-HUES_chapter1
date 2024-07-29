@@ -3,7 +3,7 @@
   "%Name":"fnt_pixel",
   "AntiAlias":0,
   "applyKerning":0,
-  "ascender":0,
+  "ascender":11,
   "ascenderOffset":0,
   "bold":false,
   "canGenerateBitmap":true,
@@ -115,7 +115,7 @@
   "italic":false,
   "kerningPairs":[],
   "last":0,
-  "lineHeight":0,
+  "lineHeight":14,
   "maintainGms1Font":false,
   "name":"fnt_pixel",
   "parent":{

@@ -123,6 +123,7 @@
     {"name":"spr_rose_walk_left","order":45,"path":"sprites/spr_rose_walk_left/spr_rose_walk_left.yy",},
     {"name":"spr_rose_walk_right","order":46,"path":"sprites/spr_rose_walk_right/spr_rose_walk_right.yy",},
     {"name":"spr_rose_walk_up","order":47,"path":"sprites/spr_rose_walk_up/spr_rose_walk_up.yy",},
+    {"name":"spr_test_armor_1","order":77,"path":"sprites/spr_test_armor_1/spr_test_armor_1.yy",},
     {"name":"spr_test_armor","order":72,"path":"sprites/spr_test_armor/spr_test_armor.yy",},
     {"name":"spr_test_burger","order":53,"path":"sprites/spr_test_burger/spr_test_burger.yy",},
     {"name":"spr_test_inv","order":32,"path":"sprites/spr_test_inv/spr_test_inv.yy",},

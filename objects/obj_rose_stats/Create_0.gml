@@ -13,3 +13,6 @@ weapon_selected = -1;
 
 weapon_equiped = noone;
 armor_equiped = noone;
+
+last_equiped_weapon = -1;
+last_equiped_armor = -1;

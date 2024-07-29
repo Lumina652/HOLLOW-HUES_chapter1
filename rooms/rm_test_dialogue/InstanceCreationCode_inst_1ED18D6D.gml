@@ -1,1 +1,1 @@
-armor = global.armor_list.Garnek;
+armor = global.armor_list.Scarf;

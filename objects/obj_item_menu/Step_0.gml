@@ -76,7 +76,7 @@ if (selected_menu == 0) {
 }
 
 //Go back to picking menus
-if (keyboard_check_pressed(global.controls_back)) && (menu_button != -1) && (pressed_interact_timer == 0) && (obj_player_sal.in_text == 0) {
+if (keyboard_check_pressed(global.controls_back)) && (menu_button != -1) && (pressed_interact_timer == 0) && (obj_player_sal.in_text == 0) && (picking_item_for_party == 0) && (picking_weapon_for_party == 0) && (picking_armor_for_party == 0) {
 	menu_button = -1;
 	obj_player_sal.hasControl = true;
 	selected_menu = 0;
@@ -87,7 +87,7 @@ if (keyboard_check_pressed(global.controls_back)) && (menu_button != -1) && (pre
 }
 
 //closing with controls_back
-if (keyboard_check_pressed(global.controls_back)) && (menu_button == -1) && (pressed_interact_timer == 0) && (obj_player_sal.hasControl == true) && (obj_player_sal.in_text == 0) {
+if (keyboard_check_pressed(global.controls_back)) && (menu_button == -1) && (pressed_interact_timer == 0) && (obj_player_sal.hasControl == true) && (obj_player_sal.in_text == 0) && (picking_item_for_party == 0) && (picking_weapon_for_party == 0) && (picking_armor_for_party == 0)  {
 	obj_player_sal.in_inv = 0;
 	obj_player_sal.opened_inv = false;
 	instance_destroy(obj_item_menu);
