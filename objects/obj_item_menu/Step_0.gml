@@ -279,7 +279,7 @@ switch (menu_button) {
 				scr_add_interaction_delay()
 				global.inv_key[item_move_vertical].k_effect();
 			}
-	
+			
 			//drop the item
 			if (keyboard_check_pressed(global.controls_test)) && (global.inv_key[item_move_vertical].k_can_drop == true) && (obj_player_sal.in_text == 0) && (pressed_interact_timer == 0) {
 				scr_add_interaction_delay()

@@ -718,7 +718,7 @@ function scr_select_party_item() {
 				scr_add_interaction_delay()
 				obj_player_sal.hasControl = true;
 			}
-					
+			
 			break;
 		case 1:
 			if (global.follower_count == 1) {
@@ -739,7 +739,7 @@ function scr_select_party_item() {
 				scr_add_interaction_delay()
 				obj_player_sal.hasControl = true;
 			}
-					
+			
 			break;
 		case 2:
 			party_select_frame_alpha = 1;
@@ -753,7 +753,7 @@ function scr_select_party_item() {
 				scr_add_interaction_delay()
 				obj_player_sal.hasControl = true;
 			}
-					
+			
 			break;
 	}
 }
@@ -788,7 +788,7 @@ function scr_select_party_weapon() {
 				scr_add_interaction_delay()
 				obj_player_sal.hasControl = true;
 			}
-					
+			
 			break;
 		case 1:
 			if (global.follower_count == 1) {
@@ -810,7 +810,7 @@ function scr_select_party_weapon() {
 				scr_add_interaction_delay()
 				obj_player_sal.hasControl = true;
 			}
-					
+			
 			break;
 		case 2:
 			party_select_frame_alpha = 1;
@@ -825,7 +825,7 @@ function scr_select_party_weapon() {
 				party_select_frame_alpha = 0;
 				obj_player_sal.hasControl = true;
 			}
-					
+			
 			break;
 	}
 }
@@ -860,7 +860,7 @@ function scr_select_party_armor() {
 				scr_add_interaction_delay()
 				obj_player_sal.hasControl = true;
 			}
-					
+			
 			break;
 		case 1:
 			if (global.follower_count == 1) {
@@ -882,7 +882,7 @@ function scr_select_party_armor() {
 				scr_add_interaction_delay()
 				obj_player_sal.hasControl = true;
 			}
-					
+			
 			break;
 		case 2:
 			party_select_frame_alpha = 1;
@@ -897,7 +897,7 @@ function scr_select_party_armor() {
 				scr_add_interaction_delay()
 				obj_player_sal.hasControl = true;
 			}
-					
+			
 			break;
 	}
 }

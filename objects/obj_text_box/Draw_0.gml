@@ -90,7 +90,7 @@ if (text_pause_timer <= 0) {
 		}
 		else {
 			if (snd_count < snd_delay) {
-				snd_count++;	
+				snd_count++;
 			}
 			else {
 				snd_count = 0;
