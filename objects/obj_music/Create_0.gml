@@ -1,34 +1,11 @@
-pause_music = -1;
-enum ROOM_MUSIC {
-	OCEAN,
-	MALACHI_BOSS,
-	RISING_UP,
-	SILENT,
-	UNDERWATER
-}
+song_instance = noone;
+song_asset = noone;
+target_song_asset = noone;
+end_fade_out_time = 0; //frames to fade out the song playing rn
+start_fade_in_time = 0; //frames to fade in the new song
+fade_in_instance_volume = 1; //the volume of song_instance
+song_loop = true; //set if the song should loop
 
-switch (current_music) {
-	case ROOM_MUSIC.OCEAN:
-		audio_stop_all();
-		audio_play_sound(msc_malachi_theme, 1000, true);
-		pause_music = 0;
-		break;
-	case ROOM_MUSIC.MALACHI_BOSS:
-		audio_stop_all();
-		audio_play_sound(msc_test, 1000, true);
-		pause_music = 0;
-		break;
-	case ROOM_MUSIC.RISING_UP:
-		audio_stop_all();
-		audio_play_sound(msc_rising_up, 1000, false);
-		pause_music = -1;
-		break;
-	case ROOM_MUSIC.UNDERWATER:
-		audio_stop_all();
-		audio_play_sound(msc_underwater, 1000, false);
-		pause_music = -1;
-		break;
-	case ROOM_MUSIC.SILENT:
-		audio_stop_all();
-		pause_music = -1;
-}
+fade_out_instances = array_create(0); //audio instances to fade out
+fade_out_instances_volume = array_create(0); //volumes of each individual audio instance
+fade_out_instances_time = array_create(0); //how fast the fadeout should happen

@@ -19,5 +19,5 @@ target = room;
 percent_target = 1.15;
 
 white_alpha = 0;
-white_duration = audio_sound_length(msc_rising_up) * room_speed;
+white_duration = audio_sound_length(msc_rise) * room_speed;
 white_stop = 1;

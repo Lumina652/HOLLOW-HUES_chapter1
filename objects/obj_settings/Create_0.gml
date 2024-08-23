@@ -1,8 +1,10 @@
 global.font_main = fnt_pixel;
 global.font_pause = fnt_pause;
 
-global.music_channel = 0;
-global.sound_channel = 0;
+global.master_volume = 1;
+global.music_volume = 1;
+global.sound_volume = 1;
+global.talk_volume = 1;
 
 //CONTROLS
 global.controls_up = ord("W");

@@ -18,8 +18,8 @@
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
-  "sampleRate":44100,
+  "sampleRate":48000,
   "soundFile":"msc_underwater.ogg",
-  "type":0,
+  "type":1,
   "volume":1.0,
 }

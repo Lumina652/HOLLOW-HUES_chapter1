@@ -100,7 +100,7 @@ if (argument_count > 1) {
 			//speaker_sprite[page_number] = spr_test_portrait0;
 			speaker_sprite[page_number] = spr_portrait_malachi;
 			textb_spr[page_number] = spr_text_box_malachi;
-			snd[page_number] = snd_malachi_8;
+			snd[page_number] = snd_malachi_1;
 			name_text[page_number] = "Malachi";
 			break;
 		//Sal Narrator

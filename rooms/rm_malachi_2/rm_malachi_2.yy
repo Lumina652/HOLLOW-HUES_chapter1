@@ -12,17 +12,12 @@
     {"name":"inst_569CC32B_1_1","path":"rooms/rm_malachi_2/rm_malachi_2.yy",},
     {"name":"inst_51E8BDD8_1_1","path":"rooms/rm_malachi_2/rm_malachi_2.yy",},
     {"name":"inst_44F6AC25_1_1","path":"rooms/rm_malachi_2/rm_malachi_2.yy",},
-    {"name":"inst_616F8120","path":"rooms/rm_malachi_2/rm_malachi_2.yy",},
     {"name":"inst_450C8A63","path":"rooms/rm_malachi_2/rm_malachi_2.yy",},
     {"name":"inst_2A2F1D00","path":"rooms/rm_malachi_2/rm_malachi_2.yy",},
   ],
   "isDnd":false,
   "layers":[
-    {"$GMRInstanceLayer":"","%Name":"MANAGERS","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"v1","%Name":"inst_616F8120","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_616F8120","objectId":{"name":"obj_music","path":"objects/obj_music/obj_music.yy",},"properties":[
-            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_music","path":"objects/obj_music/obj_music.yy",},"propertyId":{"name":"current_music","path":"objects/obj_music/obj_music.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"ROOM_MUSIC.SILENT",},
-          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-64.0,"y":-64.0,},
-      ],"layers":[],"name":"MANAGERS","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+    {"$GMRInstanceLayer":"","%Name":"MANAGERS","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"MANAGERS","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Text","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Text","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Overlay","depth":200,"effectEnabled":true,"effectType":null,"gridX":20,"gridY":20,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v1","%Name":"inst_44F6AC25_1_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_44F6AC25_1_1","objectId":{"name":"obj_ocean_overlay","path":"objects/obj_ocean_overlay/obj_ocean_overlay.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0625,"scaleY":1.0833334,"x":-20.0,"y":-20.000015,},
