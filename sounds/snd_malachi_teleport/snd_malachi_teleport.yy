@@ -20,6 +20,6 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_malachi_teleport.ogg",
-  "type":0,
+  "type":1,
   "volume":1.0,
 }

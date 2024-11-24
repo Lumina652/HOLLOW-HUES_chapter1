@@ -1,81 +1,84 @@
 function scr_make_inventory_portraits() {
+	var _bgx = camera_get_view_x(view_camera[0]);
+	var _bgy = camera_get_view_y(view_camera[0]);
+	
 	//portraits
 	switch (global.follower_count) {
 		case 0:
-			draw_sprite_ext(button_unselected, bg_img, portrait_sal_x_1, portrait_y, portrait_scale, portrait_scale, 0, c_white, 1);
-			draw_sprite(portrait_sal_sprite, 0, sal_x_1, portrait_people_y);
+			draw_sprite_ext(button_unselected, bg_img, portrait_sal_x_1 + _bgx, portrait_y + _bgy, portrait_scale, portrait_scale, 0, c_white, 1);
+			draw_sprite(portrait_sal_sprite, 0, sal_x_1 + _bgx, portrait_people_y + _bgy);
 		
 			//WEAPON ICON
 			if (obj_sal_stats.weapon_equiped != noone) {
-				draw_sprite_ext(obj_sal_stats.weapon_equiped, 0, sal_weapon_x_1, weapon_icon_y, 1, 1, 0, c_white, 1);	
+				draw_sprite_ext(obj_sal_stats.weapon_equiped, 0, sal_weapon_x_1 + _bgx, weapon_icon_y + _bgy, 1, 1, 0, c_white, 1);	
 			}
 			//ARMOR ICON
 			if (obj_sal_stats.armor_equiped != noone) {
-				draw_sprite_ext(obj_sal_stats.armor_equiped, 0, sal_weapon_x_1 + armor_offset_x, weapon_icon_y, 1, 1, 0, c_white, 1);
+				draw_sprite_ext(obj_sal_stats.armor_equiped, 0, sal_weapon_x_1 + armor_offset_x + _bgx, weapon_icon_y + _bgy, 1, 1, 0, c_white, 1);
 			}
 			break;
 		case 1:
-			draw_sprite_ext(button_unselected, bg_img, portrait_sal_x_2, portrait_y, portrait_scale, portrait_scale, 0, c_white, 1);
-			draw_sprite_ext(portrait_rose, bg_img, portrait_other_x_2, portrait_y, portrait_scale, portrait_scale, 0, c_white, 1);
-			draw_sprite(portrait_sal_sprite, 0, sal_x_2, portrait_people_y);
-			draw_sprite(portrait_rose_sprite, 0, rose_x_2, portrait_people_y);
+			draw_sprite_ext(button_unselected, bg_img, portrait_sal_x_2 + _bgx, portrait_y + _bgy, portrait_scale, portrait_scale, 0, c_white, 1);
+			draw_sprite_ext(portrait_rose, bg_img, portrait_other_x_2 + _bgx, portrait_y + _bgy, portrait_scale, portrait_scale, 0, c_white, 1);
+			draw_sprite(portrait_sal_sprite, 0, sal_x_2 + _bgx, portrait_people_y + _bgy);
+			draw_sprite(portrait_rose_sprite, 0, rose_x_2 + _bgx, portrait_people_y + _bgy);
 		
 			//SAL
 			//WEAPON ICON
 			if (obj_sal_stats.weapon_equiped != noone) {
-				draw_sprite_ext(obj_sal_stats.weapon_equiped, 0, sal_weapon_x_2, weapon_icon_y, 1, 1, 0, c_white, 1);	
+				draw_sprite_ext(obj_sal_stats.weapon_equiped, 0, sal_weapon_x_2 + _bgx, weapon_icon_y + _bgy, 1, 1, 0, c_white, 1);	
 			}
 			//ARMOR ICON
 			if (obj_sal_stats.armor_equiped != noone) {
-				draw_sprite_ext(obj_sal_stats.armor_equiped, 0, sal_weapon_x_2 + armor_offset_x, weapon_icon_y, 1, 1, 0, c_white, 1);
+				draw_sprite_ext(obj_sal_stats.armor_equiped, 0, sal_weapon_x_2 + armor_offset_x + _bgx, weapon_icon_y + _bgy, 1, 1, 0, c_white, 1);
 			}
 		
 			//ROSE
 			//WEAPON ICON
 			if (obj_rose_stats.weapon_equiped != noone) {
-				draw_sprite_ext(obj_rose_stats.weapon_equiped, 0, rose_weapon_x_2, weapon_icon_y, 1, 1, 0, c_white, 1);	
+				draw_sprite_ext(obj_rose_stats.weapon_equiped, 0, rose_weapon_x_2 + _bgx, weapon_icon_y + _bgy, 1, 1, 0, c_white, 1);	
 			}
 			//ARMOR ICON
 			if (obj_rose_stats.armor_equiped != noone) {
-				draw_sprite_ext(obj_rose_stats.armor_equiped, 0, rose_weapon_x_2 + armor_offset_x, weapon_icon_y, 1, 1, 0, c_white, 1);
+				draw_sprite_ext(obj_rose_stats.armor_equiped, 0, rose_weapon_x_2 + armor_offset_x + _bgx, weapon_icon_y + _bgy, 1, 1, 0, c_white, 1);
 			}
 			break;
 		case 2:
-			draw_sprite_ext(button_unselected, bg_img, portrait_sal_x_3, portrait_y, portrait_scale, portrait_scale, 0, c_white, 1);
-			draw_sprite_ext(portrait_rose, bg_img, portrait_other_x_3, portrait_y, portrait_scale, portrait_scale, 0, c_white, 1);
-			draw_sprite_ext(portrait_hazel, bg_img, portrait_other2_x_3, portrait_y, portrait_scale, portrait_scale, 0, c_white, 1);
-			draw_sprite(portrait_sal_sprite, 0, sal_x_3, portrait_people_y);
-			draw_sprite(portrait_rose_sprite, 0, rose_x_3, portrait_people_y);
-			draw_sprite(portrait_hazel_sprite, 0, hazel_x_3, portrait_people_y);
+			draw_sprite_ext(button_unselected, bg_img, portrait_sal_x_3 + _bgx, portrait_y + _bgy, portrait_scale, portrait_scale, 0, c_white, 1);
+			draw_sprite_ext(portrait_rose, bg_img, portrait_other_x_3 + _bgx, portrait_y + _bgy, portrait_scale, portrait_scale, 0, c_white, 1);
+			draw_sprite_ext(portrait_hazel, bg_img, portrait_other2_x_3 + _bgx, portrait_y + _bgy, portrait_scale, portrait_scale, 0, c_white, 1);
+			draw_sprite(portrait_sal_sprite, 0, sal_x_3 + _bgx, portrait_people_y + _bgy);
+			draw_sprite(portrait_rose_sprite, 0, rose_x_3 + _bgx, portrait_people_y + _bgy);
+			draw_sprite(portrait_hazel_sprite, 0, hazel_x_3 + _bgx, portrait_people_y + _bgy);
 		
 			//SAL
 			//WEAPON ICON
 			if (obj_sal_stats.weapon_equiped != noone) {
-				draw_sprite_ext(obj_sal_stats.weapon_equiped, 0, sal_weapon_x_3, weapon_icon_y, 1, 1, 0, c_white, 1);	
+				draw_sprite_ext(obj_sal_stats.weapon_equiped, 0, sal_weapon_x_3 + _bgx, weapon_icon_y + _bgy, 1, 1, 0, c_white, 1);	
 			}
 			//ARMOR ICON
 			if (obj_sal_stats.armor_equiped != noone) {
-				draw_sprite_ext(obj_sal_stats.armor_equiped, 0, sal_weapon_x_3 + armor_offset_x, weapon_icon_y, 1, 1, 0, c_white, 1);
+				draw_sprite_ext(obj_sal_stats.armor_equiped, 0, sal_weapon_x_3 + armor_offset_x + _bgx, weapon_icon_y + _bgy, 1, 1, 0, c_white, 1);
 			}
 		
 			//ROSE
 			//WEAPON ICON
 			if (obj_rose_stats.weapon_equiped != noone) {
-				draw_sprite_ext(obj_rose_stats.weapon_equiped, 0, rose_weapon_x_3, weapon_icon_y, 1, 1, 0, c_white, 1);	
+				draw_sprite_ext(obj_rose_stats.weapon_equiped, 0, rose_weapon_x_3 + _bgx, weapon_icon_y + _bgy, 1, 1, 0, c_white, 1);	
 			}
 			//ARMOR ICON
 			if (obj_rose_stats.armor_equiped != noone) {
-				draw_sprite_ext(obj_rose_stats.armor_equiped, 0, rose_weapon_x_3 + armor_offset_x, weapon_icon_y, 1, 1, 0, c_white, 1);
+				draw_sprite_ext(obj_rose_stats.armor_equiped, 0, rose_weapon_x_3 + armor_offset_x + _bgx, weapon_icon_y + _bgy, 1, 1, 0, c_white, 1);
 			}
 		
 			//HAZEL
 			//WEAPON ICON
 			if (obj_hazel_stats.weapon_equiped != noone) {
-				draw_sprite_ext(obj_hazel_stats.weapon_equiped, 0, hazel_weapon_x_3, weapon_icon_y, 1, 1, 0, c_white, 1);	
+				draw_sprite_ext(obj_hazel_stats.weapon_equiped, 0, hazel_weapon_x_3 + _bgx, weapon_icon_y + _bgy, 1, 1, 0, c_white, 1);	
 			}
 			//ARMOR ICON
 			if (obj_hazel_stats.armor_equiped != noone) {
-				draw_sprite_ext(obj_hazel_stats.armor_equiped, 0, hazel_weapon_x_3 + armor_offset_x, weapon_icon_y, 1, 1, 0, c_white, 1);
+				draw_sprite_ext(obj_hazel_stats.armor_equiped, 0, hazel_weapon_x_3 + armor_offset_x + _bgx, weapon_icon_y + _bgy, 1, 1, 0, c_white, 1);
 			}
 			break;
 	}
@@ -165,7 +168,7 @@ function scr_make_inventory_menu_items() {
 	//portraits
 	scr_make_inventory_portraits();
 	
-	draw_sprite_ext(item_selection_frame_spr, bg_img, party_select_frame_x, portrait_y, portrait_scale, portrait_scale, 0, c_white, party_select_frame_alpha);
+	draw_sprite_ext(item_selection_frame_spr, bg_img, party_select_frame_x + _bgx, portrait_y + _bgy, portrait_scale, portrait_scale, 0, c_white, party_select_frame_alpha);
 	
 	#endregion
 	
@@ -322,7 +325,7 @@ function scr_make_inventory_menu_weapons() {
 	scr_make_inventory_portraits();
 	
 	//SELECTING ITEMS TO PARTY MEMEBERS FRAME
-	draw_sprite_ext(item_selection_frame_spr, bg_img, party_select_frame_x, portrait_y, portrait_scale, portrait_scale, 0, c_white, party_select_frame_alpha);
+	draw_sprite_ext(item_selection_frame_spr, bg_img, party_select_frame_x + _bgx, portrait_y + _bgy, portrait_scale, portrait_scale, 0, c_white, party_select_frame_alpha);
 	
 	//weapons
 	for (var i = 0; i < array_length(global.inv_weapon); i ++) {
@@ -471,7 +474,7 @@ function scr_make_inventory_menu_armor() {
 	//portraits
 	scr_make_inventory_portraits();
 	
-	draw_sprite_ext(item_selection_frame_spr, bg_img, party_select_frame_x, portrait_y, portrait_scale, portrait_scale, 0, c_white, party_select_frame_alpha);
+	draw_sprite_ext(item_selection_frame_spr, bg_img, party_select_frame_x + _bgx, portrait_y + _bgy, portrait_scale, portrait_scale, 0, c_white, party_select_frame_alpha);
 	
 	#endregion
 	
@@ -624,7 +627,7 @@ function scr_make_inventory_menu_key() {
 	
 	#endregion
 	
-	draw_sprite_ext(item_selection_frame_spr, bg_img, party_select_frame_x, portrait_y, portrait_scale, portrait_scale, 0, c_white, party_select_frame_alpha);
+	draw_sprite_ext(item_selection_frame_spr, bg_img, party_select_frame_x + _bgx, portrait_y + _bgy, portrait_scale, portrait_scale, 0, c_white, party_select_frame_alpha);
 	
 	//weapons
 	for (var i = 0; i < array_length(global.inv_key); i ++) {

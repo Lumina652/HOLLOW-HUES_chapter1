@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"msc_windy_day",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":205.0,
+  "name":"msc_windy_day",
+  "parent":{
+    "name":"MUSIC",
+    "path":"folders/Sounds/MUSIC.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":48000,
+  "soundFile":"msc_windy_day.ogg",
+  "type":1,
+  "volume":1.0,
+}

@@ -12,14 +12,14 @@
   "duration":71.89007,
   "name":"snd_ocean_ambience",
   "parent":{
-    "name":"SFX",
-    "path":"folders/Sounds/SFX.yy",
+    "name":"AMBIENCE",
+    "path":"folders/Sounds/AMBIENCE.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_ocean_ambience.ogg",
-  "type":0,
-  "volume":0.22,
+  "type":1,
+  "volume":1.0,
 }

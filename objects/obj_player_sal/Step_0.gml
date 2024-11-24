@@ -20,7 +20,7 @@ else {
 }
 
 //&& (global.chapter != 0)
-if (hasControl) && (in_text == 0) {
+if (hasControl) && (in_text == 0) && (canInv) {
 	key_inventory = keyboard_check_pressed(global.controls_inventory);
 }
 else {
@@ -118,7 +118,7 @@ if (image_index == 1) || (image_index == 3) {
 			instance_create_layer(x, y + 10, "WalkingEffect", obj_ocean_walk);	
 		}
 		
-		audio_play_sound(choose(snd_sand_0, snd_sand_1, snd_sand_2, snd_sand_3, snd_sand_4, snd_sand_5, snd_sand_6), 10, false);
+		audio_play_sound(choose(snd_sand_0, snd_sand_1, snd_sand_2, snd_sand_3, snd_sand_4, snd_sand_5, snd_sand_6), 6, false);
 	}
 }
 #endregion
@@ -128,6 +128,8 @@ if (key_inventory) {
 }
 
 if (in_inv == 1) {
+	xspd = 0;
+	yspd = 0;
 	if (opened_inv == false) {
 		instance_create_depth(x, y, -9999, obj_item_menu);
 		opened_inv = true;

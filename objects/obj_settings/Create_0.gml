@@ -5,6 +5,7 @@ global.master_volume = 1;
 global.music_volume = 1;
 global.sound_volume = 1;
 global.talk_volume = 1;
+global.ambience_volume = 0.3;
 
 //CONTROLS
 global.controls_up = ord("W");

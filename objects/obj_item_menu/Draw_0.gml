@@ -38,12 +38,12 @@ if (made_draw_menu == 0) {
 }
 
 //item, weapon, armor and key items buttons
-draw_sprite_ext(button_bg_item, bg_img, button_x, button_item_y, button_width, button_height, 0, c_white, 1);
-draw_sprite_ext(button_bg_weapon, bg_img, button_x, button_weapon_y, button_width, button_height, 0, c_white, 1);
-draw_sprite_ext(button_bg_armor, bg_img, button_x, button_armor_y, button_width, button_height, 0, c_white, 1);
-draw_sprite_ext(button_bg_key, bg_img, button_x, button_key_y, button_width, button_height, 0, c_white, 1);
+draw_sprite_ext(button_bg_item, bg_img, button_x + _bgx, button_item_y + _bgy, button_width, button_height, 0, c_white, 1);
+draw_sprite_ext(button_bg_weapon, bg_img, button_x + _bgx, button_weapon_y + _bgy, button_width, button_height, 0, c_white, 1);
+draw_sprite_ext(button_bg_armor, bg_img, button_x + _bgx, button_armor_y + _bgy, button_width, button_height, 0, c_white, 1);
+draw_sprite_ext(button_bg_key, bg_img, button_x + _bgx, button_key_y + _bgy, button_width, button_height, 0, c_white, 1);
 
-draw_sprite_ext(button_item_icon, 0, button_x, button_item_y, 1, 1, 0, c_white, 1);
-draw_sprite_ext(button_weapon_icon, 0, button_x, button_weapon_y, 1, 1, 0, c_white, 1);
-draw_sprite_ext(button_armor_icon, 0, button_x, button_armor_y, 1, 1, 0, c_white, 1);
-draw_sprite_ext(button_key_icon, 0, button_x, button_key_y, 1, 1, 0, c_white, 1);
+draw_sprite_ext(button_item_icon, 0, button_x + _bgx, button_item_y + _bgy, 1, 1, 0, c_white, 1);
+draw_sprite_ext(button_weapon_icon, 0, button_x + _bgx, button_weapon_y + _bgy, 1, 1, 0, c_white, 1);
+draw_sprite_ext(button_armor_icon, 0, button_x + _bgx, button_armor_y + _bgy, 1, 1, 0, c_white, 1);
+draw_sprite_ext(button_key_icon, 0, button_x + _bgx, button_key_y + _bgy, 1, 1, 0, c_white, 1);

@@ -179,7 +179,7 @@ if (speaker_sprite[page] != noone) {
 	//nametext_line_width = _nametext_side - nametext_border * 2
 	
 	draw_sprite_ext(textb_spr[page], textb_img, textbox_x + portrait_x_offset[page], textbox_y, sprite_width/textb_spr_w, sprite_height/textb_spr_h, 0, c_white, 1);
-	draw_sprite_ext(sprite_index, image_index, _speaker_x, textbox_y, speaker_side[page], 1, 0, c_white, 1);
+	draw_sprite_ext(sprite_index, image_index, _speaker_x, textbox_y - 2, speaker_side[page], 1, 0, c_white, 1);
 	draw_sprite_ext(textb_spr[page], nametext_img, _nametext_side, nametext_y, nametext_width, nametext_height, 0, c_white, 1);
 	
 	if (name_text[page] != noone) {
@@ -221,7 +221,7 @@ if (draw_char == text_length[page]) && (page == page_number - 1) {
 		
 		//option pick sound
 		if (keyboard_check_pressed(global.controls_down)) || (keyboard_check_pressed(global.controls_up)) {
-			audio_play_sound(snd_option_pick, 2, false);	
+			audio_play_sound(snd_option_pick, 6, false);	
 		}
 	}
 	

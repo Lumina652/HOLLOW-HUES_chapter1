@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"msc_whats_this_green_stuff",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":30.0,
+  "name":"msc_whats_this_green_stuff",
+  "parent":{
+    "name":"MUSIC",
+    "path":"folders/Sounds/MUSIC.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":48000,
+  "soundFile":"msc_whats_this_green_stuff.ogg",
+  "type":1,
+  "volume":1.0,
+}

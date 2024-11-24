@@ -98,9 +98,9 @@ if (argument_count > 1) {
 		//Malachi
 		case "Malachi": //No portrait
 			//speaker_sprite[page_number] = spr_test_portrait0;
-			speaker_sprite[page_number] = spr_portrait_malachi;
+			speaker_sprite[page_number] = spr_portrait_malachi_1;
 			textb_spr[page_number] = spr_text_box_malachi;
-			snd[page_number] = snd_malachi_1;
+			snd[page_number] = snd_malachi_3;
 			name_text[page_number] = "Malachi";
 			break;
 		//Sal Narrator
@@ -163,4 +163,33 @@ function scr_create_textbox(_text_id) {
 			scr_game_script(_text_id);
 		}
 	}
+}
+	
+function scr_textbox_cutscene_destroy() {
+	switch (obj_player_sal.whatCutscene) {
+		case 1:
+			obj_malachi_cut_01.alarm[2] = 1 * room_speed;
+			break;
+		case 2:
+			obj_malachi_cut_02.alarm[2] = 1 * room_speed;
+			break;
+		case 3:
+			obj_malachi_cut_03.alarm[2] = 1 * room_speed;
+			break;
+		case 4:
+			obj_malachi_cut_04.alarm[2] = 1 * room_speed;
+			break;
+		case 5:
+			obj_malachi_cut_05.alarm[2] = 1 * room_speed;
+			break;
+		case 6:
+			obj_test_cut_verdantis.alarm[1] = 1.5 * room_speed;
+			break;
+		case 7:
+			obj_test_cut_verdantis.alarm[3] = 0.5 * room_speed;
+			break;
+		case 8:
+			obj_test_cut_verdantis.alarm[4] = 2;
+			break;
+	}	
 }

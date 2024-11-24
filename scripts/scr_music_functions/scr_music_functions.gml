@@ -9,3 +9,12 @@ function scr_set_song_ingame(_song, _fade_out_current_song = 0, _fade_in = 0, _s
 		song_loop = _song_loop;
 	}
 }
+
+function scr_set_ambience_ingame(_ambience, _fade_out_current_ambience = 0, _fade_in = 0, _ambience_loop = true) {
+	with (obj_ambience_sound) {
+		target_ambience_asset = _ambience;
+		ambience_end_fade_out_time = _fade_out_current_ambience
+		ambience_start_fade_in_time = _fade_in;
+		ambience_loop = _ambience_loop;
+	}
+}

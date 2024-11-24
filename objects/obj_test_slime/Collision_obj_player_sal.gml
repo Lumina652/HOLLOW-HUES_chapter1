@@ -1,0 +1,1 @@
+scr_NewEncounter([global.enemies.slime, global.enemies.slime], spr_battle_bg_1);

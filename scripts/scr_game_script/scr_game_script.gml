@@ -151,7 +151,7 @@ function scr_game_script(_text_id){
 			scr_text("Save their color.", "Malachi", -1);
 			break;
 		case "Malachi0_6": //ENCRYPTED
-			scr_text("Hmm? Why are you still here, Sal?", "Malachi", -1);
+			scr_text("Hmm? Why are you still here?", "Malachi", -1);
 			//I've got questions.
 			scr_text("Oh. Well...I guess I should have seen this coming.", "Malachi", -1);
 			//Am I safe here?
@@ -183,6 +183,82 @@ function scr_game_script(_text_id){
 			scr_text("I'm sure you can do it, you two! I'll be on my way to the office to be in contact with you!", "Aster - normal", -1);
 			scr_text("Remember, if you need help just let me know!", "Aster - normal", -1);
 			scr_text("Yeah yeah whatever.", "Hazel - normal", -1);
+			break;
+		case "test1_0":
+			scr_text("Ah! Thank you so much, if it wasn't for you I don't think we would escape so easily!", "Rose - normal", -1);
+			scr_text("You were actually great out there while fighting, may we know your name?", "Rose - normal", -1);
+			break;
+		case "test1_1":
+			scr_text("Sal? That's a nice name!", "Rose - normal", -1);
+			break;
+		case "test1_2":
+			scr_text("I'm Rose, and this is my sister, Hazel!", "Rose - normal", -1);
+			scr_text("Sup, gotta say myself, that was actually pretty damn cool what you did back there", "Hazel - normal", -1);
+			scr_text("Didn't think a beginner like you could learn so quickly how to fight properly", "Hazel - normal", -1);
+			break;
+		case "SistersIntro1_0":
+			scr_text("Ugh! I can't believe this place is THIS bad!", "Hazel - Annoyed", -1);
+			scr_text("I can barely walk through these disgusting vines!", "Hazel - Annoyed", -1);
+			scr_text("Sis it’s fine! Just don’t go near them!", "Rose - Worried", -1);
+			scr_text("There’s a clear path that’s been trampled by some old residents of this area specifically made to avoid those!", "Rose - Worried", -1);
+			scr_text("But still! It’s so...creepy and weird, how did these plants manage to get so big in the first place?!", "Hazel - Annoyed", -1);
+			scr_text("Don’t know...but either way, we have no time for questions...", "Rose - Worried", -1);
+			scr_text("What if we get attacked by that thing causing disturbances in our boss’s radar?", "Rose - Anxious", -1);
+			scr_text("We’re just standing around doing nothing!", "Rose - Anxious", -1);
+			scr_text("Calm down...we’re gonna be fine, let’s get a move on then", "Hazel - Annoyed", -1);
+			break;
+		case "SistersIntro1_1":
+			scr_text("W- who are you?!", "Hazel - Shocked", -1);
+			scr_text("Are you the one causing havoc here?!", "Hazel - Shocked", -1);
+			scr_text("Wait wait wait!! Sis h- how could a teen even get here in the first place?! S- surely they can’t be the entity shown by the r- radar!", "Rose - Shocked", -1);
+			scr_text("How are you so sure of that?! I say we take them out right here, right now!", "Hazel - Shocked", -1);
+			scr_text("I- I’m sure t- there’s a reasonable explanation for all of this! W- why are you here uh...person?", "Rose - Worried", -1);
+			break;
+		case "SistersIntro1_2":
+			scr_text("Uhhh...they’re not doing anything Rosie..", "Hazel - Confused", -1);
+			scr_text("I...realized yeah...", "Rose - Confused", -1);
+			scr_text("...yeah I don’t think this is the one, so what are they even doing here?-", "Hazel - Confused", -1);
+			break;
+		case "HenchmenBeforeFight1_0":
+			scr_text("Hah! That’s what you get for stepping into our land! Never let your guard down ladies!", "Henchman1 - Cocky", -1);
+			scr_text("There’s still one more we didn’t catch though, guess they’ll have to go through a beating!", "Henchman2 - Serious", -1);
+			scr_text("Only because we ran out of vines..", "Henchman2 - Nervous smile", -1);
+			scr_text("Wait, wait, wait, what do you mean ran out?! There’s literally hundreds around you two!", "Hazel - AngryConfused", 1);
+			scr_text("Most of them looked at us funny so we don’t wanna use them!", "Henchman1 - Cocky", -1);
+			scr_text("The ones we used were carefully handpicked by our bosses", "Henchman1 - Cocky", -1);
+			scr_text("Wonder why they gave us a deathly glare though when we asked for the vines to be specifically picked out..", "Henchman1 - Confused", -1);
+			scr_text("God..how on earth did such imbeciles manage to catch us?", "Hazel - Confused", 1);
+			scr_text("Ay! Watch your tone, pillock! Time to get serious, let’s fight, weird orange haired looking...girl? boy? whatever you are!", "Henchman2 - Serious", -1);
+			scr_text("Here we go I guess..", "Rose - Worried", 1);
+			break;
+		case "HenchmenAfterFight1_0":
+			scr_text("What the hell..how are they so strong?!", "Henchman2 - Angry", -1);
+			scr_text("Hah! That’s what you get for messing with...whatever their name is", "Hazel - Confident", 1);
+			scr_text("Now scram, losers!", "Hazel - Confident", 1);
+			scr_text("Ugh! You three will pay for this!", "Henchman1 - Angry", -1);
+			scr_text("Time to snitch to our bosses about you two! Have fun dealing with the real trouble!", "Henchman1 - Cocky", -1);
+			scr_text("Yeah yeah, whatever. Run away before me and my sis get involved!", "Hazel - RollingEyes Annoyed", 1);
+			scr_text("On it ma’am!", "Henchman2 - Nervous smile", -1);
+			break;
+		case "Hazel&RoseIntro1_0":
+			scr_text("Ah! Thank you so much, if it wasn't for you I don't think we would escape so easily!", "Rose - Relieved", 1);
+			scr_text("You were actually great out there while fighting, may we know your name?", "Rose - Relieved", 1)
+			break;
+		case "Hazel&RoseIntro1_1":
+			scr_text("Sal? That's a nice name!", "Rose - Awe", 1);
+			scr_text("I'm Rose, and this is my sister, Hazel!", "Rose - Awe", 1);
+			scr_text("Sup, gotta say myself, that was actually pretty damn cool what you did back there", "Hazel - Cocky", 1);
+			scr_text("Didn't think a beginner like you could learn so quickly how to fight properly", "Hazel - Cocky", 1);
+			scr_text("But now the question is, what do we do with you? You’re a teen, we can’t let you wander around this forest", "Hazel - Worried", 1);
+			scr_text("How did you even get here to be honest??", "Hazel - Confused", 1);
+			break;
+		case "Hazel&RoseIntro1_2":
+			scr_text("...still not that talkative, huh?", "Hazel - Worried", 1);
+			scr_text("That’s fine! Why don’t we take them with us for now?", "Rose - Nervous smile", 1);
+			scr_text("We can’t leave them, and they already know how to fight! We’ll just take them with us whenever we teleport back to Meadowbrook!", "Rose - Nervous smile", 1);
+			scr_text("...I don’t know, what if Aster gets mad?", "Hazel - Worried", 1);
+			scr_text("I’m sure it will be fine! Now c’mon, no use standing around", "Rose - Nervous smile", 1);
+			scr_text("Let’s try to find the two bosses of those henchmen! Maybe they have something to do with that radar that was going off!", "Rose - Nervous smile", 1);
 			break;
 		#endregion
 	}

@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_malachi_tp",
-    "path":"sprites/spr_malachi_tp/spr_malachi_tp.yy",
+    "name":"spr_malachi_tp_1",
+    "path":"sprites/spr_malachi_tp_1/spr_malachi_tp_1.yy",
   },
   "spriteMaskId":{
     "name":"spr_malachi_idle",

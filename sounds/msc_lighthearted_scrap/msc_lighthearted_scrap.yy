@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"msc_lighthearted_scrap",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":90.352905,
+  "name":"msc_lighthearted_scrap",
+  "parent":{
+    "name":"MUSIC",
+    "path":"folders/Sounds/MUSIC.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":48000,
+  "soundFile":"msc_lighthearted_scrap.ogg",
+  "type":1,
+  "volume":1.0,
+}
