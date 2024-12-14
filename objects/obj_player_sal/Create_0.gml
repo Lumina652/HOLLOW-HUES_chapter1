@@ -33,10 +33,6 @@ party_position = 0;
 
 #region FIGHTING SYSTEM
 
-global.encounter_counter = 0;
-global.encounter_random_value = irandom_range(0, 125);
-
-
 #endregion
 
 #region STATS
@@ -52,7 +48,7 @@ armor_equiped = noone;
 alarm[0] = 1 * room_speed;
 
 instance_create_layer(x, y, "Player", obj_interact);
-instance_create_layer(x, y, "Player", obj_rose_follower);
+//instance_create_layer(x, y, "Player", obj_rose_follower);
 //instance_create_layer(x, y, "Player", obj_hazel_follower);
 #endregion
 

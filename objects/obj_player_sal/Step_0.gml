@@ -1,5 +1,10 @@
+////DEBUG
+//if (instance_exists(obj_battle)) {
+//	show_debug_message(obj_battle.party_units[0].hp);
+//}
+
 #region INPUT
-if (hasControl) && (in_inv == 0) {
+if (hasControl) && (in_inv == 0) && (!instance_exists(obj_battle)) {
 	key_left = keyboard_check(global.controls_left);
 	key_right = keyboard_check(global.controls_right);
 	key_up = keyboard_check(global.controls_up);
@@ -20,7 +25,7 @@ else {
 }
 
 //&& (global.chapter != 0)
-if (hasControl) && (in_text == 0) && (canInv) {
+if (hasControl) && (in_text == 0) && (canInv) && (!instance_exists(obj_battle)) {
 	key_inventory = keyboard_check_pressed(global.controls_inventory);
 }
 else {
@@ -87,11 +92,6 @@ if (xspd == 0) && (yspd == 0) {
 else {
 	sprite_index = sprite[faceDir];
 }
-
-if (image_speed != 0) && (image_index == 3) || (image_index == 1) {
-	global.encounter_counter ++;
-}
-
 #endregion
 #region COLLISION
 //Horizontal Collision
@@ -144,3 +144,15 @@ if (in_inv > 1) {
 }
 
 #endregion
+
+if (global.party[0].hp > global.party[0].hpMax) {
+	global.party[0].hp = global.party[0].hpMax;	
+}
+
+if (global.party[1].hp > global.party[1].hpMax) {
+	global.party[1].hp = global.party[1].hpMax;	
+}
+
+if (global.party[2].hp > global.party[2].hpMax) {
+	global.party[2].hp = global.party[2].hpMax;	
+}

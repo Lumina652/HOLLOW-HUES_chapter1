@@ -61,9 +61,7 @@ global.item_list = {
 		"Inv_Test",
 		"Inv_Test",
 		function(_party) {
-			with (_party) {
-				hp += 10;
-			}
+			global.party[_party].hp += 10;
 				//delete item
 			array_delete(global.inv_item, obj_item_menu.item_move_vertical, 1);
 			scr_create_textbox("Inv_Test");
@@ -81,9 +79,7 @@ global.item_list = {
 		"Inv_Test2",
 		"Inv_Test2",
 		function(_party) {
-			with (_party) {
-				hp -= 10;	
-			}
+			global.party[_party].hp -= 10;
 			//delete item
 			array_delete(global.inv_item, obj_item_menu.item_move_vertical, 1);
 			scr_create_textbox("Inv_Test2");
@@ -100,16 +96,14 @@ global.weapon_list = {
 		"Bachi_Test",
 		99,
 		function(_party) {
-			with (_party) {
-				dmg = 0;
-				dmg += 99;	
-			}
+			global.party[_party].attack = 0;
+			global.party[_party].attack += 99;
 			//delete item
 			array_delete(global.inv_weapon, obj_item_menu.item_move_vertical, 1);
-			if (_party.last_equiped_weapon != -1) {
-				array_insert(global.inv_weapon, obj_item_menu.item_move_vertical, _party.last_equiped_weapon);
+			if (global.party[_party].last_equiped_weapon != -1) {
+				array_insert(global.inv_weapon, obj_item_menu.item_move_vertical, global.party[_party].last_equiped_weapon);
 			}
-			_party.last_equiped_weapon = global.weapon_list.Bachi;
+			global.party[_party].last_equiped_weapon = global.weapon_list.Bachi;
 			scr_create_textbox("Inv_Test2");
 		}
 	),
@@ -124,16 +118,14 @@ global.armor_list = {
 		"Garnek_Test",
 		99,
 		function(_party) {
-			with (_party) {
-				def = 0;
-				def += 99;	
-			}
+			global.party[_party].defense = 0;
+			global.party[_party].defense += 99;
 			//delete item
 			array_delete(global.inv_armor, obj_item_menu.item_move_vertical, 1);
-			if (_party.last_equiped_armor != -1) {
-				array_insert(global.inv_armor, obj_item_menu.item_move_vertical, _party.last_equiped_armor);
+			if (global.party[_party].last_equiped_armor != -1) {
+				array_insert(global.inv_armor, obj_item_menu.item_move_vertical, global.party[_party].last_equiped_armor);
 			}
-			_party.last_equiped_armor = global.armor_list.Garnek;
+			global.party[_party].last_equiped_armor = global.armor_list.Garnek;
 			scr_create_textbox("Inv_Test2");
 		}
 	),
@@ -146,16 +138,14 @@ global.armor_list = {
 		"Garnek_Test",
 		13,
 		function(_party) {
-			with (_party) {
-				def = 0;
-				def += 13;	
-			}
+			global.party[_party].defense = 0;
+			global.party[_party].defense += 13;
 			//delete item
 			array_delete(global.inv_armor, obj_item_menu.item_move_vertical, 1);
-			if (_party.last_equiped_armor != -1) {
-				array_insert(global.inv_armor, obj_item_menu.item_move_vertical, _party.last_equiped_armor);
+			if (global.party[_party].last_equiped_armor != -1) {
+				array_insert(global.inv_armor, obj_item_menu.item_move_vertical, global.party[_party].last_equiped_armor);
 			}
-			_party.last_equiped_armor = global.armor_list.Scarf;
+			global.party[_party].last_equiped_armor = global.armor_list.Scarf;
 			scr_create_textbox("Inv_Test2");
 		}
 	),
@@ -164,7 +154,7 @@ global.armor_list = {
 global.key_list = {
 	test_key : new scr_create_key(
 		"Test Key", 
-		"How did you get this?", 
+		"How did you get this? Looks like it can open pink walls.", 
 		spr_test_burger, 
 		spr_test_key,
 		false,

@@ -4,8 +4,6 @@ textbox_y = camera_get_view_y(view_camera[0]) + 320;
 
 accept_key = keyboard_check_pressed(global.controls_interact);
 
-
-
 #endregion
 
 #region setup
@@ -107,6 +105,23 @@ else {
 #endregion
 
 #region ----------go through pages ----------
+if (instance_exists(obj_battle)) {
+	if (accept_key) {
+		if (draw_char == text_length[page]) {
+			if (page < page_number - 1) {
+				page++;
+				draw_char = 0;
+			}
+			else {
+				with (obj_battle) {
+					battle_state = battle_state_select_action;	
+				}
+				instance_destroy();
+			}
+		}
+	}
+}
+
 
 if (instance_exists(obj_item_menu)) {
 	if (accept_key) && (obj_item_menu.pressed_interact_timer == 0) {
@@ -129,8 +144,7 @@ if (instance_exists(obj_item_menu)) {
 		}
 	}
 }
-else {
-	if (accept_key) {
+if (accept_key) && (!instance_exists(obj_battle)) && (!instance_exists(obj_item_menu)) {
 		if (draw_char == text_length[page]) {
 			if (page < page_number - 1) {
 				page++;
@@ -148,7 +162,6 @@ else {
 		else {
 			draw_char = text_length[page];
 		}
-	}
 }
 #endregion
 

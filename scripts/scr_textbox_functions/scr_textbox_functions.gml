@@ -191,5 +191,8 @@ function scr_textbox_cutscene_destroy() {
 		case 8:
 			obj_test_cut_verdantis.alarm[4] = 2;
 			break;
+		case 9:
+			obj_malachi_cut_06.alarm[2] = 1 *room_speed;
+			break;
 	}	
 }

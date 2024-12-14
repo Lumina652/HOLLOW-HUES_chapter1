@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":131.36841,
+  "duration":128.0,
   "name":"msc_sharp_advantage",
   "parent":{
     "name":"MUSIC",

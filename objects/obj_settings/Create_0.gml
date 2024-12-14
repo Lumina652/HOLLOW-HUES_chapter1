@@ -18,3 +18,10 @@ global.controls_interact = ord("Z");
 global.controls_back = ord("X");
 global.controls_esc = vk_escape;
 global.controls_test = ord("O");
+global.controls_toggle = vk_shift;
+
+//fight themes
+global.fight_theme_ost = msc_lighthearted_scrap;
+
+//battle wait time between actions
+global.battle_wait_time = 60;

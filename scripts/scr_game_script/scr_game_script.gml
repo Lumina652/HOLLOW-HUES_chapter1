@@ -3,6 +3,21 @@ function scr_game_script(_text_id){
 	
 	switch (_text_id) {
 		
+		#region battle_lines
+		case "Battle_Generic":
+			scr_text("The wind flows by. The smell of laziness fills your senses.", "Sal");
+			break;
+		case "Boss_Malachi0":
+			scr_text("You should not expect anything spectacular little one.", "Malachi", -1);
+			scr_text("This should not be accessable to you either way.", "Malachi", -1);
+			scr_text("What, you think by being a sneaky little thing you get rewarded with actual entertainment?", "Malachi", -1);
+			scr_text("Do not make me laugh.", "Malachi", -1);
+			break;
+		case "Boss_Malachi1":
+			scr_text("...", "Malachi", -1);
+			break;
+		#endregion
+		
 		#region testing lines
 		case "TEST1":
 			scr_text("Hello! What a fine evening we're having.", "test character", 1);
@@ -33,6 +48,10 @@ function scr_game_script(_text_id){
 		#region Interacting
 		case "Ball":
 			scr_text("It's a red ball. It has a pretty cute smile on it!", "Sal");
+			break;
+			
+		case "testingmal":
+			scr_text("What are you doing here.", "Malachi", -1);
 			break;
 		
 		case "no_space":
@@ -90,7 +109,7 @@ function scr_game_script(_text_id){
 			scr_text("Do not get the wrong idea, I have not made you. They did. I am here to tell you what you should be, according to them.", "Malachi", -1);
 				scr_text_color(48, 57, c_red, c_red, c_red, c_red); scr_text_color(113, 118, c_red, c_red, c_red, c_red);
 			scr_text("Let's get started, shall we?", "Malachi", -1);
-			scr_text("Step forward.", "Malachi", -1);
+			scr_text("Go forward.", "Malachi", -1);
 			break;
 			
 		case "Malachi0_2":
@@ -102,7 +121,7 @@ function scr_game_script(_text_id){
 			scr_text("As a bonus, they have made you look...different.", "Malachi", -1);
 				scr_text_color(38, 48, c_yellow, c_yellow, c_yellow, c_yellow);
 			scr_text("Finally, embrace yourself, for who you are, and will be. You are to be loved, to be accepted and most importantly, to be who you want to be.", "Malachi", -1);
-			scr_text("Step forward.", "Malachi", -1);
+			scr_text("Go forward.", "Malachi", -1);
 			break;
 		
 		//ENTER NAME
@@ -115,12 +134,12 @@ function scr_game_script(_text_id){
 				
 				case "Malachi0_3 Yes":
 					scr_text("Very well. Your integrity to embrace yourself, made our meeting very simple and clear.", "Malachi", -1);
-					scr_text("Step forward.", "Malachi", -1);
+					scr_text("Go forward.", "Malachi", -1);
 					break;
 				case "Malachi0_3 No":
 					//THEY NA RED
 					scr_text("Understood. Whatever you think, it does not matter, you cannot change what they want. Our time together is nearing its end.", "Malachi", -1);
-					scr_text("Step forward.", "Malachi", -1);
+					scr_text("Go forward.", "Malachi", -1);
 						scr_text_color(75, 83, c_red, c_red, c_red, c_red);
 					break;
 		
@@ -133,7 +152,7 @@ function scr_game_script(_text_id){
 				scr_text_float(37, 41);
 			scr_text("For now...you need to know one more thing. Sal.", "Malachi", -1);
 				scr_text_float(43, 47);
-			scr_text("Step forward.", "Malachi", -1);
+			scr_text("Go forward.", "Malachi", -1);
 			break;
 		
 		case "Malachi0_5":
@@ -154,16 +173,34 @@ function scr_game_script(_text_id){
 			scr_text("Hmm? Why are you still here?", "Malachi", -1);
 			//I've got questions.
 			scr_text("Oh. Well...I guess I should have seen this coming.", "Malachi", -1);
-			//Am I safe here?
+			//
 			scr_text("Yes.", "Malachi", -1);
-			//When can I leave?
+			//
 			scr_text("That is...complicated.", "Malachi", -1);
-			//Am I saved?
+			//
 			scr_text("Yes.", "Malachi", -1);
-			//Will it come back?
+			//
 			scr_text("No.", "Malachi", -1);
 			//...
 			scr_text("I'm assuming your silence means we are done here. Very well then.", "Malachi", -1);
+			scr_text("Go forward.", "Malachi", -1);
+			break;
+		case "Malachi_Boss_Pre":
+			scr_text("...", "Malachi", -1);
+			scr_text("...What are you doing here.", "Malachi", -1);
+			scr_text("This room should not be accessable to you.", "Malachi", -1);
+			scr_text("...", "Malachi", -1);
+			scr_text("You wish to fight?", "Malachi", -1);
+			scr_text("My oh my, what childish requests you have dear.", "Malachi", -1);
+			scr_text("You think you can just waltz in here and ask me for such unholy wishes?", "Malachi", -1);
+			scr_text("How 'fun', guess I have to teach you a lesson after all.", "Malachi", -1); scr_text_float(17,18);
+			scr_text("The audacity you possess dear...", "Malachi", -1); scr_text_shake(0,31);
+			scr_text("Ah, whatever Malachi. Why the nerves? I am an xxxxx after all...", "Malachi", -1); scr_text_color(46, 51, c_black, c_black, c_black, c_black);
+			scr_text("I was going to be forced to do this sooner or later.", "Malachi", -1);
+			scr_text("If it were not for him.", "Malachi", -1); scr_text_color(18, 21, c_red, c_red, c_red, c_red);
+			scr_text("Enough chit chat.", "Malachi", -1);
+			scr_text("Get ready, Sal.", "Malachi", -1);
+			scr_text("Come at me.", "Malachi", -1); scr_text_float(0, 11);
 			break;
 		#endregion
 		#region Chapter 1
