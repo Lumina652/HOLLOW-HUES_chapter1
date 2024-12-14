@@ -236,15 +236,17 @@ function battle_state_turn_progression() {
 		turn = 0;
 		if (once == 0) {
 			round_count++;
+			battle_textbox_limit = round_count;
 		}
 	}
 	
 	once = 1;
 	
-	
 	for (var i = 0; i < array_length(enemy_units); ++i) {
-		battle_textbox = enemy_units[i].battle_dialogue[round_count];
-		if (round_count > array_length(enemy_units[i].battle_dialogue)) battle_textbox = noone;
+		var _max = array_length(enemy_units[i].battle_dialogue) - 1;
+		battle_textbox_limit = clamp(battle_textbox_limit, 0, _max);
+		//clamp(battle_textbox_limit, 0, array_length(enemy_units[i].battle_dialogue));
+		battle_textbox = enemy_units[i].battle_dialogue[battle_textbox_limit];
 	}
 	
 	//battle text <3

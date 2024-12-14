@@ -8,13 +8,40 @@ function scr_game_script(_text_id){
 			scr_text("The wind flows by. The smell of laziness fills your senses.", "Sal");
 			break;
 		case "Boss_Malachi0":
-			scr_text("You should not expect anything spectacular little one.", "Malachi", -1);
-			scr_text("This should not be accessable to you either way.", "Malachi", -1);
-			scr_text("What, you think by being a sneaky little thing you get rewarded with actual entertainment?", "Malachi", -1);
-			scr_text("Do not make me laugh.", "Malachi", -1);
+			scr_text("WW91IHNob3VsZCBub3QgZXhwZWN0IGFueXRoaW5nIHNwZWN0YWN1bGFyIGxpdHRsZSBvbmUu", "Malachi", -1);
+			scr_text("VGhpcyBzaG91bGQgbm90IGJlIGFjY2Vzc2FibGUgdG8geW91IGVpdGhlciB3YXku", "Malachi", -1);
+			scr_text("V2hhdCwgeW91IHRoaW5rIGJ5IGJlaW5nIGEgc25lYWt5IGxpdHRsZSB0aGluZyB5b3UgZ2V0IHJld2FyZGVkIHdpdGggYWN0dWFsIGVudGVydGFpbm1lbnQ/", "Malachi", -1);
+			scr_text("RG8gbm90IG1ha2UgbWUgbGF1Z2gu", "Malachi", -1);
 			break;
 		case "Boss_Malachi1":
-			scr_text("...", "Malachi", -1);
+			scr_text("VGhlIG5pZ2h0bWFyZSBpcyBhd2FrZW5pbmcgZXZlbiBmYXN0ZXIgZHVlIHRvIHlvdXIgZ2FtZXMu", "Malachi", -1);
+			break;
+		case "Boss_Malachi2":
+			scr_text("SW4gYWxsIGhvbmVzdGx5LCBJIGRvIG5vdCBzZWUgeW91IHJlc2N1aW5nIHlvdXIgZnJpZW5kcyBhIHN1Y2Nlc3Mu", "Malachi", -1);
+			break;
+		case "Boss_Malachi3":
+			scr_text("SXQgaXMgYmVjYXVzZSBvZiBjaGlsZGlzaCBhY3RzIGxpa2UgdGhpcyBsaXR0bGUgb25lLg==", "Malachi", -1);
+			break;
+		case "Boss_Malachi4":
+			scr_text("U28gZG8gbm90IGJlIHNob2NrZWQgdGhhdCBvbmNlIHlvdXIgZ2FtZSBjb21lcyB0byBhbiBlbmQuLi4=", "Malachi", -1);
+			break;
+		case "Boss_Malachi5":
+			scr_text("WW91IHdpbGwgYmUgbWV0IHdpdGggWU9VUiBlbmQu", "Malachi", -1);
+			break;
+		case "Boss_Malachi6":
+			scr_text("QWxsIG9mIHlvdXIgZnJpZW5kcyB3aWxsIGxvc2UgdGhlaXIgY29sb3IgYmVjYXVzZSBvZiB0aGUgbGFjayBvZiByZXNwb25zaWJpbGl0eSB5b3UgcG9zc2Vzcy4=", "Malachi", -1);
+			break;
+		case "Boss_Malachi7":
+			scr_text("QWxsIHRoZSB3cm9uZ3MgdGhhdCBjYW4gaGFwcGVuLCB3aWxsLg==", "Malachi", -1);
+			break;
+		case "Boss_Malachi8":
+			scr_text("Li4ubGV0IG1lIGd1ZXNzLg==", "Malachi", -1);
+			break;
+		case "Boss_Malachi9":
+			scr_text("VGhhdCBoYXMgYWxyZWFkeSBoYXBwZW5lZCwgaGFzbid0IGl0Pw==", "Malachi", -1);
+			break;
+		case "Boss_Malachi10":
+			scr_text("Li4u", "Malachi", -1);
 			break;
 		#endregion
 		

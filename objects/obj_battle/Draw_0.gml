@@ -1,7 +1,7 @@
 anim_run += 6 / room_speed;
 //bg
 draw_sprite(battle_background, 0, x, y);
-draw_text(x, y, string(round_count));
+draw_text(x, y, string(battle_textbox_limit));
 
 //units
 var _unit_with_current_turn = unit_turn_order[turn].id;

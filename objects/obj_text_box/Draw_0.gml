@@ -166,8 +166,16 @@ if (accept_key) && (!instance_exists(obj_battle)) && (!instance_exists(obj_item_
 #endregion
 
 #region  ----------draw textbox ----------
+if (instance_exists(obj_battle)) {
+	battle_y_offset = 10;
+}
+else {
+	battle_y_offset = 0;	
+}
+
+
 var _textb_x = textbox_x + text_x_offset[page];
-var _textb_y = textbox_y;
+var _textb_y = textbox_y + battle_y_offset;
 textb_img += textb_img_speed;
 textb_spr_w = sprite_get_width(textb_spr[page]);
 textb_spr_h = sprite_get_height(textb_spr[page]);
@@ -191,14 +199,14 @@ if (speaker_sprite[page] != noone) {
 	
 	//nametext_line_width = _nametext_side - nametext_border * 2
 	
-	draw_sprite_ext(textb_spr[page], textb_img, textbox_x + portrait_x_offset[page], textbox_y, sprite_width/textb_spr_w, sprite_height/textb_spr_h, 0, c_white, 1);
-	draw_sprite_ext(sprite_index, image_index, _speaker_x, textbox_y - 2, speaker_side[page], 1, 0, c_white, 1);
-	draw_sprite_ext(textb_spr[page], nametext_img, _nametext_side, nametext_y, nametext_width, nametext_height, 0, c_white, 1);
+	draw_sprite_ext(textb_spr[page], textb_img, textbox_x + portrait_x_offset[page], textbox_y + battle_y_offset, sprite_width/textb_spr_w, sprite_height/textb_spr_h, 0, c_white, 1);
+	draw_sprite_ext(sprite_index, image_index, _speaker_x, textbox_y + battle_y_offset - 2, speaker_side[page], 1, 0, c_white, 1);
+	draw_sprite_ext(textb_spr[page], nametext_img, _nametext_side, nametext_y + battle_y_offset, nametext_width, nametext_height, 0, c_white, 1);
 	
 	if (name_text[page] != noone) {
 	//draw_text_ext_color(_nametext_side, nametext_y, name_text[page], nametext_line_sep, nametext_line_width, c_white, c_white, c_white, c_white, 1);
 		draw_set_halign(fa_center);
-		draw_text(_nametext_side + nametext_border, nametext_y + 9, name_text[page]);
+		draw_text(_nametext_side + nametext_border, nametext_y + battle_y_offset + 9, name_text[page]);
 	}
 	
 	draw_set_halign(fa_left);
@@ -270,7 +278,7 @@ for (var c = 0; c < draw_char; c++) {
 	
 	
 	//normal text
-	draw_text_color(char_x[c, page] + _shake_x, char_y[c, page] + _float_y + _shake_y, char[c, page], col_1[c, page], col_2[c, page], col_3[c, page], col_4[c, page], 1);
+	draw_text_color(char_x[c, page] + _shake_x, char_y[c, page] + battle_y_offset + _float_y + _shake_y, char[c, page], col_1[c, page], col_2[c, page], col_3[c, page], col_4[c, page], 1);
 }
 
 #endregion

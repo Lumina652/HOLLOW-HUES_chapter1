@@ -4,6 +4,8 @@ depth = -99999;
 
 obj_player_sal.in_text = 1;
 
+battle_y_offset = 10;
+
 #region textbox parameters
 textbox_width = 440;
 textbox_height = 140;

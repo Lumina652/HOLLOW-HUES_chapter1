@@ -95,7 +95,7 @@ global.party =
 		last_equiped_weapon: -1,
 		last_equiped_armor: -1,
 		sprites: { idle: spr_player_walk_down, attack: spr_player_walk_up, defend: spr_player_walk_left, down: spr_player_walk_right},
-		actions: [global.actionLibrary.attack, global.actionLibrary.attack2test]
+		actions: [global.actionLibrary.attack, global.actionLibrary.attack2test, global.actionLibrary.healtest, global.actionLibrary.ice]
 	}
 	,
 	{
@@ -169,7 +169,7 @@ global.enemies =
 		sprites: { idle: spr_malachi_idle_1, attack: spr_malachi_flee_1},
 		actions: [global.actionLibrary.attack],
 		xpValue: 66666,
-		battle_dialogue: ["Boss_Malachi0", "Boss_Malachi1"],
+		battle_dialogue: ["Boss_Malachi0", "Boss_Malachi1", "Boss_Malachi2", "Boss_Malachi3", "Boss_Malachi4", "Boss_Malachi5", "Boss_Malachi6", "Boss_Malachi7", "Boss_Malachi8", "Boss_Malachi9", "Boss_Malachi10"],
 		AIscript: function()
 		{
 			//attack random party member
