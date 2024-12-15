@@ -242,7 +242,7 @@ if (draw_char == text_length[page]) && (page == page_number - 1) {
 		
 		//option pick sound
 		if (keyboard_check_pressed(global.controls_down)) || (keyboard_check_pressed(global.controls_up)) {
-			audio_play_sound(snd_option_pick, 6, false);	
+			audio_play_sound(snd_select, 6, false);	
 		}
 	}
 	

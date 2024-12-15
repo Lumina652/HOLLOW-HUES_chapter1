@@ -1,5 +1,5 @@
 if (keyboard_check_pressed(global.controls_esc)) {
-	if (!isPaused) && (obj_player_sal.hasControl) && (obj_player_sal.in_inv == 0) && (!instance_exists(obj_battle)) {
+	if (!isPaused) && (obj_player_sal.hasControl) && (obj_player_sal.in_inv == 0) {
 		scr_pause_game();
 	}
 }

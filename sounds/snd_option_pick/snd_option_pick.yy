@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.107143,
+  "duration":0.387098,
   "name":"snd_option_pick",
   "parent":{
     "name":"SFX",

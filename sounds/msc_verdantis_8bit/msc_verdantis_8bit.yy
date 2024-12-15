@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"msc_verdantis_8bit",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":126.48649,
+  "name":"msc_verdantis_8bit",
+  "parent":{
+    "name":"MUSIC",
+    "path":"folders/Sounds/MUSIC.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":48000,
+  "soundFile":"msc_verdantis_8bit.ogg",
+  "type":1,
+  "volume":1.0,
+}

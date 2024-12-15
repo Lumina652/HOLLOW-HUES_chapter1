@@ -1,6 +1,7 @@
 depth = -99999;
 depth_text = depth;
 
+#region VARIABLES
 //PAUSEBOX VARIABLES
 pausebox_width = 320;
 pausebox_height = 360;
@@ -56,3 +57,8 @@ pick_y_offset_inventory = 320;
 pick_y_offset_quit = 360;
 option_number = 4;
 option_pos = 0
+#endregion
+
+//MUSIC
+last_volume = global.master_volume;
+global.master_volume = last_volume / 3;

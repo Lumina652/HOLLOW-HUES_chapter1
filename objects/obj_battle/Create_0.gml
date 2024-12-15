@@ -8,6 +8,7 @@ instance_activate_object(obj_item_menu);
 instance_activate_object(obj_item_manager);
 instance_activate_object(obj_text_box);
 
+last_music = obj_music.target_song_asset;
 scr_set_song_ingame(battle_music, 0, 0, true);
 
 anim_run = 0;
@@ -28,7 +29,7 @@ unit_render_order = [];
 
 enemy_reached_death = 0;
 
-show_debug_message(creator);
+//show_debug_message(creator);
 
 turn_count = 0;
 round_count = 0;
@@ -206,7 +207,7 @@ function battle_state_perform_action() {
 
 function battle_state_victory_check () {
 	if (enemy_reached_death == 0) {
-		scr_set_song_ingame(noone, 100, 0, false);
+		scr_set_song_ingame(last_music, 60, 60, true);
 		instance_activate_all();
 		
 		for (var i = 0; i < array_length(party_units); ++i) {
@@ -250,13 +251,16 @@ function battle_state_turn_progression() {
 	}
 	
 	//battle text <3
-	if (unit_turn_order[turn].object_index == obj_battle_unit_enemy) {
+	if (unit_turn_order[turn].object_index == obj_battle_unit_enemy) && (unit_turn_order[turn].object_index.hp > 0) {
 		if (battle_textbox != noone) {
 			scr_create_textbox(battle_textbox);
 		}
 		else {
 			battle_state = battle_state_select_action;	
 		}
+	}
+	else {
+		battle_state = battle_state_select_action;	
 	}
 	//if (keyboard_check_pressed(global.controls_interact)) text_timer = 0;
 	if (unit_turn_order[turn].object_index == obj_battle_unit_pc) {

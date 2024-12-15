@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":79.44828,
+  "duration":0.0,
   "name":"msc_cat",
   "parent":{
     "name":"MUSIC",

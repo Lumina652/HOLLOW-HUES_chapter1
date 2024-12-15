@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"msc_closing_roughhouse_loop",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":150.48648,
+  "name":"msc_closing_roughhouse_loop",
+  "parent":{
+    "name":"MUSIC",
+    "path":"folders/Sounds/MUSIC.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":48000,
+  "soundFile":"msc_closing_roughhouse_loop.ogg",
+  "type":1,
+  "volume":1.0,
+}

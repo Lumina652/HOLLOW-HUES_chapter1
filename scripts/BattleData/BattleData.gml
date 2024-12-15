@@ -30,7 +30,9 @@ global.actionLibrary =
 		effectOnTarget: MODE.ALWAYS,
 		func: function(_user, _targets)
 		{
-			battle_change_hp(_targets[0], -1000, 0);
+			var _damage = ceil(_user.attack * 1000)
+			
+			battle_change_hp(_targets[0], -_damage, 0);
 		}
 	},
 	healtest:

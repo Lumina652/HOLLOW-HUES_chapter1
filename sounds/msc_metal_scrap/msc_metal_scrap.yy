@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"msc_metal_scrap",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":90.383675,
+  "name":"msc_metal_scrap",
+  "parent":{
+    "name":"MUSIC",
+    "path":"folders/Sounds/MUSIC.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":48000,
+  "soundFile":"msc_metal_scrap.mp3",
+  "type":1,
+  "volume":1.0,
+}

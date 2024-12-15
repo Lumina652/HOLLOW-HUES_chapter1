@@ -2,7 +2,7 @@ var _bgx = camera_get_view_x(view_camera[0]);
 var _bgy = camera_get_view_y(view_camera[0]);
 
 #region VARIABLES
-draw_set_font(global.font_pause);
+draw_set_font(global.font_main);
 draw_set_valign(fa_top);
 draw_set_halign(fa_center);
 
@@ -17,7 +17,7 @@ draw_sprite_ext(pausebox_sprite, pausebox_img, pausebox_x + _bgx, pausebox_y + _
 #endregion
 #region DRAW THE OPTIONS
 //pause text
-draw_text_color(pausedtext_x + pausedtext_x_offset + _bgx, pausedtext_y + pausedtext_y_offset + _bgy, pausedtext_string, c_white, c_white, c_white, c_white, 1);
+draw_text_transformed_color(pausedtext_x + pausedtext_x_offset + _bgx, pausedtext_y + pausedtext_y_offset + _bgy, pausedtext_string, 2, 2, 0, c_white, c_white, c_white, c_white, 1);
 //resume
 draw_text_color(resume_x + resume_x_offset + _bgx, resume_y + resume_y_offset + _bgy, "RESUME", c_white, c_white, c_white, c_white, 1);
 //settings
@@ -27,7 +27,7 @@ draw_text_color(inventory_x + inventory_x_offset + _bgx, inventory_y + inventory
 //quit game
 draw_text_color(quit_x + quit_x_offset + _bgx, quit_y + quit_y_offset + _bgy, "QUIT GAME", c_white, c_white, c_white, c_white, 1);
 //option pick
-draw_sprite_ext(spr_pause_choose, 0, pick_x + pick_x_offset + _bgx, pick_y + pick_y_offset + _bgy, 14, 1, 0, c_white, 1);
+draw_sprite_ext(spr_pause_choose, 0, pick_x + pick_x_offset + _bgx, pick_y + pick_y_offset + _bgy, 14, 0.5, 0, c_white, 1);
 
 
 #endregion

@@ -57,8 +57,15 @@ if (cursor.active) {
 			}
 		}
 		
+		//SFX
+		//option pick sound
+		if (_key_right) || (_key_left) || (_key_up) || (_key_down) {
+			audio_play_sound(snd_select, 6, false);	
+		}
+		
 		//confirm action
 		if (_key_confirm) {
+			audio_play_sound(snd_confirm, 6, false);	
 			with (obj_battle) battle_begin_action(cursor.active_user, cursor.active_action, cursor.active_target);
 			with (obj_battle_menu) instance_destroy();
 			active = false;
@@ -67,6 +74,7 @@ if (cursor.active) {
 		
 		//cancel action
 		if (_key_cancel) && !(_key_confirm) {
+			audio_play_sound(snd_cancel, 6, false);	
 			with (obj_battle_menu) active = true;
 			active = false;
 			confirm_delay = 0;
