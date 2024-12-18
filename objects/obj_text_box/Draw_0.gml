@@ -173,9 +173,9 @@ else {
 	battle_y_offset = 0;	
 }
 
-
 var _textb_x = textbox_x + text_x_offset[page];
 var _textb_y = textbox_y + battle_y_offset;
+
 textb_img += textb_img_speed;
 textb_spr_w = sprite_get_width(textb_spr[page]);
 textb_spr_h = sprite_get_height(textb_spr[page]);

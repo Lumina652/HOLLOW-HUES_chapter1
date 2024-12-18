@@ -43,8 +43,7 @@ function scr_game_script(_text_id){
 		case "Boss_Malachi10":
 			scr_text("Li4u", "Malachi", -1);
 			break;
-		#endregion
-		
+		#endregion		
 		#region testing lines
 		case "TEST1":
 			scr_text("Hello! What a fine evening we're having.", "test character", 1);
@@ -125,6 +124,9 @@ function scr_game_script(_text_id){
 			case "HUB_portal0 - No":
 				scr_text("You decided to not go into the portal yet.", "Sal");		
 				break;
+		case "Music_Mushroom_after":
+			scr_text("It's light went out, the life drained out of it's system.", "Sal");
+			break;
 		#endregion
 		#region Chapter 0
 		case "Malachi0_1":
