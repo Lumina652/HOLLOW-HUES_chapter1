@@ -22,8 +22,8 @@ draw_text_transformed_color(pausedtext_x + pausedtext_x_offset + _bgx, pausedtex
 draw_text_color(resume_x + resume_x_offset + _bgx, resume_y + resume_y_offset + _bgy, "RESUME", c_white, c_white, c_white, c_white, 1);
 //settings
 draw_text_color(settings_x + settings_x_offset + _bgx, settings_y + settings_y_offset + _bgy, "SETTINGS", c_white, c_white, c_white, c_white, 1);
-//inventory
-draw_text_color(inventory_x + inventory_x_offset + _bgx, inventory_y + inventory_y_offset + _bgy, "INVENTORY", c_white, c_white, c_white, c_white, 1);
+//save
+draw_text_color(save_x + save_x_offset + _bgx, save_y + save_y_offset + _bgy, "SAVE & LOAD", c_white, c_white, c_white, c_white, 1);
 //quit game
 draw_text_color(quit_x + quit_x_offset + _bgx, quit_y + quit_y_offset + _bgy, "QUIT GAME", c_white, c_white, c_white, c_white, 1);
 //option pick
@@ -51,7 +51,7 @@ switch (option_pos) {
 		pick_y_offset = pick_y_offset_settings;
 		break;
 	case 2:
-		pick_y_offset = pick_y_offset_inventory;
+		pick_y_offset = pick_y_offset_save;
 		break;
 	case 3:
 		pick_y_offset = pick_y_offset_quit;
@@ -70,7 +70,7 @@ if (keyboard_check_pressed(global.controls_interact)) || (keyboard_check_pressed
 			instance_destroy();
 			break;
 		case 2:
-			//inventory stuff
+			//save stuff
 			break;
 		case 3:
 			//quit game stuff

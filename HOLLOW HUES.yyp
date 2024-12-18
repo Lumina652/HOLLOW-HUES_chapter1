@@ -39,7 +39,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.8.1.171",
+    "IDEVersion":"2024.11.0.179",
   },
   "name":"HOLLOW HUES",
   "resources":[
@@ -99,6 +99,7 @@
     {"id":{"name":"obj_settings_menu","path":"objects/obj_settings_menu/obj_settings_menu.yy",},},
     {"id":{"name":"obj_settings","path":"objects/obj_settings/obj_settings.yy",},},
     {"id":{"name":"obj_test_cut_verdantis","path":"objects/obj_test_cut_verdantis/obj_test_cut_verdantis.yy",},},
+    {"id":{"name":"obj_test_sign","path":"objects/obj_test_sign/obj_test_sign.yy",},},
     {"id":{"name":"obj_test_slime","path":"objects/obj_test_slime/obj_test_slime.yy",},},
     {"id":{"name":"obj_text_box","path":"objects/obj_text_box/obj_text_box.yy",},},
     {"id":{"name":"obj_transition_white","path":"objects/obj_transition_white/obj_transition_white.yy",},},
@@ -178,6 +179,7 @@
     {"id":{"name":"snd_sfx","path":"sounds/snd_sfx/snd_sfx.yy",},},
     {"id":{"name":"snd_slipstream_portaller","path":"sounds/snd_slipstream_portaller/snd_slipstream_portaller.yy",},},
     {"id":{"name":"snd_test","path":"sounds/snd_test/snd_test.yy",},},
+    {"id":{"name":"snd_throw_away_item","path":"sounds/snd_throw_away_item/snd_throw_away_item.yy",},},
     {"id":{"name":"spr_arrow_down_sal","path":"sprites/spr_arrow_down_sal/spr_arrow_down_sal.yy",},},
     {"id":{"name":"spr_arrow_left_sal","path":"sprites/spr_arrow_left_sal/spr_arrow_left_sal.yy",},},
     {"id":{"name":"spr_ball","path":"sprites/spr_ball/spr_ball.yy",},},
@@ -247,6 +249,7 @@
     {"id":{"name":"spr_test_portrait0","path":"sprites/spr_test_portrait0/spr_test_portrait0.yy",},},
     {"id":{"name":"spr_test_portrait1","path":"sprites/spr_test_portrait1/spr_test_portrait1.yy",},},
     {"id":{"name":"spr_test_portrait2","path":"sprites/spr_test_portrait2/spr_test_portrait2.yy",},},
+    {"id":{"name":"spr_test_sign","path":"sprites/spr_test_sign/spr_test_sign.yy",},},
     {"id":{"name":"spr_test_weapon","path":"sprites/spr_test_weapon/spr_test_weapon.yy",},},
     {"id":{"name":"spr_test_white","path":"sprites/spr_test_white/spr_test_white.yy",},},
     {"id":{"name":"spr_test","path":"sprites/spr_test/spr_test.yy",},},

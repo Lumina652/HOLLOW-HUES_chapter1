@@ -5,9 +5,9 @@ function scr_make_inventory_stats(){
 	var _bgy = camera_get_view_y(view_camera[0]);
 	
 	//rims
-	draw_sprite_ext(other_frame_sprite_stats, 0, _bgx + 170, _bgy, 8.1, 11, 0, c_white, 0.5);
-	draw_sprite_ext(other_frame_sprite_stats, 0, _bgx + 70, _bgy + 70, 13, 0.05, 0, c_white, 0.5);
-	draw_sprite_ext(other_frame_sprite_stats, 0, _bgx + 70, _bgy + 140, 13, 0.05, 0, c_white, 0.5);
+	draw_sprite_ext(other_frame_sprite_stats, 0, _bgx + 170, _bgy, 9.6, 11, 0, c_white, 0.5);
+	draw_sprite_ext(other_frame_sprite_stats, 0, _bgx + 70, _bgy + 70, 14.5, 0.05, 0, c_white, 0.5);
+	draw_sprite_ext(other_frame_sprite_stats, 0, _bgx + 70, _bgy + 140, 14.5, 0.05, 0, c_white, 0.5);
 	
 	//portraits
 	switch (global.follower_count) {

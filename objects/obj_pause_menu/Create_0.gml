@@ -29,10 +29,10 @@ settings_y = 0
 settings_x_offset = 320;
 settings_y_offset = 260;
 
-inventory_x = 0
-inventory_y = 0
-inventory_x_offset = 320;
-inventory_y_offset = 300;
+save_x = 0
+save_y = 0
+save_x_offset = 320;
+save_y_offset = 300;
 
 quit_x = 0
 quit_y = 0
@@ -53,7 +53,7 @@ pick_x_offset = 180
 pick_y_offset = 240;
 pick_y_offset_resume = 240
 pick_y_offset_settings = 280;
-pick_y_offset_inventory = 320;
+pick_y_offset_save = 320;
 pick_y_offset_quit = 360;
 option_number = 4;
 option_pos = 0

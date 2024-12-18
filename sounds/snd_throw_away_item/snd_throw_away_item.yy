@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_throw_away_item",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.387098,
+  "name":"snd_throw_away_item",
+  "parent":{
+    "name":"SFX",
+    "path":"folders/Sounds/SFX.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_throw_away_item.ogg",
+  "type":1,
+  "volume":1.0,
+}

@@ -3,8 +3,8 @@ if (follow != noone)  {
 	y_to = follow.y;
 }
 
-x += (x_to - x); // / 10;
-y += (y_to - y); // / 10;
+x += (x_to - x) / cam_speed; // / 10;
+y += (y_to - y) / cam_speed; // / 10;
 
 x = clamp(x, cam_width/2, room_width - cam_width/2);
 y = clamp(y, cam_height/2, room_height - cam_height/2);

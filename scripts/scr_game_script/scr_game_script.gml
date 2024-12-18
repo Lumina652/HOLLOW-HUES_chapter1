@@ -75,7 +75,12 @@ function scr_game_script(_text_id){
 		case "Ball":
 			scr_text("It's a red ball. It has a pretty cute smile on it!", "Sal");
 			break;
-			
+		
+		case "Test_Sign":
+			scr_text("'Don't get lost like I did dear travaler. These mushrooms have a set order that open the door.'", "Sal");
+			scr_text("'The order goes: 1, 3, 4, 1, 2. Input it correctly and the door shall open.'", "Sal");
+			break;
+		
 		case "testingmal":
 			scr_text("What are you doing here.", "Malachi", -1);
 			break;

@@ -60,6 +60,7 @@ else {
 		with (obj_interact) {
 			x = other.x + 16;
 			y = other.y;
+			image_angle = 0;
 		}
 	}
 	if (xspd < 0) {
@@ -67,6 +68,7 @@ else {
 		with (obj_interact) {
 			x = other.x - 16;
 			y = other.y;
+			image_angle = 0;
 		}
 	}
 
@@ -75,6 +77,7 @@ else {
 		with (obj_interact) {
 			x = other.x;
 			y = other.y - 16;
+			image_angle = 90;
 		}
 	}
 	if (yspd > 0) {
@@ -82,6 +85,7 @@ else {
 		with (obj_interact) {
 			x = other.x;
 			y = other.y + 16;
+			image_angle = 90;
 		}
 	}
 
@@ -144,7 +148,7 @@ if (in_inv > 1) {
 }
 
 #endregion
-
+#region HP AND MANA TRACKER
 if (global.party[0].hp > global.party[0].hpMax) {
 	global.party[0].hp = global.party[0].hpMax;	
 }
@@ -156,3 +160,4 @@ if (global.party[1].hp > global.party[1].hpMax) {
 if (global.party[2].hp > global.party[2].hpMax) {
 	global.party[2].hp = global.party[2].hpMax;	
 }
+#endregion
