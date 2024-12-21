@@ -25,3 +25,6 @@ global.fight_theme_ost = msc_lighthearted_scrap;
 
 //battle wait time between actions
 global.battle_wait_time = 60;
+
+//difficulty
+global.difficulty = 1;

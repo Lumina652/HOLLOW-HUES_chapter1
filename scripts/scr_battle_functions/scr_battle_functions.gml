@@ -124,3 +124,16 @@ function battle_menu_select_action(_user, _action) {
 		}
 	}
 }
+	
+function battle_skillcheck_bar(_user, _diff) {
+	var _bar = instance_create_depth(_user.x, _user.y, -99999, obj_battle_skillcheck_bar);
+	with (_bar) {
+		skillcheck_bar_enemy = _diff;
+		if (won == true) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+}

@@ -104,50 +104,53 @@ function battle_state_select_action() {
 	
 		//if unit is player controlled:
 		if (_unit.object_index == obj_battle_unit_pc) {
-			//compile the action menu
-			var _menu_options = [];
-			var _sub_menus = {};
-			var _action_list = _unit.actions;
+			if (!instance_exists(obj_battle_skillcheck_bar)) {
+				//compile the action menu
+				var _menu_options = [];
+				var _sub_menus = {};
+				var _action_list = _unit.actions;
 			
-			for (var i = 0; i < array_length(_action_list); i++) {
-				var _action = _action_list[i];
-				var _available = true; //check mana cost here
-				var _name_and_count = _action.name; //
+				for (var i = 0; i < array_length(_action_list); i++) {
+					var _action = _action_list[i];
+					var _available = true; //check mana cost here
+					var _name_and_count = _action.name; //
 				
-				if (_action.subMenu == -1) {
-					array_push(_menu_options, [_name_and_count, battle_menu_select_action, [_unit, _action], _available]);
-				}
-				else {
-					if (is_undefined(_sub_menus[$ _action.subMenu])) {
-						variable_struct_set(_sub_menus, _action.subMenu, [[_name_and_count, battle_menu_select_action, [_unit, _action], _available]]);
+					if (_action.subMenu == -1) {
+						array_push(_menu_options, [_name_and_count, battle_menu_select_action, [_unit, _action], _available]);
 					}
 					else {
-						array_push(_sub_menus[$ _action.subMenu], [_name_and_count, battle_menu_select_action, [_unit, _action], _available]);	
+						if (is_undefined(_sub_menus[$ _action.subMenu])) {
+							variable_struct_set(_sub_menus, _action.subMenu, [[_name_and_count, battle_menu_select_action, [_unit, _action], _available]]);
+						}
+						else {
+							array_push(_sub_menus[$ _action.subMenu], [_name_and_count, battle_menu_select_action, [_unit, _action], _available]);	
+						}
 					}
+				
 				}
-				
-			}
 			
-			//turn sub menus into an array
-			var _sub_menus_array = variable_struct_get_names(_sub_menus);
+				//turn sub menus into an array
+				var _sub_menus_array = variable_struct_get_names(_sub_menus);
 				
-			for (var i = 0; i < array_length(_sub_menus_array); i++) {
-				//sort submenu if needed
-				//here kurwa
+				for (var i = 0; i < array_length(_sub_menus_array); i++) {
+					//sort submenu if needed
+					//here kurwa
 					
-				//add back option at the end of each submenu
-				array_push(_sub_menus[$ _sub_menus_array[i]], ["Back", battle_menu_go_back, -1, true]);
-				//add submenu into main menu
-				array_push(_menu_options, [_sub_menus_array[i], battle_sub_menu, [_sub_menus[$ _sub_menus_array[i]]], true]);
+					//add back option at the end of each submenu
+					array_push(_sub_menus[$ _sub_menus_array[i]], ["Back", battle_menu_go_back, -1, true]);
+					//add submenu into main menu
+					array_push(_menu_options, [_sub_menus_array[i], battle_sub_menu, [_sub_menus[$ _sub_menus_array[i]]], true]);
+				}
+			
+				battle_make_menu(x, y+320, _menu_options,,20*9, 20*8);
 			}
-			
-			battle_make_menu(x, y+320, _menu_options,,20*9, 20*8);
-			
 		}
 		else { //if unit is an enemy
 			var _enemy_action = _unit.AIscript();
 			if (_enemy_action != -1) {
-				battle_begin_action(_unit.id, _enemy_action[0], _enemy_action[1]);
+				if (!instance_exists(obj_battle_skillcheck_bar)) {
+					battle_begin_action(_unit.id, _enemy_action[0], _enemy_action[1]);
+				}
 			}
 		}
 	}
@@ -169,7 +172,7 @@ function battle_begin_action(_user, _action, _targets) {
 			image_index = 0;
 		}
 	}
-	battle_state = battle_state_perform_action;
+	battle_state = battle_state_perform_action;	
 }
 
 function battle_state_perform_action() {

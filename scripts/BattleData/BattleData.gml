@@ -14,8 +14,33 @@ global.actionLibrary =
 		effectOnTarget: MODE.ALWAYS,
 		func: function(_user, _targets)
 		{
-			var _damage = ceil(_user.attack + random_range(-_user.attack * 0.25, _user.attack * 0.25) / _user.defense);
+			var _damage = ceil(_user.attack + random_range(-_user.attack * 0.25, _user.attack * 0.25) / _targets[0].defense);
 			battle_change_hp(_targets[0], -_damage, 0);
+		}
+	},
+	attack_enemy:
+	{
+		name: "Attack",
+		description: "{0} attacks!",
+		subMenu: -1,
+		manaCost: 0,
+		targetRequired: true,
+		targetEnemyByDefault: true,
+		targetAll: MODE.NEVER,
+		userAnimation: "attack",
+		effectSprite: spr_hit_test,
+		effectOnTarget: MODE.ALWAYS,
+		func: function(_user, _targets)
+		{
+			var _damage = ceil(_user.attack + random_range(-_user.attack * 0.25, _user.attack * 0.25) / _targets[0].defense);
+			var _bar = battle_skillcheck_bar(_targets[0], 3);
+			show_debug_message(_bar);
+			if (_bar) {
+				battle_change_hp(_user[0], -_damage / 2, 0);	
+			}
+			else {
+				battle_change_hp(_targets[0], -_damage, 0);	
+			}
 		}
 	},
 	attack2test:
@@ -70,7 +95,7 @@ global.actionLibrary =
 		func: function(_user, _targets)
 		{
 			for (var i = 0; i < array_length(_targets); ++i) {
-				if (array_length(_targets) >= 1) var _damage = ceil(_user.attack + irandom_range(10, 35) / _user.defense);
+				if (array_length(_targets) >= 1) var _damage = ceil(_user.attack + irandom_range(10, 35) / _targets[i].defense);
 				battle_change_hp(_targets[i], -_damage);
 				//battle_change_mana(_user, -manaCost);
 			}
@@ -153,7 +178,7 @@ global.enemies =
 		attack: 5,
 		defense: 2,
 		sprites: { idle: spr_malachi_idle_1, attack: spr_malachi_flee_1},
-		actions: [global.actionLibrary.attack],
+		actions: [global.actionLibrary.attack_enemy],
 		xpValue: 15,
 		battle_dialogue: ["Battle_Generic"],
 		AIscript: function()
