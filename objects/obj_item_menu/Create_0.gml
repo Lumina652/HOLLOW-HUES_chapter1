@@ -233,3 +233,13 @@ stats_maxcounter_w = 25;
 
 //CURRENT COUNTER
 stats_currentcounter_x = 290 
+
+//LEVELS AND EXP
+sallevel_x = 180;
+sallevel_y = 50;
+sallevel_w = 85;
+
+salexp_x = 275;
+
+roselevel_y = 120;
+hazellevel_y = 190;

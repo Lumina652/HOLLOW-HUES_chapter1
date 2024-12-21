@@ -5,6 +5,7 @@ global.actionLibrary =
 		name: "Attack",
 		description: "{0} attacks!",
 		subMenu: -1,
+		manaCost: 0,
 		targetRequired: true,
 		targetEnemyByDefault: true,
 		targetAll: MODE.NEVER,
@@ -22,6 +23,7 @@ global.actionLibrary =
 		name: "Sal Bomboclat",
 		description: "{0} attacks!",
 		subMenu: "Skills",
+		manaCost: 100,
 		targetRequired: true,
 		targetEnemyByDefault: true,
 		targetAll: MODE.NEVER,
@@ -40,7 +42,7 @@ global.actionLibrary =
 		name: "Heal",
 		description: "{0} heals!",
 		subMenu: "Skills",
-		manaCost: 14,
+		manaCost: 32,
 		targetRequired: true,
 		targetEnemyByDefault: false, //0: party/self, 1:enemy
 		targetAll: MODE.NEVER,
@@ -58,7 +60,7 @@ global.actionLibrary =
 		name: "Ice",
 		description: "{0} casts ice!",
 		subMenu: "Skills",
-		manaCost: 14,
+		manaCost: 20,
 		targetRequired: true,
 		targetEnemyByDefault: true, //0: party/self, 1:enemy
 		targetAll: MODE.VARIES,
@@ -88,7 +90,7 @@ global.party =
 		name: "Sal",
 		hp: 100,
 		hpMax: 100,
-		mana: 100,
+		mana: 80,
 		manaMax: 100,
 		attack: 10,
 		defense: 1,
@@ -96,6 +98,8 @@ global.party =
 		armor_equiped: noone,
 		last_equiped_weapon: -1,
 		last_equiped_armor: -1,
+		level: 1,
+		xp: 0,
 		sprites: { idle: spr_player_walk_down, attack: spr_player_walk_up, defend: spr_player_walk_left, down: spr_player_walk_right},
 		actions: [global.actionLibrary.attack, global.actionLibrary.attack2test, global.actionLibrary.healtest, global.actionLibrary.ice]
 	}
@@ -112,6 +116,8 @@ global.party =
 		armor_equiped: noone,
 		last_equiped_weapon: -1,
 		last_equiped_armor: -1,
+		level: 1,
+		xp: 0,
 		sprites: { idle: spr_rose_walk_down, attack: spr_rose_walk_up, defend: spr_rose_walk_left, down: spr_rose_walk_right},
 		actions: [global.actionLibrary.attack, global.actionLibrary.healtest]
 	}
@@ -128,6 +134,8 @@ global.party =
 		armor_equiped: noone,
 		last_equiped_weapon: -1,
 		last_equiped_armor: -1,
+		level: 1,
+		xp: 0,
 		sprites: { idle: spr_hazel_walk_down, attack: spr_hazel_walk_up, defend: spr_hazel_walk_left, down: spr_hazel_walk_right},
 		actions: [global.actionLibrary.attack, global.actionLibrary.ice]	
 	}

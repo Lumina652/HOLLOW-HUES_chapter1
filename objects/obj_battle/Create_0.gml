@@ -58,6 +58,8 @@ battle_textbox_limit = 0;
 
 once = 0;
 
+full_exp = 0;
+
 //make enemies cool
 for (var i = 0; i < array_length(enemies); i++) {
 	enemy_units[i] = instance_create_depth(x + 500 + (i * 30), y + 260 + (i * 20) - 20, depth - 10, obj_battle_unit_enemy, enemies[i]);
@@ -123,6 +125,7 @@ function battle_state_select_action() {
 						array_push(_sub_menus[$ _action.subMenu], [_name_and_count, battle_menu_select_action, [_unit, _action], _available]);	
 					}
 				}
+				
 			}
 			
 			//turn sub menus into an array
@@ -211,8 +214,20 @@ function battle_state_victory_check () {
 		instance_activate_all();
 		
 		for (var i = 0; i < array_length(party_units); ++i) {
-		    global.party[i].hp = party_units[i].hp;
+		    //hp and mana
+			global.party[i].hp = party_units[i].hp;
 			global.party[i].mana = party_units[i].mana;
+			
+			//add exp
+			global.party[i].xp += full_exp;
+			
+			//levels
+			var _level = global.party[i].level;
+		
+			if (global.party[i].xp >= round(power(_level * 3, 1.6))) {
+				global.party[i].xp -= round(power(_level * 3, 1.6));
+				global.party[i].level ++;
+			}
 		}
 		
 		instance_destroy(creator);

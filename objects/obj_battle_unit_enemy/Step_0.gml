@@ -6,6 +6,7 @@ if (hp <= 0) {
 	
 	if (done = 0) {
 		obj_battle.enemy_reached_death--;
+		obj_battle.full_exp += xpValue;
 		done = 1;
 	}
 }

@@ -64,14 +64,22 @@ if (cursor.active) {
 			if (!is_array(active_target)) { //single target
 				draw_set_alpha(sin(get_timer()/50000)+1);
 				draw_sprite(spr_arrow_left_sal, 0, active_target.x, active_target.y);
+				with (active_target) {
+					shader_set(sh_whiteflash);	
+				}
 				draw_set_alpha(1.0);
+				shader_reset();
 			}
 			else { //all targets
 				draw_set_alpha(sin(get_timer()/50000)+1);
 				for (var i = 0; i < array_length(active_target); ++i) {
 				    draw_sprite(spr_arrow_left_sal, 0, active_target[i].x, active_target[i].y);
+					with (active_target[i]) {
+						shader_set(sh_whiteflash);	
+					}
 				}
 				draw_set_alpha(1.0);
+				shader_reset();
 			}
 		}
 	}

@@ -51,6 +51,10 @@ function scr_make_inventory_stats(){
 			// CURRENT COUNTER
 			draw_text_ext_transformed(stats_currentcounter_x + _bgx, stats_slash_sal_y + _bgy, string(global.party[0].hp), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
 			draw_text_ext_transformed(stats_currentcounter_x + _bgx, stats_slash_sal_y + stats_slash_mana_offset + _bgy, string(global.party[0].mana), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
+			
+			//EXP AND LEVEL
+			draw_text_ext_transformed(sallevel_x, sallevel_y, "LEVEL: " + string(global.party[0].level), 0, sallevel_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
+			draw_text_ext_transformed(salexp_x, sallevel_y, "EXP: " + string(global.party[0].xp), 0, sallevel_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
 			break;
 		case 1:
 			draw_sprite_ext(button_unselected, bg_img, stats_portrait_sal_x + _bgx, stats_portrait_sal_y + _bgy, portrait_scale, portrait_scale, 0, c_white, 1);
@@ -135,6 +139,14 @@ function scr_make_inventory_stats(){
 			// CURRENT COUNTER
 			draw_text_ext_transformed(stats_currentcounter_x + _bgx, stats_slash_rose_y + _bgy, string(global.party[1].hp), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
 			draw_text_ext_transformed(stats_currentcounter_x + _bgx, stats_slash_rose_y + stats_slash_mana_offset + _bgy, string(global.party[1].mana), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
+			
+			//EXP AND LEVEL
+			draw_text_ext_transformed(sallevel_x, sallevel_y, "LEVEL: " + string(global.party[0].level), 0, sallevel_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
+			draw_text_ext_transformed(salexp_x, sallevel_y, "EXP: " + string(global.party[0].xp), 0, sallevel_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
+			
+			draw_text_ext_transformed(sallevel_x, roselevel_y, "LEVEL: " + string(global.party[1].level), 0, sallevel_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
+			draw_text_ext_transformed(salexp_x, roselevel_y, "EXP: " + string(global.party[1].xp), 0, sallevel_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
+			
 			break;
 		case 2:
 			draw_sprite_ext(button_unselected, bg_img, stats_portrait_sal_x + _bgx, stats_portrait_sal_y + _bgy, portrait_scale, portrait_scale, 0, c_white, 1);
@@ -258,6 +270,17 @@ function scr_make_inventory_stats(){
 			// CURRENT COUNTER
 			draw_text_ext_transformed(stats_currentcounter_x + _bgx, stats_slash_hazel_y + _bgy, string(global.party[2].hp), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
 			draw_text_ext_transformed(stats_currentcounter_x + _bgx, stats_slash_hazel_y + stats_slash_mana_offset + _bgy, string(global.party[2].mana), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
+			
+			//EXP AND LEVEL
+			draw_text_ext_transformed(sallevel_x, sallevel_y, "LEVEL: " + string(global.party[0].level), 0, sallevel_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
+			draw_text_ext_transformed(salexp_x, sallevel_y, "EXP: " + string(global.party[0].xp), 0, sallevel_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
+			
+			draw_text_ext_transformed(sallevel_x, roselevel_y, "LEVEL: " + string(global.party[1].level), 0, sallevel_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
+			draw_text_ext_transformed(salexp_x, roselevel_y, "EXP: " + string(global.party[1].xp), 0, sallevel_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
+			
+			draw_text_ext_transformed(sallevel_x, hazellevel_y, "LEVEL: " + string(global.party[2].level), 0, sallevel_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
+			draw_text_ext_transformed(salexp_x, hazellevel_y, "EXP: " + string(global.party[2].xp), 0, sallevel_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
+			
 			break;
 	}
 }

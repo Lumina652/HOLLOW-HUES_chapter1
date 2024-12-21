@@ -759,6 +759,15 @@ function scr_select_party_item() {
 			
 			break;
 	}
+	
+	//going back
+	if (keyboard_check_pressed(global.controls_back)) && (obj_player_sal.in_text == 0) && (picked_item == 1) && (pressed_interact_timer == 0) {
+		picking_item_for_party = 0;
+		party_select_frame_alpha = 0;
+		audio_play_sound(snd_cancel, 2, false);
+		scr_add_interaction_delay()
+		obj_player_sal.hasControl = true;
+	}
 }
 	
 function scr_select_party_weapon() {
@@ -831,6 +840,15 @@ function scr_select_party_weapon() {
 			
 			break;
 	}
+		
+	//going back
+	if (keyboard_check_pressed(global.controls_back)) && (obj_player_sal.in_text == 0) && (picked_item == 1) && (pressed_interact_timer == 0) {
+		picking_weapon_for_party = 0;
+		party_select_frame_alpha = 0;
+		audio_play_sound(snd_cancel, 2, false);
+		scr_add_interaction_delay()
+		obj_player_sal.hasControl = true;
+	}
 }
 	
 function scr_select_party_armor() {
@@ -902,5 +920,14 @@ function scr_select_party_armor() {
 			}
 			
 			break;
+	}
+		
+	//going back
+	if (keyboard_check_pressed(global.controls_back)) && (obj_player_sal.in_text == 0) && (picked_item == 1) && (pressed_interact_timer == 0) {
+		picking_armor_for_party = 0;
+		party_select_frame_alpha = 0;
+		audio_play_sound(snd_cancel, 2, false);
+		scr_add_interaction_delay()
+		obj_player_sal.hasControl = true;
 	}
 }
