@@ -57,7 +57,7 @@ global.actionLibrary =
 		{
 			if (_user.mana >= manaCost) {
 				var _damage = ceil(_user.attack * 1000)
-				battle_skillcheck_circle(_user, 6, _damage, _targets[0]);
+				battle_skillcheck_circle(_user, 4, _damage, _targets[0]);
 				battle_change_mana(_user, -manaCost);
 			}
 		}

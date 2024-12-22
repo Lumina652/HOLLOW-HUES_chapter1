@@ -35,6 +35,9 @@
     "name":"spr_ball",
     "path":"sprites/spr_ball/spr_ball.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_ball",
+    "path":"sprites/spr_ball/spr_ball.yy",
+  },
   "visible":true,
 }
