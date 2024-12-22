@@ -53,6 +53,7 @@
     {"id":{"name":"obj_battle_floating_text","path":"objects/obj_battle_floating_text/obj_battle_floating_text.yy",},},
     {"id":{"name":"obj_battle_menu","path":"objects/obj_battle_menu/obj_battle_menu.yy",},},
     {"id":{"name":"obj_battle_skillcheck_bar","path":"objects/obj_battle_skillcheck_bar/obj_battle_skillcheck_bar.yy",},},
+    {"id":{"name":"obj_battle_skillcheck_manager","path":"objects/obj_battle_skillcheck_manager/obj_battle_skillcheck_manager.yy",},},
     {"id":{"name":"obj_battle_unit_enemy","path":"objects/obj_battle_unit_enemy/obj_battle_unit_enemy.yy",},},
     {"id":{"name":"obj_battle_unit_pc","path":"objects/obj_battle_unit_pc/obj_battle_unit_pc.yy",},},
     {"id":{"name":"obj_battle_unit","path":"objects/obj_battle_unit/obj_battle_unit.yy",},},

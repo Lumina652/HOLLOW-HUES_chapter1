@@ -125,15 +125,13 @@ function battle_menu_select_action(_user, _action) {
 	}
 }
 	
-function battle_skillcheck_bar(_user, _diff) {
-	var _bar = instance_create_depth(_user.x, _user.y, -99999, obj_battle_skillcheck_bar);
-	with (_bar) {
+function battle_skillcheck_bar(_party, _diff, _hp, _counter) {
+	//counter = who to counter
+	instance_create_depth(_party.x - 50, _party.y - 60, -99999, obj_battle_skillcheck_bar);
+	with (obj_battle_skillcheck_bar) {
 		skillcheck_bar_enemy = _diff;
-		if (won == true) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		hp_counter = _counter;
+		hp_amount = _hp;
+		hp_party = _party;
 	}
 }

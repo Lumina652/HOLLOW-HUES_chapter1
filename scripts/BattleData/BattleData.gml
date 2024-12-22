@@ -30,17 +30,11 @@ global.actionLibrary =
 		userAnimation: "attack",
 		effectSprite: spr_hit_test,
 		effectOnTarget: MODE.ALWAYS,
+		event: EVENTS.SKILLCHECKBAR,
 		func: function(_user, _targets)
 		{
 			var _damage = ceil(_user.attack + random_range(-_user.attack * 0.25, _user.attack * 0.25) / _targets[0].defense);
-			var _bar = battle_skillcheck_bar(_targets[0], 3);
-			show_debug_message(_bar);
-			if (_bar) {
-				battle_change_hp(_user[0], -_damage / 2, 0);	
-			}
-			else {
-				battle_change_hp(_targets[0], -_damage, 0);	
-			}
+			battle_skillcheck_bar(_targets[0], 3, _damage, _user);
 		}
 	},
 	attack2test:
@@ -107,6 +101,12 @@ enum MODE {
 	NEVER = 0,
 	ALWAYS = 1,
 	VARIES = 2
+}
+
+enum EVENTS {
+	NONE = 0,
+	SKILLCHECKBAR = 1,
+	SKILLCHECKDBD = 2
 }
 
 global.party = 

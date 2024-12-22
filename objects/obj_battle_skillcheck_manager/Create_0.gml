@@ -1,0 +1,1 @@
+skillcheck_bar_won = false;

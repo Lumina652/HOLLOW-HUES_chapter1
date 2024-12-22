@@ -21,10 +21,10 @@ global.controls_test = ord("O");
 global.controls_toggle = vk_shift;
 
 //fight themes
-global.fight_theme_ost = msc_lighthearted_scrap;
+global.fight_theme_ost = msc_metal_scrap;
 
 //battle wait time between actions
-global.battle_wait_time = 60;
+global.battle_wait_time = 100;
 
 //difficulty
 global.difficulty = 1;

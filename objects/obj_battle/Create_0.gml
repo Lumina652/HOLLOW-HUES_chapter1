@@ -172,7 +172,9 @@ function battle_begin_action(_user, _action, _targets) {
 			image_index = 0;
 		}
 	}
-	battle_state = battle_state_perform_action;	
+	if (!instance_exists(obj_battle_skillcheck_bar)) {
+		battle_state = battle_state_perform_action;	
+	}
 }
 
 function battle_state_perform_action() {
@@ -202,7 +204,7 @@ function battle_state_perform_action() {
 		}
 	}
 	else { //wait for the delay and then end the turn
-		if (!instance_exists(obj_battle_effect)) {
+		if (!instance_exists(obj_battle_effect)) && (!instance_exists(obj_battle_skillcheck_bar)) {
 			battle_wait_time_remaining--;
 			if (battle_wait_time_remaining == 0) {
 				battle_state = battle_state_victory_check;	

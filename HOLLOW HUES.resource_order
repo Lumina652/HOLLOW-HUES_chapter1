@@ -20,6 +20,7 @@
     {"name":"obj_battle_floating_text","order":6,"path":"objects/obj_battle_floating_text/obj_battle_floating_text.yy",},
     {"name":"obj_battle_menu","order":7,"path":"objects/obj_battle_menu/obj_battle_menu.yy",},
     {"name":"obj_battle_skillcheck_bar","order":8,"path":"objects/obj_battle_skillcheck_bar/obj_battle_skillcheck_bar.yy",},
+    {"name":"obj_battle_skillcheck_manager","order":9,"path":"objects/obj_battle_skillcheck_manager/obj_battle_skillcheck_manager.yy",},
     {"name":"obj_battle_unit_enemy","order":4,"path":"objects/obj_battle_unit_enemy/obj_battle_unit_enemy.yy",},
     {"name":"obj_battle_unit_pc","order":3,"path":"objects/obj_battle_unit_pc/obj_battle_unit_pc.yy",},
     {"name":"obj_battle_unit","order":2,"path":"objects/obj_battle_unit/obj_battle_unit.yy",},

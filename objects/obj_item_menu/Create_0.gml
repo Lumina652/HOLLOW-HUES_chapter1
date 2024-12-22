@@ -239,7 +239,7 @@ sallevel_x = 180;
 sallevel_y = 50;
 sallevel_w = 85;
 
-salexp_x = 275;
+salexp_x = 265;
 
 roselevel_y = 120;
 hazellevel_y = 190;
