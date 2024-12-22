@@ -14,26 +14,44 @@ function scr_NewEncounter(_enemies, _bg, _music) {
 	);
 }
 
-function battle_change_hp(_target, _amount, _aliveDeadOrEither = 0) {
+function battle_change_hp(_target, _amount, _critchance, _aliveDeadOrEither = 0) {
 	//alive... 0 = alive only, 1 = dead only, 2 = any;
 	var _failed = false;
+	var _crit = false;
 	if (_aliveDeadOrEither == 0) && (_target.hp <= 0) _failed = true;
 	if (_aliveDeadOrEither == 1) && (_target.hp > 0) _failed = true;
+	if (_critchance == 5) _crit = true;
 	
 	var _col = c_white;
 	if (_amount > 0) _col = c_lime;
+	if (_crit) _col = c_yellow;
 	if (_failed) {
 		_col = c_white;
-		_amount = "failed";
+		_amount = "Failed";
 	}
 	instance_create_depth(
 		_target.x,
 		_target.y,
 		_target.depth-1,
 		obj_battle_floating_text,
-		{font: global.font_main, col: _col, text: string(_amount)}
+		{col: _col, text: string(_amount)}
 	);
 	if (!_failed) _target.hp = clamp(_target.hp + _amount, 0, _target.hpMax);
+}
+
+function battle_change_mana(_target, _amount) {
+	var _failed = false;
+	if (_target.mana < manaCost) _failed = true
+	if (!_failed) _target.mana = clamp(_target.mana + _amount, 0, _target.manaMax);
+	if (_failed) {
+		instance_create_depth(
+			_target.x,
+			_target.y,
+			_target.depth-1,
+			obj_battle_floating_text,
+			{col: c_white, text: string("Failed")}
+		);	
+	}
 }
 
 function battle_make_menu (_x, _y, _options, _desc = -1, _width = undefined, _height = undefined) {
@@ -131,6 +149,16 @@ function battle_skillcheck_bar(_party, _diff, _hp, _counter) {
 	with (obj_battle_skillcheck_bar) {
 		skillcheck_bar_enemy = _diff;
 		hp_counter = _counter;
+		hp_amount = _hp;
+		hp_party = _party;
+	}
+}
+
+function battle_skillcheck_circle(_party, _diff, _hp, _enemy) {
+	instance_create_depth(_party.x, _party.y, -99999, obj_battle_skillcheck_circle);
+	with (obj_battle_skillcheck_circle) {
+		skillcheck_circle_bar_diff = _diff;
+		hp_enemy = _enemy;
 		hp_amount = _hp;
 		hp_party = _party;
 	}

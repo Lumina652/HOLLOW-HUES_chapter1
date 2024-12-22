@@ -14,8 +14,11 @@ global.actionLibrary =
 		effectOnTarget: MODE.ALWAYS,
 		func: function(_user, _targets)
 		{
-			var _damage = ceil(_user.attack + random_range(-_user.attack * 0.25, _user.attack * 0.25) / _targets[0].defense);
-			battle_change_hp(_targets[0], -_damage, 0);
+			var _crit = ceil(random_range(0, 15));
+			var _crit_damage = 0;
+			if (_crit == 5) _crit_damage = 15;
+			var _damage = ceil(_user.attack + random_range(-_user.attack * 0.25, _user.attack * 0.25) / _targets[0].defense) + _crit_damage;
+			battle_change_hp(_targets[0], -_damage, _crit, 0);
 		}
 	},
 	attack_enemy:
@@ -49,11 +52,14 @@ global.actionLibrary =
 		userAnimation: "attack",
 		effectSprite: spr_hit_test,
 		effectOnTarget: MODE.ALWAYS,
+		event: EVENTS.SKILLCHECKCIRCLE,
 		func: function(_user, _targets)
 		{
-			var _damage = ceil(_user.attack * 1000)
-			
-			battle_change_hp(_targets[0], -_damage, 0);
+			if (_user.mana >= manaCost) {
+				var _damage = ceil(_user.attack * 1000)
+				battle_skillcheck_circle(_user, 6, _damage, _targets[0]);
+				battle_change_mana(_user, -manaCost);
+			}
 		}
 	},
 	healtest:
@@ -71,7 +77,7 @@ global.actionLibrary =
 		func: function(_user, _targets)
 		{
 			var _heal = ceil(random_range(10, 40));
-			battle_change_hp(_targets[0], _heal, 0);
+			battle_change_hp(_targets[0], _heal, 0, 0);
 		}
 	},
 	ice:
@@ -90,7 +96,7 @@ global.actionLibrary =
 		{
 			for (var i = 0; i < array_length(_targets); ++i) {
 				if (array_length(_targets) >= 1) var _damage = ceil(_user.attack + irandom_range(10, 35) / _targets[i].defense);
-				battle_change_hp(_targets[i], -_damage);
+				battle_change_hp(_targets[i], -_damage, 0, 0);
 				//battle_change_mana(_user, -manaCost);
 			}
 		}
@@ -106,7 +112,7 @@ enum MODE {
 enum EVENTS {
 	NONE = 0,
 	SKILLCHECKBAR = 1,
-	SKILLCHECKDBD = 2
+	SKILLCHECKCIRCLE = 2
 }
 
 global.party = 
@@ -115,7 +121,7 @@ global.party =
 		name: "Sal",
 		hp: 100,
 		hpMax: 100,
-		mana: 80,
+		mana: 100,
 		manaMax: 100,
 		attack: 10,
 		defense: 1,
@@ -180,7 +186,7 @@ global.enemies =
 		sprites: { idle: spr_malachi_idle_1, attack: spr_malachi_flee_1},
 		actions: [global.actionLibrary.attack_enemy],
 		xpValue: 15,
-		battle_dialogue: ["Battle_Generic"],
+		battle_dialogue: [noone],    //"Battle_Generic"],
 		AIscript: function()
 		{
 			//attack random party member

@@ -104,7 +104,7 @@ function battle_state_select_action() {
 	
 		//if unit is player controlled:
 		if (_unit.object_index == obj_battle_unit_pc) {
-			if (!instance_exists(obj_battle_skillcheck_bar)) {
+			if (!instance_exists(obj_battle_skillcheck_bar)) && (!instance_exists(obj_battle_skillcheck_circle)) {
 				//compile the action menu
 				var _menu_options = [];
 				var _sub_menus = {};
@@ -148,7 +148,7 @@ function battle_state_select_action() {
 		else { //if unit is an enemy
 			var _enemy_action = _unit.AIscript();
 			if (_enemy_action != -1) {
-				if (!instance_exists(obj_battle_skillcheck_bar)) {
+				if (!instance_exists(obj_battle_skillcheck_bar)) && (!instance_exists(obj_battle_skillcheck_circle)) {
 					battle_begin_action(_unit.id, _enemy_action[0], _enemy_action[1]);
 				}
 			}
@@ -172,7 +172,7 @@ function battle_begin_action(_user, _action, _targets) {
 			image_index = 0;
 		}
 	}
-	if (!instance_exists(obj_battle_skillcheck_bar)) {
+	if (!instance_exists(obj_battle_skillcheck_bar)) && (!instance_exists(obj_battle_skillcheck_circle)) {
 		battle_state = battle_state_perform_action;	
 	}
 }
@@ -204,7 +204,7 @@ function battle_state_perform_action() {
 		}
 	}
 	else { //wait for the delay and then end the turn
-		if (!instance_exists(obj_battle_effect)) && (!instance_exists(obj_battle_skillcheck_bar)) {
+		if (!instance_exists(obj_battle_effect)) && (!instance_exists(obj_battle_skillcheck_bar)) && (!instance_exists(obj_battle_skillcheck_circle)) {
 			battle_wait_time_remaining--;
 			if (battle_wait_time_remaining == 0) {
 				battle_state = battle_state_victory_check;	

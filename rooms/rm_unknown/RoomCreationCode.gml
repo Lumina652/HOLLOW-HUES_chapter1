@@ -1,1 +1,1 @@
-global.chapter = -1;
+global.chapter = 0;
