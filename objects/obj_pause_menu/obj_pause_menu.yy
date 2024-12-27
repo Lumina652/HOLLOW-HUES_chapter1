@@ -9,8 +9,8 @@
   "name":"obj_pause_menu",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"SETTINGS",
+    "path":"folders/Objects/SETTINGS.yy",
   },
   "parentObjectId":null,
   "persistent":false,

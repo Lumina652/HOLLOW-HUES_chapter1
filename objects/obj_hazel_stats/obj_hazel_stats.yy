@@ -9,8 +9,8 @@
   "name":"obj_hazel_stats",
   "overriddenProperties":[],
   "parent":{
-    "name":"MANAGERS",
-    "path":"folders/Objects/MANAGERS.yy",
+    "name":"INVENTORY",
+    "path":"folders/Objects/INVENTORY.yy",
   },
   "parentObjectId":null,
   "persistent":true,

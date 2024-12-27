@@ -62,8 +62,15 @@ global.item_list = {
 		"Inv_Test",
 		function(_party) {
 			global.party[_party].hp += 10;
-				//delete item
+			//delete item
 			array_delete(global.inv_item, obj_item_menu.item_move_vertical, 1);
+			for (var i = 0; i < array_length(global.party); ++i) {
+			    var _find = function(_element) {
+					return (_element == global.actionItemsLibrary.items_burger); //CHANGE ITEMS_X
+				}
+				var _index_action = array_find_index(global.party[i].actions, _find);
+				array_delete(global.party[i].actions, _index_action, 1);
+			}
 			scr_create_textbox("Inv_Test");
 			//add the burger why not lol
 			//array_insert(inv, selected_item, global.item_list.burger);
@@ -82,7 +89,39 @@ global.item_list = {
 			global.party[_party].hp -= 10;
 			//delete item
 			array_delete(global.inv_item, obj_item_menu.item_move_vertical, 1);
+			for (var i = 0; i < array_length(global.party); ++i) {
+			    var _find = function(_element) {
+					return (_element == global.actionItemsLibrary.items_cocacola); //CHANGE ITEMS_X
+				}
+				var _index_action = array_find_index(global.party[i].actions, _find);
+				array_delete(global.party[i].actions, _index_action, 1);
+			}
 			scr_create_textbox("Inv_Test2");
+		}
+	),
+	
+	mana_burg : new scr_create_item(
+		"Mana burger", 
+		"Where did you find this?\nMANA - +50", 
+		spr_test_burger_1, 
+		spr_ball,
+		true,
+		"Inv_manatest",
+		"Inv_manatest-USED",
+		function(_party) {
+			global.party[_party].mana += 50;
+			//delete item
+			array_delete(global.inv_item, obj_item_menu.item_move_vertical, 1);
+			for (var i = 0; i < array_length(global.party); ++i) {
+			    var _find = function(_element) {
+					return (_element == global.actionItemsLibrary.items_manaburg); //CHANGE ITEMS_X
+				}
+				var _index_action = array_find_index(global.party[i].actions, _find);
+				array_delete(global.party[i].actions, _index_action, 1);
+			}
+			scr_create_textbox("Inv_manatest-USED");
+			//add the burger why not lol
+			//array_insert(inv, selected_item, global.item_list.burger);
 		}
 	),
 }
@@ -90,17 +129,20 @@ global.item_list = {
 global.weapon_list = {
 	Bachi : new scr_create_weapon(
 		"Bachi",
-		"Used for taiko drumming.\nDMG - 99",
+		"Used for taiko drumming.\nDMG - +6",
 		spr_test_weapon,
 		spr_ball,
 		"Bachi_Test",
-		99,
+		6,
 		function(_party) {
-			global.party[_party].attack = 0;
-			global.party[_party].attack += 99;
+			if (global.party[_party].last_equiped_weapon != -1) {
+				global.party[_party].attack -= global.party[_party].last_equiped_weapon.w_dmg; 	
+			}
+			global.party[_party].attack += global.weapon_list.Bachi.w_dmg;
 			//delete item
 			array_delete(global.inv_weapon, obj_item_menu.item_move_vertical, 1);
 			if (global.party[_party].last_equiped_weapon != -1) {
+				//global.party[_party].attack -= last_equiped_weapon.w_dmg;
 				array_insert(global.inv_weapon, obj_item_menu.item_move_vertical, global.party[_party].last_equiped_weapon);
 			}
 			global.party[_party].last_equiped_weapon = global.weapon_list.Bachi;
@@ -112,14 +154,17 @@ global.weapon_list = {
 global.armor_list = {
 	Garnek : new scr_create_armor(
 		"Garnek",
-		"ZUPA!!! OBIAD!!!\nDEFENSE - 99",
+		"ZUPA!!! OBIAD!!!\nDEFENSE - +10",
 		spr_test_armor,
 		spr_ball,
 		"Garnek_Test",
-		99,
+		10,
 		function(_party) {
-			global.party[_party].defense = 0;
-			global.party[_party].defense += 99;
+			if (global.party[_party].last_equiped_armor != -1) {
+				global.party[_party].defense -= global.party[_party].last_equiped_armor.a_defense; 	
+			}
+			global.party[_party].defense += global.armor_list.Garnek.a_defense;
+			
 			//delete item
 			array_delete(global.inv_armor, obj_item_menu.item_move_vertical, 1);
 			if (global.party[_party].last_equiped_armor != -1) {
@@ -132,14 +177,17 @@ global.armor_list = {
 	
 	Scarf : new scr_create_armor(
 		"Scarf",
-		"LOL\nDEFENSE - 13",
+		"LOL\nDEFENSE - +3",
 		spr_test_armor_1,
 		spr_ball,
 		"Garnek_Test",
-		13,
+		3,
 		function(_party) {
-			global.party[_party].defense = 0;
-			global.party[_party].defense += 13;
+			if (global.party[_party].last_equiped_armor != -1) {
+				global.party[_party].defense -= global.party[_party].last_equiped_armor.a_defense; 	
+			}
+			global.party[_party].defense += global.armor_list.Scarf.a_defense;
+			
 			//delete item
 			array_delete(global.inv_armor, obj_item_menu.item_move_vertical, 1);
 			if (global.party[_party].last_equiped_armor != -1) {

@@ -10,8 +10,8 @@
   "name":"obj_transition_white",
   "overriddenProperties":[],
   "parent":{
-    "name":"MANAGERS",
-    "path":"folders/Objects/MANAGERS.yy",
+    "name":"TRANSITIONS",
+    "path":"folders/Objects/TRANSITIONS.yy",
   },
   "parentObjectId":null,
   "persistent":true,

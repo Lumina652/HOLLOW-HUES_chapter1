@@ -1,0 +1,1 @@
+image_angle = obj_battle_skillcheck_circle.skillcheck_circle_bar_rotate;

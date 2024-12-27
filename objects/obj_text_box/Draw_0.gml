@@ -92,7 +92,7 @@ if (text_pause_timer <= 0) {
 			}
 			else {
 				snd_count = 0;
-				audio_play_sound(snd[page], 8, false);
+				audio_play_sound(snd[page], 8, false, global.talk_volume * global.master_volume);
 			}
 		}
 	}
@@ -242,7 +242,7 @@ if (draw_char == text_length[page]) && (page == page_number - 1) {
 		
 		//option pick sound
 		if (keyboard_check_pressed(global.controls_down)) || (keyboard_check_pressed(global.controls_up)) {
-			audio_play_sound(snd_select, 6, false);	
+			audio_play_sound(snd_select, 6, false, global.sound_volume * global.master_volume);	
 		}
 	}
 	

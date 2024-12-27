@@ -714,14 +714,25 @@ function scr_select_party_item() {
 				picked_item = 1;
 			}
 					
-			if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_item == 1) && (pressed_interact_timer == 0) {
-				global.inv_item[item_move_vertical].effect(0);
-				picking_item_for_party = 0;
-				party_select_frame_alpha = 0;
-				scr_add_interaction_delay()
-				obj_player_sal.hasControl = true;
+			if (!instance_exists(obj_battle)) {
+				if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_item == 1) && (pressed_interact_timer == 0) {
+					global.inv_item[item_move_vertical].effect(0);
+					picking_item_for_party = 0;
+					party_select_frame_alpha = 0;
+					scr_add_interaction_delay()
+					obj_player_sal.hasControl = true;
+				}
 			}
-			
+			else {
+				if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_item == 1) && (pressed_interact_timer == 0) {
+					global.inv_item[item_move_vertical].effect(0);
+					picking_item_for_party = 0;
+					party_select_frame_alpha = 0;
+					scr_add_interaction_delay()
+					obj_player_sal.hasControl = true;
+					instance_destroy(obj_item_menu);
+				}	
+			}
 			break;
 		case 1:
 			if (global.follower_count == 1) {
@@ -734,29 +745,51 @@ function scr_select_party_item() {
 				party_select_frame_x = portrait_other_x_3;
 				picked_item = 1;
 			}
-					
-			if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_item == 1) && (pressed_interact_timer == 0) {
-				global.inv_item[item_move_vertical].effect(1);
-				picking_item_for_party = 0;
-				party_select_frame_alpha = 0;
-				scr_add_interaction_delay()
-				obj_player_sal.hasControl = true;
-			}
 			
+			if (!instance_exists(obj_battle)) {
+				if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_item == 1) && (pressed_interact_timer == 0) {
+					global.inv_item[item_move_vertical].effect(1);
+					picking_item_for_party = 0;
+					party_select_frame_alpha = 0;
+					scr_add_interaction_delay()
+					obj_player_sal.hasControl = true;
+				}
+			}
+			else {
+				if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_item == 1) && (pressed_interact_timer == 0) {
+					global.inv_item[item_move_vertical].effect(1);
+					picking_item_for_party = 0;
+					party_select_frame_alpha = 0;
+					scr_add_interaction_delay()
+					obj_player_sal.hasControl = true;
+					instance_destroy(obj_item_menu);
+				}	
+			}
 			break;
 		case 2:
 			party_select_frame_alpha = 1;
 			party_select_frame_x = portrait_other2_x_3;
 			picked_item = 1;
 			
-			if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_item == 1) && (pressed_interact_timer == 0) {
-				global.inv_item[item_move_vertical].effect(2);
-				picking_item_for_party = 0;
-				party_select_frame_alpha = 0;
-				scr_add_interaction_delay()
-				obj_player_sal.hasControl = true;
+			if (!instance_exists(obj_battle)) {
+				if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_item == 1) && (pressed_interact_timer == 0) {
+					global.inv_item[item_move_vertical].effect(2);
+					picking_item_for_party = 0;
+					party_select_frame_alpha = 0;
+					scr_add_interaction_delay()
+					obj_player_sal.hasControl = true;
+				}
 			}
-			
+			else {
+				if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_item == 1) && (pressed_interact_timer == 0) {
+					global.inv_item[item_move_vertical].effect(2);
+					picking_item_for_party = 0;
+					party_select_frame_alpha = 0;
+					scr_add_interaction_delay();
+					obj_player_sal.hasControl = true;
+					instance_destroy(obj_item_menu);
+				}	
+			}
 			break;
 	}
 	
@@ -764,7 +797,7 @@ function scr_select_party_item() {
 	if (keyboard_check_pressed(global.controls_back)) && (obj_player_sal.in_text == 0) && (picked_item == 1) && (pressed_interact_timer == 0) {
 		picking_item_for_party = 0;
 		party_select_frame_alpha = 0;
-		audio_play_sound(snd_cancel, 2, false);
+		audio_play_sound(snd_cancel, 2, false, global.sound_volume * global.master_volume);
 		scr_add_interaction_delay()
 		obj_player_sal.hasControl = true;
 	}
@@ -791,16 +824,28 @@ function scr_select_party_weapon() {
 				party_select_frame_x = portrait_sal_x_3;
 				picked_weapon = 1;
 			}
-					
-			if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_weapon == 1) && (pressed_interact_timer == 0) {
-				global.party[0].weapon_equiped = global.inv_weapon[item_move_vertical].w_icon;
-				global.inv_weapon[item_move_vertical].w_effect(0);
-				picking_weapon_for_party = 0;
-				party_select_frame_alpha = 0;
-				scr_add_interaction_delay()
-				obj_player_sal.hasControl = true;
-			}
 			
+			if (!instance_exists(obj_battle)) {
+				if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_weapon == 1) && (pressed_interact_timer == 0) {
+					global.party[0].weapon_equiped = global.inv_weapon[item_move_vertical].w_icon;
+					global.inv_weapon[item_move_vertical].w_effect(0);
+					picking_weapon_for_party = 0;
+					party_select_frame_alpha = 0;
+					scr_add_interaction_delay()
+					obj_player_sal.hasControl = true;
+				}
+			}
+			else {
+				if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_weapon == 1) && (pressed_interact_timer == 0) {
+					global.party[0].weapon_equiped = global.inv_weapon[item_move_vertical].w_icon;
+					global.inv_weapon[item_move_vertical].w_effect(0);
+					picking_weapon_for_party = 0;
+					party_select_frame_alpha = 0;
+					scr_add_interaction_delay()
+					obj_player_sal.hasControl = true;
+					instance_destroy(obj_item_menu);
+				}	
+			}
 			break;
 		case 1:
 			if (global.follower_count == 1) {
@@ -813,31 +858,55 @@ function scr_select_party_weapon() {
 				party_select_frame_x = portrait_other_x_3;
 				picked_weapon = 1;
 			}
-					
-			if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_weapon == 1) && (pressed_interact_timer == 0) {
-				global.party[1].weapon_equiped = global.inv_weapon[item_move_vertical].w_icon;
-				global.inv_weapon[item_move_vertical].w_effect(1);
-				picking_weapon_for_party = 0;
-				party_select_frame_alpha = 0;
-				scr_add_interaction_delay()
-				obj_player_sal.hasControl = true;
-			}
 			
+			if (!instance_exists(obj_battle)) {
+				if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_weapon == 1) && (pressed_interact_timer == 0) {
+					global.party[1].weapon_equiped = global.inv_weapon[item_move_vertical].w_icon;
+					global.inv_weapon[item_move_vertical].w_effect(1);
+					picking_weapon_for_party = 0;
+					party_select_frame_alpha = 0;
+					scr_add_interaction_delay()
+					obj_player_sal.hasControl = true;
+				}
+			}
+			else {
+				if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_weapon == 1) && (pressed_interact_timer == 0) {
+					global.party[1].weapon_equiped = global.inv_weapon[item_move_vertical].w_icon;
+					global.inv_weapon[item_move_vertical].w_effect(1);
+					picking_weapon_for_party = 0;
+					party_select_frame_alpha = 0;
+					scr_add_interaction_delay()
+					obj_player_sal.hasControl = true;
+					instance_destroy(obj_item_menu);
+				}	
+			}
 			break;
 		case 2:
 			party_select_frame_alpha = 1;
 			party_select_frame_x = portrait_other2_x_3;
 			picked_weapon = 1;
 			
-			if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_weapon == 1) && (pressed_interact_timer == 0) {	
-				global.party[2].weapon_equiped = global.inv_weapon[item_move_vertical].w_icon;
-				global.inv_weapon[item_move_vertical].w_effect(2);
-				picking_weapon_for_party = 0;
-				scr_add_interaction_delay()
-				party_select_frame_alpha = 0;
-				obj_player_sal.hasControl = true;
+			if (!instance_exists(obj_battle)) {
+				if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_weapon == 1) && (pressed_interact_timer == 0) {	
+					global.party[2].weapon_equiped = global.inv_weapon[item_move_vertical].w_icon;
+					global.inv_weapon[item_move_vertical].w_effect(2);
+					picking_weapon_for_party = 0;
+					scr_add_interaction_delay()
+					party_select_frame_alpha = 0;
+					obj_player_sal.hasControl = true;
+				}
 			}
-			
+			else {
+				if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_weapon == 1) && (pressed_interact_timer == 0) {	
+					global.party[2].weapon_equiped = global.inv_weapon[item_move_vertical].w_icon;
+					global.inv_weapon[item_move_vertical].w_effect(2);
+					picking_weapon_for_party = 0;
+					scr_add_interaction_delay()
+					party_select_frame_alpha = 0;
+					obj_player_sal.hasControl = true;
+					instance_destroy(obj_item_menu);
+				}	
+			}
 			break;
 	}
 		
@@ -845,7 +914,7 @@ function scr_select_party_weapon() {
 	if (keyboard_check_pressed(global.controls_back)) && (obj_player_sal.in_text == 0) && (picked_item == 1) && (pressed_interact_timer == 0) {
 		picking_weapon_for_party = 0;
 		party_select_frame_alpha = 0;
-		audio_play_sound(snd_cancel, 2, false);
+		audio_play_sound(snd_cancel, 2, false, global.sound_volume * global.master_volume);
 		scr_add_interaction_delay()
 		obj_player_sal.hasControl = true;
 	}
@@ -872,16 +941,28 @@ function scr_select_party_armor() {
 				party_select_frame_x = portrait_sal_x_3;
 				picked_armor = 1;
 			}
-					
-			if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_armor == 1) && (pressed_interact_timer == 0) {
-				global.party[0].armor_equiped = global.inv_armor[item_move_vertical].a_icon;
-				global.inv_armor[item_move_vertical].a_effect(0);
-				picking_armor_for_party = 0;
-				party_select_frame_alpha = 0;
-				scr_add_interaction_delay()
-				obj_player_sal.hasControl = true;
-			}
 			
+			if (!instance_exists(obj_battle)) {
+				if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_armor == 1) && (pressed_interact_timer == 0) {
+					global.party[0].armor_equiped = global.inv_armor[item_move_vertical].a_icon;
+					global.inv_armor[item_move_vertical].a_effect(0);
+					picking_armor_for_party = 0;
+					party_select_frame_alpha = 0;
+					scr_add_interaction_delay()
+					obj_player_sal.hasControl = true;
+				}
+			}
+			else {
+				if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_armor == 1) && (pressed_interact_timer == 0) {
+					global.party[0].armor_equiped = global.inv_armor[item_move_vertical].a_icon;
+					global.inv_armor[item_move_vertical].a_effect(0);
+					picking_armor_for_party = 0;
+					party_select_frame_alpha = 0;
+					scr_add_interaction_delay()
+					obj_player_sal.hasControl = true;
+					instance_destroy(obj_item_menu);
+				}	
+			}
 			break;
 		case 1:
 			if (global.follower_count == 1) {
@@ -894,31 +975,55 @@ function scr_select_party_armor() {
 				party_select_frame_x = portrait_other_x_3;
 				picked_armor = 1;
 			}
-					
-			if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_armor == 1) && (pressed_interact_timer == 0) {
-				global.party[1].armor_equiped = global.inv_armor[item_move_vertical].a_icon;
-				global.inv_armor[item_move_vertical].a_effect(1);
-				picking_armor_for_party = 0;
-				party_select_frame_alpha = 0;
-				scr_add_interaction_delay()
-				obj_player_sal.hasControl = true;
-			}
 			
+			if (!instance_exists(obj_battle)) {
+				if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_armor == 1) && (pressed_interact_timer == 0) {
+					global.party[1].armor_equiped = global.inv_armor[item_move_vertical].a_icon;
+					global.inv_armor[item_move_vertical].a_effect(1);
+					picking_armor_for_party = 0;
+					party_select_frame_alpha = 0;
+					scr_add_interaction_delay()
+					obj_player_sal.hasControl = true;
+				}
+			}
+			else {
+				if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_armor == 1) && (pressed_interact_timer == 0) {
+					global.party[1].armor_equiped = global.inv_armor[item_move_vertical].a_icon;
+					global.inv_armor[item_move_vertical].a_effect(1);
+					picking_armor_for_party = 0;
+					party_select_frame_alpha = 0;
+					scr_add_interaction_delay()
+					obj_player_sal.hasControl = true;
+					instance_destroy(obj_item_menu);
+				}	
+			}
 			break;
 		case 2:
 			party_select_frame_alpha = 1;
 			party_select_frame_x = portrait_other2_x_3;
 			picked_armor = 1;
 			
-			if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_armor == 1) && (pressed_interact_timer == 0) {
-				global.party[2].armor_equiped = global.inv_armor[item_move_vertical].a_icon;
-				global.inv_armor[item_move_vertical].a_effect(2);
-				picking_armor_for_party = 0;
-				party_select_frame_alpha = 0;
-				scr_add_interaction_delay()
-				obj_player_sal.hasControl = true;
+			if (!instance_exists(obj_battle)) {
+				if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_armor == 1) && (pressed_interact_timer == 0) {
+					global.party[2].armor_equiped = global.inv_armor[item_move_vertical].a_icon;
+					global.inv_armor[item_move_vertical].a_effect(2);
+					picking_armor_for_party = 0;
+					party_select_frame_alpha = 0;
+					scr_add_interaction_delay()
+					obj_player_sal.hasControl = true;
+				}
 			}
-			
+			else {
+				if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (picked_armor == 1) && (pressed_interact_timer == 0) {
+					global.party[2].armor_equiped = global.inv_armor[item_move_vertical].a_icon;
+					global.inv_armor[item_move_vertical].a_effect(2);
+					picking_armor_for_party = 0;
+					party_select_frame_alpha = 0;
+					scr_add_interaction_delay()
+					obj_player_sal.hasControl = true;
+					instance_destroy(obj_item_menu);
+				}	
+			}
 			break;
 	}
 		
@@ -926,7 +1031,7 @@ function scr_select_party_armor() {
 	if (keyboard_check_pressed(global.controls_back)) && (obj_player_sal.in_text == 0) && (picked_item == 1) && (pressed_interact_timer == 0) {
 		picking_armor_for_party = 0;
 		party_select_frame_alpha = 0;
-		audio_play_sound(snd_cancel, 2, false);
+		audio_play_sound(snd_cancel, 2, false, global.sound_volume * global.master_volume);
 		scr_add_interaction_delay()
 		obj_player_sal.hasControl = true;
 	}

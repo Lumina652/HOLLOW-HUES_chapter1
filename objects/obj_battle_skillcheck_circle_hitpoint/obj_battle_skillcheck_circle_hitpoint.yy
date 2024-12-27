@@ -2,7 +2,8 @@
   "$GMObject":"",
   "%Name":"obj_battle_skillcheck_circle_hitpoint",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_battle_skillcheck_circle_hitpoint",
@@ -30,9 +31,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_ball",
-    "path":"sprites/spr_ball/spr_ball.yy",
+    "name":"spr_quicktime_event_test_3",
+    "path":"sprites/spr_quicktime_event_test_3/spr_quicktime_event_test_3.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_quicktime_event_test_3",
+    "path":"sprites/spr_quicktime_event_test_3/spr_quicktime_event_test_3.yy",
+  },
   "visible":true,
 }

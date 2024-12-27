@@ -2,7 +2,7 @@ draw_sprite_stretched(spr_text_box_inv, obj_battle.anim_run, x,y,width_full,heig
 scr_draw_set_text(c_white, global.font_main, fa_left, fa_top);
 
 var _desc = !(description == -1);
-var _scroll_push = max(0, hover - (visible_options_max));
+var _scroll_push = max(0, hover - (visible_options_max - 1));
 
 for (var i = 0; i < (visible_options_max + _desc); i++) {
 	if (i >= array_length(options)) break;

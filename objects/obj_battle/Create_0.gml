@@ -7,6 +7,7 @@ instance_activate_object(obj_player_sal);
 instance_activate_object(obj_item_menu);
 instance_activate_object(obj_item_manager);
 instance_activate_object(obj_text_box);
+instance_activate_object(obj_camera);
 
 last_music = obj_music.target_song_asset;
 scr_set_song_ingame(battle_music, 0, 0, true);
@@ -57,6 +58,8 @@ battle_textbox = noone;
 battle_textbox_limit = 0;
 
 once = 0;
+once_move_begin = 0;
+once_move_after = 0;
 
 full_exp = 0;
 
@@ -90,6 +93,8 @@ refresh_render_order();
 
 function battle_state_select_action() {
 	once = 0;
+	once_move_after = 0;
+	once_move_begin = 0;
 	
 	if (!instance_exists(obj_battle_menu)) {
 		var _unit = unit_turn_order[turn];
@@ -104,7 +109,7 @@ function battle_state_select_action() {
 	
 		//if unit is player controlled:
 		if (_unit.object_index == obj_battle_unit_pc) {
-			if (!instance_exists(obj_battle_skillcheck_bar)) && (!instance_exists(obj_battle_skillcheck_circle)) {
+			if (!instance_exists(obj_battle_skillcheck_bar)) && (!instance_exists(obj_battle_skillcheck_circle)) && (!instance_exists(obj_item_menu)) && (!instance_exists(obj_text_box)) && (!instance_exists(obj_pause_menu)) {
 				//compile the action menu
 				var _menu_options = [];
 				var _sub_menus = {};
@@ -148,7 +153,7 @@ function battle_state_select_action() {
 		else { //if unit is an enemy
 			var _enemy_action = _unit.AIscript();
 			if (_enemy_action != -1) {
-				if (!instance_exists(obj_battle_skillcheck_bar)) && (!instance_exists(obj_battle_skillcheck_circle)) {
+				if (!instance_exists(obj_battle_skillcheck_bar)) && (!instance_exists(obj_battle_skillcheck_circle)) && (!instance_exists(obj_item_menu)) && (!instance_exists(obj_text_box)) && (!instance_exists(obj_pause_menu)) {
 					battle_begin_action(_unit.id, _enemy_action[0], _enemy_action[1]);
 				}
 			}
@@ -172,7 +177,7 @@ function battle_begin_action(_user, _action, _targets) {
 			image_index = 0;
 		}
 	}
-	if (!instance_exists(obj_battle_skillcheck_bar)) && (!instance_exists(obj_battle_skillcheck_circle)) {
+	if (!instance_exists(obj_battle_skillcheck_bar)) && (!instance_exists(obj_battle_skillcheck_circle)) && (!instance_exists(obj_item_menu)) && (!instance_exists(obj_text_box)) && (!instance_exists(obj_pause_menu)) {
 		battle_state = battle_state_perform_action;	
 	}
 }
@@ -182,6 +187,34 @@ function battle_state_perform_action() {
 	if (current_user.acting) {
 		//when it ends, perform action effect if it exists
 		if (current_user.image_index >= current_user.image_number -1) {
+			//move active units to the middle
+			if (once_move_begin == 0) {
+				//if user is player
+				if (current_user.object_index == obj_battle_unit_pc) {
+					if (current_action.damage_bool != DAMAGE.ADD) {
+						current_user.x += 140;
+						for (var i = 0; i < array_length(current_targets); ++i) {
+						    current_targets[i].x -= 140;
+						}
+					}
+				}
+				else {
+					current_user.x -= 140;
+					for (var i = 0; i < array_length(current_targets); ++i) {
+					    current_targets[i].x += 140;
+					}
+				}
+				//camera
+				/*
+				with (obj_camera) {
+					camera_set_view_size(view_camera[0], cam_width / 2, cam_height / 2);
+					camera_set_view_pos(view_camera[0], x - (cam_width * 0.5), y - (cam_height * 0.5));
+				}
+				*/
+				
+				once_move_begin = 1;
+			}
+			
 			with (current_user) {
 				sprite_index = sprites.idle;
 				image_index = 0;
@@ -204,8 +237,35 @@ function battle_state_perform_action() {
 		}
 	}
 	else { //wait for the delay and then end the turn
-		if (!instance_exists(obj_battle_effect)) && (!instance_exists(obj_battle_skillcheck_bar)) && (!instance_exists(obj_battle_skillcheck_circle)) {
+		if (!instance_exists(obj_battle_effect)) && (!instance_exists(obj_battle_skillcheck_bar)) && (!instance_exists(obj_battle_skillcheck_circle)) && (!instance_exists(obj_item_menu)) && (!instance_exists(obj_text_box)) && (!instance_exists(obj_pause_menu)) {
 			battle_wait_time_remaining--;
+			//set the positions back
+			if (once_move_after == 0) {
+				//if user is player
+				if (current_user.object_index == obj_battle_unit_pc) {
+					if (current_action.damage_bool != DAMAGE.ADD) {
+						current_user.x -= 140;
+						for (var i = 0; i < array_length(current_targets); ++i) {
+						    current_targets[i].x += 140;
+						}
+					}
+				}
+				else {
+					current_user.x += 140;
+					for (var i = 0; i < array_length(current_targets); ++i) {
+					    current_targets[i].x -= 140;
+					}
+				}
+				//camera
+				/*
+				with (obj_camera) {
+					camera_set_view_size(view_camera[0], cam_width, cam_height);
+					camera_set_view_pos(view_camera[0], x - (cam_width * 0.5), y - (cam_height * 0.5));
+				}
+				*/
+				
+				once_move_after = 1;
+			}
 			if (battle_wait_time_remaining == 0) {
 				battle_state = battle_state_victory_check;	
 			}
@@ -215,7 +275,7 @@ function battle_state_perform_action() {
 
 function battle_state_victory_check () {
 	if (enemy_reached_death == 0) {
-		scr_set_song_ingame(last_music, 60, 60, true);
+		scr_set_song_ingame(last_music, 60, 0, true);
 		instance_activate_all();
 		
 		for (var i = 0; i < array_length(party_units); ++i) {

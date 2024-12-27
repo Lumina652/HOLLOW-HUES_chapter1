@@ -12,6 +12,7 @@ global.actionLibrary =
 		userAnimation: "attack",
 		effectSprite: spr_hit_test,
 		effectOnTarget: MODE.ALWAYS,
+		damage_bool: DAMAGE.SUBTRACT,
 		func: function(_user, _targets)
 		{
 			var _crit = ceil(random_range(0, 15));
@@ -34,6 +35,7 @@ global.actionLibrary =
 		effectSprite: spr_hit_test,
 		effectOnTarget: MODE.ALWAYS,
 		event: EVENTS.SKILLCHECKBAR,
+		damage_bool: DAMAGE.SUBTRACT,
 		func: function(_user, _targets)
 		{
 			var _damage = ceil(_user.attack + random_range(-_user.attack * 0.25, _user.attack * 0.25) / _targets[0].defense);
@@ -45,7 +47,7 @@ global.actionLibrary =
 		name: "Sal Bomboclat",
 		description: "{0} attacks!",
 		subMenu: "Skills",
-		manaCost: 100,
+		manaCost: 10,
 		targetRequired: true,
 		targetEnemyByDefault: true,
 		targetAll: MODE.NEVER,
@@ -53,12 +55,16 @@ global.actionLibrary =
 		effectSprite: spr_hit_test,
 		effectOnTarget: MODE.ALWAYS,
 		event: EVENTS.SKILLCHECKCIRCLE,
+		damage_bool: DAMAGE.SUBTRACT,
 		func: function(_user, _targets)
 		{
 			if (_user.mana >= manaCost) {
 				var _damage = ceil(_user.attack * 1000)
 				battle_skillcheck_circle(_user, 4, _damage, _targets[0]);
 				battle_change_mana(_user, -manaCost);
+			}
+			else {
+				battle_change_mana(_user, -manaCost);	
 			}
 		}
 	},
@@ -74,6 +80,7 @@ global.actionLibrary =
 		userAnimation: "attack",
 		effectSprite: spr_hit_test,
 		effectOnTarget: MODE.ALWAYS,
+		damage_bool: DAMAGE.ADD,
 		func: function(_user, _targets)
 		{
 			var _heal = ceil(random_range(10, 40));
@@ -92,6 +99,7 @@ global.actionLibrary =
 		userAnimation: "attack",
 		effectSprite: spr_hit_test,
 		effectOnTarget: MODE.ALWAYS,
+		damage_bool: DAMAGE.SUBTRACT,
 		func: function(_user, _targets)
 		{
 			for (var i = 0; i < array_length(_targets); ++i) {
@@ -99,6 +107,115 @@ global.actionLibrary =
 				battle_change_hp(_targets[i], -_damage, 0, 0);
 				//battle_change_mana(_user, -manaCost);
 			}
+		}
+	}
+}
+	
+global.actionItemsLibrary =
+{
+	items_burger:
+	{
+		name: "Burger",
+		description: "{0} used a burger!",
+		subMenu: "Inventory",
+		manaCost: 0,
+		targetRequired: true,
+		targetEnemyByDefault: false,
+		targetAll: MODE.NEVER,
+		userAnimation: "attack",
+		effectSprite: spr_hit_test,
+		effectOnTarget: MODE.ALWAYS,
+		damage_bool: DAMAGE.ADD,
+		func: function(_user, _targets)
+		{
+			//item functionality:
+			battle_change_hp(_targets[0], 10, 0, 0);
+			
+			//delete item from action list
+			for (var i = 0; i < array_length(global.party); ++i) {
+			    var _find = function(_element) {
+					return (_element == global.actionItemsLibrary.items_burger); //CHANGE ITEMS_X
+				}
+				var _index_action = array_find_index(global.party[i].actions, _find);
+				array_delete(global.party[i].actions, _index_action, 1);
+			}
+			
+			//delete item from item inv
+			var _find_item = function(_element) {
+				return (_element == global.item_list.burger); //CHANGE ITEMS_X
+			}
+			var _index_item = array_find_index(global.inv_item, _find_item);
+			array_delete(global.inv_item, _index_item, 1);
+		}
+	},
+	items_manaburg:
+	{
+		name: "Mana burger",
+		description: "{0} used a mana burger!",
+		subMenu: "Inventory",
+		manaCost: 0,
+		targetRequired: true,
+		targetEnemyByDefault: false,
+		targetAll: MODE.NEVER,
+		userAnimation: "attack",
+		effectSprite: spr_hit_test,
+		effectOnTarget: MODE.ALWAYS,
+		damage_bool: DAMAGE.ADD,
+		func: function(_user, _targets)
+		{
+			//item functionality:
+			battle_change_mana(_targets[0], 50);
+			
+			//delete item from action list
+			for (var i = 0; i < array_length(global.party); ++i) {
+			    var _find = function(_element) {
+					return (_element == global.actionItemsLibrary.items_manaburg); //CHANGE ITEMS_X
+				}
+				var _index_action = array_find_index(global.party[i].actions, _find);
+				array_delete(global.party[i].actions, _index_action, 1);
+			}
+			
+			//delete item from item inv
+			var _find_item = function(_element) {
+				return (_element == global.item_list.mana_burg); //CHANGE ITEMS_X
+			}
+			var _index_item = array_find_index(global.inv_item, _find_item);
+			array_delete(global.inv_item, _index_item, 1);
+		}
+	},
+	items_cocacola:
+	{
+		name: "Cola",
+		description: "{0} used a COKE!",
+		subMenu: "Inventory",
+		manaCost: 0,
+		targetRequired: true,
+		targetEnemyByDefault: false,
+		targetAll: MODE.NEVER,
+		userAnimation: "attack",
+		effectSprite: spr_hit_test,
+		effectOnTarget: MODE.ALWAYS,
+		damage_bool: DAMAGE.ADD,
+		func: function(_user, _targets)
+		{
+			//item functionality:
+			battle_change_hp(_targets[0], -10, 0, 0);
+			
+			//delete item from action list
+			for (var i = 0; i < array_length(global.party); ++i) {
+			    var _find = function(_element) {
+					return (_element == global.actionItemsLibrary.items_cocacola); //CHANGE ITEMS_X
+				}
+				var _index_action = array_find_index(global.party[i].actions, _find);
+				array_delete(global.party[i].actions, _index_action, 1);
+			}
+			
+			//delete item from item inv
+			var _find_item = function(_element) {
+				return (_element == global.item_list.cola_espona); //CHANGE ITEMS_X
+			}
+			var _index_item = array_find_index(global.inv_item, _find_item);
+			array_delete(global.inv_item, _index_item, 1);
 		}
 	}
 }
@@ -113,6 +230,11 @@ enum EVENTS {
 	NONE = 0,
 	SKILLCHECKBAR = 1,
 	SKILLCHECKCIRCLE = 2
+}
+
+enum DAMAGE {
+	SUBTRACT = 0,
+	ADD = 1
 }
 
 global.party = 

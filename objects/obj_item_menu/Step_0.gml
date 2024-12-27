@@ -42,11 +42,11 @@ if (selected_menu == 0) {
 
 	//option pick sound
 	if (keyboard_check_pressed(global.controls_down)) || (keyboard_check_pressed(global.controls_up)) {
-		audio_play_sound(snd_option_pick, 2, false);
+		audio_play_sound(snd_option_pick, 2, false, global.sound_volume * global.master_volume);
 	}
 	//picking menu
 	if (keyboard_check_pressed(global.controls_interact)) && (pressed_interact_timer == 0) {
-		audio_play_sound(snd_confirm, 2, false);
+		audio_play_sound(snd_confirm, 2, false, global.sound_volume * global.master_volume);
 		switch (menu_button_pos) {
 			case 0:
 				menu_button = 0;
@@ -78,7 +78,7 @@ if (selected_menu == 0) {
 
 //Go back to picking menus
 if (keyboard_check_pressed(global.controls_back)) && (menu_button != -1) && (pressed_interact_timer == 0) && (obj_player_sal.in_text == 0) && (picking_item_for_party == 0) && (picking_weapon_for_party == 0) && (picking_armor_for_party == 0) {
-	audio_play_sound(snd_cancel, 2, false);
+	audio_play_sound(snd_cancel, 2, false, global.sound_volume * global.master_volume);
 	menu_button = -1;
 	obj_player_sal.hasControl = true;
 	selected_menu = 0;
@@ -90,7 +90,7 @@ if (keyboard_check_pressed(global.controls_back)) && (menu_button != -1) && (pre
 
 //closing with controls_back
 if (keyboard_check_pressed(global.controls_back)) && (menu_button == -1) && (pressed_interact_timer == 0) && (obj_player_sal.hasControl == true) && (obj_player_sal.in_text == 0) && (picking_item_for_party == 0) && (picking_weapon_for_party == 0) && (picking_armor_for_party == 0)  {
-	audio_play_sound(snd_cancel, 2, false);
+	audio_play_sound(snd_cancel, 2, false, global.sound_volume * global.master_volume);
 	obj_player_sal.in_inv = 0;
 	obj_player_sal.opened_inv = false;
 	instance_destroy(obj_item_menu);
@@ -131,14 +131,14 @@ switch (menu_button) {
 			//use an item
 			if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (pressed_interact_timer == 0) {
 				//global.inv_item[item_move_vertical].effect();
-				audio_play_sound(snd_confirm, 2, false);
+				audio_play_sound(snd_confirm, 2, false, global.sound_volume * global.master_volume);
 				scr_add_interaction_delay()
 				picking_item_for_party = 1;
 			}
 	
 			//drop the item
 			if (keyboard_check_pressed(global.controls_esc)) && (global.inv_item[item_move_vertical].can_drop == true) && (obj_player_sal.in_text == 0) && (pressed_interact_timer == 0) {
-				audio_play_sound(snd_throw_away_item, 2, false);
+				audio_play_sound(snd_throw_away_item, 2, false, global.sound_volume * global.master_volume);
 				array_delete(global.inv_item, global.inv_item[item_move_vertical], 1);
 				scr_add_interaction_delay()
 				picking_item_for_party = 0;
@@ -183,14 +183,14 @@ switch (menu_button) {
 			//use an item
 			if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (pressed_interact_timer == 0) {
 				//global.inv_item[item_move_vertical].effect();
-				audio_play_sound(snd_confirm, 2, false);
+				audio_play_sound(snd_confirm, 2, false, global.sound_volume * global.master_volume);
 				scr_add_interaction_delay()
 				picking_weapon_for_party = 1;
 			}
 	
 			//drop the item
 			if (keyboard_check_pressed(global.controls_esc)) && (obj_player_sal.in_text == 0) && (pressed_interact_timer == 0) {
-				audio_play_sound(snd_throw_away_item, 2, false);
+				audio_play_sound(snd_throw_away_item, 2, false, global.sound_volume * global.master_volume);
 				array_delete(global.inv_weapon, global.inv_weapon[item_move_vertical], 1);
 				scr_add_interaction_delay()
 				picking_weapon_for_party = 0;
@@ -235,14 +235,14 @@ switch (menu_button) {
 			//use an item
 			if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (pressed_interact_timer == 0) {
 				//global.inv_item[item_move_vertical].effect();
-				audio_play_sound(snd_confirm, 2, false);
+				audio_play_sound(snd_confirm, 2, false, global.sound_volume * global.master_volume);
 				scr_add_interaction_delay()
 				picking_armor_for_party = 1;
 			}
 	
 			//drop the item
 			if (keyboard_check_pressed(global.controls_esc)) && (obj_player_sal.in_text == 0) && (pressed_interact_timer == 0) {
-				audio_play_sound(snd_throw_away_item, 2, false);
+				audio_play_sound(snd_throw_away_item, 2, false, global.sound_volume * global.master_volume);
 				array_delete(global.inv_armor, global.inv_armor[item_move_vertical], 1);
 				scr_add_interaction_delay()
 				picking_armor_for_party = 0;
@@ -285,14 +285,14 @@ switch (menu_button) {
 		if (selected_item != -1) {
 			//use an item
 			if (keyboard_check_pressed(global.controls_interact)) && (obj_player_sal.in_text == 0) && (pressed_interact_timer == 0) {
-				audio_play_sound(snd_confirm, 2, false);
+				audio_play_sound(snd_confirm, 2, false, global.sound_volume * global.master_volume);
 				scr_add_interaction_delay()
 				global.inv_key[item_move_vertical].k_effect();
 			}
 			
 			//drop the item
 			if (keyboard_check_pressed(global.controls_esc)) && (global.inv_key[item_move_vertical].k_can_drop == true) && (obj_player_sal.in_text == 0) && (pressed_interact_timer == 0) {
-				audio_play_sound(snd_throw_away_item, 2, false);
+				audio_play_sound(snd_throw_away_item, 2, false, global.sound_volume * global.master_volume);
 				scr_add_interaction_delay()
 				array_delete(global.inv_key, global.inv_key[item_move_vertical], 1);
 			}

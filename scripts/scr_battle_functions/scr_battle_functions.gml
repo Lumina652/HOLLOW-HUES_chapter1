@@ -59,7 +59,7 @@ function battle_make_menu (_x, _y, _options, _desc = -1, _width = undefined, _he
 		options = _options;
 		description = _desc;
 		var _optionsCount = array_length(_options);
-		visible_options_max = _optionsCount;
+		visible_options_max = 6;
 		
 		//set up size
 		xymargin = 20;
@@ -86,7 +86,7 @@ function battle_make_menu (_x, _y, _options, _desc = -1, _width = undefined, _he
 			//scrolling?
 			if (height_line * (_optionsCount + !(description == -1)) > _height - (xymargin*2)) {
 				scrolling = true;
-				visible_options_max = 6;
+				visible_options_max = _optionsCount;
 			}
 		}
 	}

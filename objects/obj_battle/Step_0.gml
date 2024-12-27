@@ -1,5 +1,7 @@
 //DEBUG
 //show_debug_message(enemy_reached_death);
+x = camera_get_view_x(view_camera[0]);
+y = camera_get_view_y(view_camera[0]);
 //run state machine
 battle_state();
 //cursor control
@@ -60,12 +62,12 @@ if (cursor.active) {
 		//SFX
 		//option pick sound
 		if (_key_right) || (_key_left) || (_key_up) || (_key_down) {
-			audio_play_sound(snd_select, 6, false);	
+			audio_play_sound(snd_select, 6, false, global.sound_volume * global.master_volume);	
 		}
 		
 		//confirm action
 		if (_key_confirm) {
-			audio_play_sound(snd_confirm, 6, false);	
+			audio_play_sound(snd_confirm, 6, false, global.sound_volume * global.master_volume);	
 			with (obj_battle) battle_begin_action(cursor.active_user, cursor.active_action, cursor.active_target);
 			with (obj_battle_menu) instance_destroy();
 			active = false;
@@ -74,7 +76,7 @@ if (cursor.active) {
 		
 		//cancel action
 		if (_key_cancel) && !(_key_confirm) {
-			audio_play_sound(snd_cancel, 6, false);	
+			audio_play_sound(snd_cancel, 6, false, global.sound_volume * global.master_volume);	
 			with (obj_battle_menu) active = true;
 			active = false;
 			confirm_delay = 0;

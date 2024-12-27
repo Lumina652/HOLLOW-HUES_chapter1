@@ -7,7 +7,7 @@ skillcheck_circle_bar_rotate += _fulldiff;
 if (keyboard_check_pressed(global.controls_interact)) {
 	with (obj_battle_skillcheck_circle_hit) {
 		if (place_meeting(x,y,obj_battle_skillcheck_circle_hitpoint)) {
-			audio_play_sound(snd_malachi_teleport, 1, false);
+			//audio_play_sound(snd_malachi_teleport, 1, false);
 			instance_destroy(obj_battle_skillcheck_circle_hitpoint);
 			
 			with (other) {

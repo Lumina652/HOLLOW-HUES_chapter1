@@ -93,6 +93,15 @@ function scr_game_script(_text_id){
 			scr_text("You got a burger! It's not very usefull...", "Sal");
 			scr_text("Nice job Sal!", "Rose - normal", 1);
 			break;
+			
+		case "Inv_manatest":
+			scr_text("You picked up a mana burger!", "Sal");
+			break;
+			
+		case "Inv_manatest-USED":
+			scr_text("You ate the mana burger, you suddenly started to feel...funny.", "Sal");
+			scr_text("Your mana was increased!", "Sal");
+			break;
 		
 		case "Inv_Test2":
 			scr_text("You got COCA COLA ESPUMAAAAAA", "Sal");

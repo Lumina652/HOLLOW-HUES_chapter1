@@ -10,8 +10,8 @@
   "name":"obj_item_menu",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"INVENTORY",
+    "path":"folders/Objects/INVENTORY.yy",
   },
   "parentObjectId":null,
   "persistent":false,

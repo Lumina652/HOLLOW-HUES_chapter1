@@ -1,5 +1,6 @@
 depth = -99999;
 depth_text = depth;
+instance_deactivate_all(true);
 
 #region VARIABLES
 //PAUSEBOX VARIABLES
@@ -60,5 +61,3 @@ option_pos = 0
 #endregion
 
 //MUSIC
-last_volume = global.master_volume;
-global.master_volume = last_volume / 3;

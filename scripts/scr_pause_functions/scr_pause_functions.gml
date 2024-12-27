@@ -7,7 +7,6 @@ function scr_pause_game() {
 }
 
 function scr_resume_game() {
-	global.master_volume = last_volume;
 	obj_player_sal.hasControl = true;
 	obj_game.isPaused = false;
 	instance_destroy(obj_pause_menu);

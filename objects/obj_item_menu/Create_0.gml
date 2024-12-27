@@ -1,4 +1,4 @@
-depth = -9999;
+depth = -9999999;
 
 selected_item = -1;
 

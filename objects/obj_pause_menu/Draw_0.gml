@@ -39,7 +39,7 @@ option_pos = clamp(option_pos, 0, option_number - 1);
 
 //option pick sound
 if (keyboard_check_pressed(global.controls_down)) || (keyboard_check_pressed(global.controls_up)) {
-	audio_play_sound(snd_option_pick, 2, false);	
+	audio_play_sound(snd_option_pick, 2, false, global.sound_volume * global.master_volume);	
 }
 
 //option position
@@ -63,11 +63,11 @@ if (keyboard_check_pressed(global.controls_interact)) || (keyboard_check_pressed
 	switch (option_pos) {
 		case 0:
 			//resume game
+			instance_activate_all();
 			scr_resume_game();
 			break;
 		case 1:
 			instance_create_depth(0, 0, -99999, obj_settings_menu);
-			instance_destroy();
 			break;
 		case 2:
 			//save stuff

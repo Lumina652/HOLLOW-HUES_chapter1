@@ -122,7 +122,7 @@ if (image_index == 1) || (image_index == 3) {
 			instance_create_layer(x, y + 10, "WalkingEffect", obj_ocean_walk);	
 		}
 		
-		audio_play_sound(choose(snd_sand_0, snd_sand_1, snd_sand_2, snd_sand_3, snd_sand_4, snd_sand_5, snd_sand_6), 6, false);
+		audio_play_sound(choose(snd_sand_0, snd_sand_1, snd_sand_2, snd_sand_3, snd_sand_4, snd_sand_5, snd_sand_6), 6, false, global.sound_volume * global.master_volume);
 	}
 }
 #endregion
@@ -149,15 +149,8 @@ if (in_inv > 1) {
 
 #endregion
 #region HP AND MANA TRACKER
-if (global.party[0].hp > global.party[0].hpMax) {
-	global.party[0].hp = global.party[0].hpMax;	
-}
-
-if (global.party[1].hp > global.party[1].hpMax) {
-	global.party[1].hp = global.party[1].hpMax;	
-}
-
-if (global.party[2].hp > global.party[2].hpMax) {
-	global.party[2].hp = global.party[2].hpMax;	
+for (var i = 0; i < array_length(global.party); ++i) {
+    if (global.party[i].hp > global.party[i].hpMax) global.party[i].hp = global.party[i].hpMax;
+	if (global.party[i].mana > global.party[i].manaMax) global.party[i].mana = global.party[i].manaMax;
 }
 #endregion

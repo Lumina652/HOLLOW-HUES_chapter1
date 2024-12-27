@@ -32,12 +32,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_ball",
-    "path":"sprites/spr_ball/spr_ball.yy",
+    "name":"spr_quicktime_event_test_1",
+    "path":"sprites/spr_quicktime_event_test_1/spr_quicktime_event_test_1.yy",
   },
-  "spriteMaskId":{
-    "name":"spr_ball",
-    "path":"sprites/spr_ball/spr_ball.yy",
-  },
+  "spriteMaskId":null,
   "visible":true,
 }

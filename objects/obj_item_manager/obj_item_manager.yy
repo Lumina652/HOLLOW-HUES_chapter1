@@ -8,8 +8,8 @@
   "name":"obj_item_manager",
   "overriddenProperties":[],
   "parent":{
-    "name":"MANAGERS",
-    "path":"folders/Objects/MANAGERS.yy",
+    "name":"INVENTORY",
+    "path":"folders/Objects/INVENTORY.yy",
   },
   "parentObjectId":null,
   "persistent":true,
