@@ -1,16 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_rose_follower",
+  "%Name":"obj_battle_skillcheck_circle_combo",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_rose_follower",
+  "name":"obj_battle_skillcheck_circle_combo",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"BATTLE",
+    "path":"folders/Objects/BATTLE.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -31,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_rose_walk_down",
-    "path":"sprites/spr_rose_walk_down/spr_rose_walk_down.yy",
+    "name":"spr_quicktime_event_test_1",
+    "path":"sprites/spr_quicktime_event_test_1/spr_quicktime_event_test_1.yy",
   },
   "spriteMaskId":null,
   "visible":true,

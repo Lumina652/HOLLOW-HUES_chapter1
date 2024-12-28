@@ -4,6 +4,12 @@ function scr_game_script(_text_id){
 	switch (_text_id) {
 		
 		#region battle_lines
+		case "EXP":
+			scr_text("You won! You got {0} exp!");
+			break;
+		case "LEVELUP":
+			scr_text("You leveled up!");
+			break;
 		case "Battle_Generic":
 			scr_text("The wind flows by. The smell of laziness fills your senses.", "Sal");
 			break;

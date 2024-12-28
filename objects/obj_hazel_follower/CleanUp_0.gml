@@ -1,1 +1,0 @@
-ds_queue_clear(following_que2);

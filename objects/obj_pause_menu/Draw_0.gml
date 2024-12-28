@@ -67,7 +67,7 @@ if (keyboard_check_pressed(global.controls_interact)) || (keyboard_check_pressed
 			scr_resume_game();
 			break;
 		case 1:
-			instance_create_depth(0, 0, -99999, obj_settings_menu);
+			//instance_create_depth(0, 0, -99999, obj_settings_menu);
 			break;
 		case 2:
 			//save stuff

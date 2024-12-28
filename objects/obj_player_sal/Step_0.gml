@@ -154,3 +154,17 @@ for (var i = 0; i < array_length(global.party); ++i) {
 	if (global.party[i].mana > global.party[i].manaMax) global.party[i].mana = global.party[i].manaMax;
 }
 #endregion
+#region FOLLOWERS
+//update recordings
+if (x != xprevious) || (y != yprevious) {
+	for (var i = followers_array_size-1; i > 0; i--) {
+		followers_pos_x[i] = followers_pos_x[i-1];
+		followers_pos_y[i] = followers_pos_y[i-1];
+		followers_to_record_sprite[i] = followers_to_record_sprite[i-1];
+	}
+	followers_pos_x[0] = x;
+	followers_pos_y[0] = y;
+	followers_to_record_sprite[0] = sprite_index;
+	
+}
+#endregion

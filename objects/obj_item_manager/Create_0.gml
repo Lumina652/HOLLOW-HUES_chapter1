@@ -102,7 +102,7 @@ global.item_list = {
 	
 	mana_burg : new scr_create_item(
 		"Mana burger", 
-		"Where did you find this?\nMANA - +50", 
+		"Where did you find this?\nMANA: +50", 
 		spr_test_burger_1, 
 		spr_ball,
 		true,
@@ -129,7 +129,7 @@ global.item_list = {
 global.weapon_list = {
 	Bachi : new scr_create_weapon(
 		"Bachi",
-		"Used for taiko drumming.\nDMG - +6",
+		"Used for taiko drumming\nDMG: +6",
 		spr_test_weapon,
 		spr_ball,
 		"Bachi_Test",
@@ -154,7 +154,7 @@ global.weapon_list = {
 global.armor_list = {
 	Garnek : new scr_create_armor(
 		"Garnek",
-		"ZUPA!!! OBIAD!!!\nDEFENSE - +10",
+		"ZUPA!!! OBIAD!!!\nDEFENSE: +10",
 		spr_test_armor,
 		spr_ball,
 		"Garnek_Test",
@@ -177,7 +177,7 @@ global.armor_list = {
 	
 	Scarf : new scr_create_armor(
 		"Scarf",
-		"LOL\nDEFENSE - +3",
+		"LOL\nDEFENSE: +3",
 		spr_test_armor_1,
 		spr_ball,
 		"Garnek_Test",

@@ -1,3 +1,5 @@
+show_debug_message(target_hueshift_value);
+
 anim_run += 6 / room_speed;
 //bg
 draw_sprite(battle_background, 0, x, y);
@@ -6,7 +8,7 @@ draw_sprite(battle_background, 0, x, y);
 var _unit_with_current_turn = unit_turn_order[turn].id;
 for (var i = 0; i < array_length(unit_render_order); i++) {
 	with (unit_render_order[i]) {
-		draw_self();	
+		draw_self();
 	}
 }
 
@@ -61,24 +63,34 @@ if (cursor.active) {
 	with (cursor) {
 		if (active_target != noone) {
 			if (!is_array(active_target)) { //single target
-				draw_set_alpha(sin(get_timer()/50000)+1);
-				draw_sprite(spr_arrow_left_sal, 0, active_target.x, active_target.y);
 				with (active_target) {
-					shader_set(sh_whiteflash);	
+					shader_set(sh_hue_white);
+					obj_battle.target_hueshift_value = clamp(sin(get_timer()/90000) + 1, -999, 0.4);
+					var _shader_alpha = shader_get_uniform(sh_hue_white, "uniform_val");
+					shader_set_uniform_f(_shader_alpha, obj_battle.target_hueshift_value);
+					draw_self();
+					shader_reset();
 				}
+				
+				//draw_set_alpha(sin(get_timer()/50000)+1);
+				draw_sprite(spr_arrow_left_sal, 0, active_target.x, active_target.y);
 				draw_set_alpha(1.0);
-				shader_reset();
 			}
 			else { //all targets
-				draw_set_alpha(sin(get_timer()/50000)+1);
+				//draw_set_alpha(sin(get_timer()/50000)+1);
 				for (var i = 0; i < array_length(active_target); ++i) {
-				    draw_sprite(spr_arrow_left_sal, 0, active_target[i].x, active_target[i].y);
-					with (active_target[i]) {
-						shader_set(sh_whiteflash);	
+				    with (active_target[i]) {
+						shader_set(sh_hue_white);
+						obj_battle.target_hueshift_value = clamp(sin(get_timer()/90000) + 1, -999, 0.4);
+						var _shader_alpha = shader_get_uniform(sh_hue_white, "uniform_val");
+						shader_set_uniform_f(_shader_alpha, obj_battle.target_hueshift_value);
+						draw_self();
+						shader_reset();
 					}
+					
+					draw_sprite(spr_arrow_left_sal, 0, active_target[i].x, active_target[i].y);
 				}
 				draw_set_alpha(1.0);
-				shader_reset();
 			}
 		}
 	}

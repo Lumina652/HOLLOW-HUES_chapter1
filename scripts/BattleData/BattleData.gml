@@ -15,6 +15,7 @@ global.actionLibrary =
 		damage_bool: DAMAGE.SUBTRACT,
 		func: function(_user, _targets)
 		{
+			//NORMAL ATTACK
 			var _crit = ceil(random_range(0, 15));
 			var _crit_damage = 0;
 			if (_crit == 5) _crit_damage = 15;
@@ -38,6 +39,7 @@ global.actionLibrary =
 		damage_bool: DAMAGE.SUBTRACT,
 		func: function(_user, _targets)
 		{
+			//COUNTERABLE
 			var _damage = ceil(_user.attack + random_range(-_user.attack * 0.25, _user.attack * 0.25) / _targets[0].defense);
 			battle_skillcheck_bar(_targets[0], 3, _damage, _user);
 		}
@@ -58,9 +60,37 @@ global.actionLibrary =
 		damage_bool: DAMAGE.SUBTRACT,
 		func: function(_user, _targets)
 		{
+			//CIRCLE SKILL CHECK
 			if (_user.mana >= manaCost) {
-				var _damage = ceil(_user.attack * 1000)
-				battle_skillcheck_circle(_user, 4, _damage, _targets[0]);
+				var _damage = ceil(_user.attack * 3)
+				battle_skillcheck_circle(_user, 6.5, _damage, _targets[0]);
+				battle_change_mana(_user, -manaCost);
+			}
+			else {
+				battle_change_mana(_user, -manaCost);	
+			}
+		}
+	},
+	attackcombo_test:
+	{
+		name: "Wombo Combo",
+		description: "{0} attacks!",
+		subMenu: "Skills",
+		manaCost: 50,
+		targetRequired: true,
+		targetEnemyByDefault: true,
+		targetAll: MODE.NEVER,
+		userAnimation: "attack",
+		effectSprite: spr_hit_test,
+		effectOnTarget: MODE.ALWAYS,
+		event: EVENTS.SKILLCHECKCIRCLE,
+		damage_bool: DAMAGE.SUBTRACT,
+		func: function(_user, _targets)
+		{
+			//CIRCLE SKILL CHECK MULTIPLE TIMES
+			if (_user.mana >= manaCost) {
+				var _damage = ceil(_user.attack * 20);
+				battle_skillcheck_circle_combo(_user, 6, 5, _damage, _targets[0]);
 				battle_change_mana(_user, -manaCost);
 			}
 			else {
@@ -241,11 +271,11 @@ global.party =
 [
 	{
 		name: "Sal",
-		hp: 100,
-		hpMax: 100,
+		hp: 90,
+		hpMax: 90,
 		mana: 100,
 		manaMax: 100,
-		attack: 10,
+		attack: 1,
 		defense: 1,
 		weapon_equiped: noone,
 		armor_equiped: noone,
@@ -254,17 +284,17 @@ global.party =
 		level: 1,
 		xp: 0,
 		sprites: { idle: spr_player_walk_down, attack: spr_player_walk_up, defend: spr_player_walk_left, down: spr_player_walk_right},
-		actions: [global.actionLibrary.attack, global.actionLibrary.attack2test, global.actionLibrary.healtest, global.actionLibrary.ice]
+		actions: [global.actionLibrary.attack, global.actionLibrary.attack2test, global.actionLibrary.healtest, global.actionLibrary.ice, global.actionLibrary.attackcombo_test]
 	}
 	,
 	{
 		name: "Rose",
-		hp: 100,
-		hpMax: 100,
+		hp: 80,
+		hpMax: 80,
 		mana: 100,
 		manaMax: 100,
-		attack: 5,
-		defense: 1,
+		attack: 1,
+		defense: 3,
 		weapon_equiped: noone,
 		armor_equiped: noone,
 		last_equiped_weapon: -1,
@@ -281,8 +311,8 @@ global.party =
 		hpMax: 100,
 		mana: 100,
 		manaMax: 100,
-		attack: 10,
-		defense: 1,
+		attack: 3,
+		defense: 2,
 		weapon_equiped: noone,
 		armor_equiped: noone,
 		last_equiped_weapon: -1,
@@ -307,7 +337,7 @@ global.enemies =
 		defense: 2,
 		sprites: { idle: spr_malachi_idle_1, attack: spr_malachi_flee_1},
 		actions: [global.actionLibrary.attack_enemy],
-		xpValue: 15,
+		xpValue: 5,
 		battle_dialogue: [noone],    //"Battle_Generic"],
 		AIscript: function()
 		{

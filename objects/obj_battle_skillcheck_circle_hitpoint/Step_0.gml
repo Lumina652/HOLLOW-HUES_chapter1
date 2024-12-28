@@ -1,1 +1,2 @@
-image_angle = obj_battle_skillcheck_circle.skillcheck_circle_bar_goal;
+if (instance_exists(obj_battle_skillcheck_circle)) image_angle = obj_battle_skillcheck_circle.skillcheck_circle_bar_goal;
+if (instance_exists(obj_battle_skillcheck_circle_combo)) image_angle = obj_battle_skillcheck_circle_combo.skillcheck_circle_bar_goal;

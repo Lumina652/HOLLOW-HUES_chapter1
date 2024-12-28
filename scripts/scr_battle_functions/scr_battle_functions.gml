@@ -163,3 +163,14 @@ function battle_skillcheck_circle(_party, _diff, _hp, _enemy) {
 		hp_party = _party;
 	}
 }
+
+function battle_skillcheck_circle_combo(_party, _diff, _loops, _hp, _enemy) {
+	instance_create_depth(_party.x, _party.y, -99999, obj_battle_skillcheck_circle_combo);
+	with (obj_battle_skillcheck_circle_combo) {
+		skillcheck_circle_bar_diff = _diff;
+		how_many = _loops;
+		hp_enemy = _enemy;
+		hp_amount = _hp;
+		hp_party = _party;
+	}
+}

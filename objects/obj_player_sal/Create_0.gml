@@ -48,11 +48,19 @@ armor_equiped = noone;
 alarm[0] = 1 * room_speed;
 
 instance_create_layer(x, y, "Player", obj_interact);
-//instance_create_layer(x, y, "Player", obj_rose_follower);
-//instance_create_layer(x, y, "Player", obj_hazel_follower);
+instance_create_layer(x, y, "Player", obj_rose_follower);
+instance_create_layer(x, y, "Player", obj_hazel_follower);
 #endregion
 
 #region FOLLOWERS
+followers_array_size = 94;
+
+for (var i = followers_array_size-1; i >= 0; --i) {
+    followers_pos_x[i] = x;
+	followers_pos_y[i] = y;
+	followers_to_record_sprite[i] = spr_player_walk_down;
+}
+
 
 if (instance_exists(obj_rose_follower)) {
 	global.follower_count ++;
