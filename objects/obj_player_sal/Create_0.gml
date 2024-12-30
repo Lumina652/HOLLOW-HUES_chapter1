@@ -3,13 +3,15 @@ enum playerAnims {
 	LEFT,
 	UP,
 	RIGHT,
-	DOWN
+	DOWN,
+	LAYING
 }
 
 sprite[playerAnims.LEFT] = spr_player_walk_left;
 sprite[playerAnims.UP] = spr_player_walk_up;
 sprite[playerAnims.RIGHT] = spr_player_walk_right;
 sprite[playerAnims.DOWN] = spr_player_walk_down;
+sprite[playerAnims.LAYING] = spr_player_idle;
 
 
 #endregion
@@ -48,8 +50,8 @@ armor_equiped = noone;
 alarm[0] = 1 * room_speed;
 
 instance_create_layer(x, y, "Player", obj_interact);
-instance_create_layer(x, y, "Player", obj_rose_follower);
-instance_create_layer(x, y, "Player", obj_hazel_follower);
+//instance_create_layer(x, y, "Player", obj_rose_follower);
+//instance_create_layer(x, y, "Player", obj_hazel_follower);
 #endregion
 
 #region FOLLOWERS

@@ -9,6 +9,10 @@ function scr_make_inventory_stats(){
 	draw_sprite_ext(other_frame_sprite_stats, 0, _bgx + 70, _bgy + 70, 14.5, 0.05, 0, c_white, 0.5);
 	draw_sprite_ext(other_frame_sprite_stats, 0, _bgx + 70, _bgy + 140, 14.5, 0.05, 0, c_white, 0.5);
 	
+	//money
+	draw_sprite_ext(spr_text_box_inv, bg_img, 360 + _bgx, 190 + _bgy, 5, 1.5, 0, c_white, 1);
+	draw_text(364 + _bgx, 198 + _bgy, string(global.party_money) + "$");
+	
 	//portraits
 	switch (global.follower_count) {
 		case 0:

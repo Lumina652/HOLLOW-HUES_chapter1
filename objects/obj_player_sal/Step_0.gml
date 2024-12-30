@@ -94,7 +94,9 @@ if (xspd == 0) && (yspd == 0) {
 	image_index = 0;
 }
 else {
-	sprite_index = sprite[faceDir];
+	if (hasControl) {
+		sprite_index = sprite[faceDir];	
+	}
 }
 #endregion
 #region COLLISION

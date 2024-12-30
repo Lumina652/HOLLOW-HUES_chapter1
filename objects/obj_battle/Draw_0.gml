@@ -1,4 +1,4 @@
-show_debug_message(target_hueshift_value);
+//show_debug_message(target_hueshift_value);
 
 anim_run += 6 / room_speed;
 //bg
@@ -98,7 +98,7 @@ if (cursor.active) {
 
 //battle text
 if (battle_text != "") {
-	draw_sprite_stretched(spr_text_box_inv, anim_run, x + 200, y+8,20*12,20*3.5);
+	draw_sprite_stretched(spr_text_box_inv, anim_run, x + 180, y+8,20*14,20*3.5);
 	scr_draw_set_text(c_white, global.font_main, fa_center, fa_center);
 	draw_text((x+200) + 120, (y+8) + 35 , battle_text);
 }

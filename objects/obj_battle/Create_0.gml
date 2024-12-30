@@ -39,8 +39,8 @@ battle_wait_time_remaining = 0;
 battle_won_time = 6 * 60;
 battle_won_time_actual = 0;
 battle_text = "";
-won_text = "You won! You got {0} EXP!";
-levelup_text = "You won! You got {0} EXP!\n\nYou leveled up!";
+won_text = "You won! You got {0} EXP and {1}$!";
+levelup_text = "You won! You got {0} EXP and {1}$!\n\nYou leveled up!";
 current_user = 0;
 current_action = -1;
 current_targets = noone;
@@ -68,6 +68,9 @@ once_move_begin = 0;
 once_move_after = 0;
 
 full_exp = 0;
+full_money = 0;
+
+stupid_text_array = [];
 
 //make enemies cool
 for (var i = 0; i < array_length(enemies); i++) {
@@ -282,6 +285,9 @@ function battle_state_perform_action() {
 function battle_state_victory_check () {
 	if (enemy_reached_death == 0) {
 		if (once == 0) {
+			//update full exp and full money
+		array_push(stupid_text_array, full_exp);
+		array_push(stupid_text_array, full_money);
 			battle_won_time_actual = battle_won_time;
 			//battle_text = levelup_text;
 			for (var i = 0; i < array_length(party_units); ++i) {
@@ -291,6 +297,7 @@ function battle_state_victory_check () {
 			
 				//add exp
 				global.party[i].xp += full_exp;
+				global.party_money += full_money;
 			
 				//levels
 				var _level = global.party[i].level;
@@ -302,10 +309,10 @@ function battle_state_victory_check () {
 					global.party[i].manaMax += 10;
 					global.party[i].attack += 1;
 					global.party[i].defense += 2;
-					battle_text = string_ext(levelup_text, [full_exp]);
+					battle_text = string_ext(levelup_text, stupid_text_array);
 				}
 				else {
-					battle_text = string_ext(won_text, [full_exp]);
+					battle_text = string_ext(won_text, stupid_text_array);
 				}
 			}
 			once = 1;

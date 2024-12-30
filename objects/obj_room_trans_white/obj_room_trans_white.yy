@@ -9,8 +9,8 @@
   "name":"obj_room_trans_white",
   "overriddenProperties":[],
   "parent":{
-    "name":"TRANSITIONS",
-    "path":"folders/Objects/TRANSITIONS.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

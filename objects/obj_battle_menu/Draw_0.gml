@@ -1,4 +1,5 @@
-draw_sprite_stretched(spr_text_box_inv, obj_battle.anim_run, x,y,width_full,height_full);
+img += ispeed;
+draw_sprite_stretched(spr_text_box_inv, ispeed, x,y,width_full,height_full);
 scr_draw_set_text(c_white, global.font_main, fa_left, fa_top);
 
 var _desc = !(description == -1);

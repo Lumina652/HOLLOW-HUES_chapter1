@@ -267,6 +267,8 @@ enum DAMAGE {
 	ADD = 1
 }
 
+global.party_money = 0;
+
 global.party = 
 [
 	{
@@ -338,6 +340,7 @@ global.enemies =
 		sprites: { idle: spr_malachi_idle_1, attack: spr_malachi_flee_1},
 		actions: [global.actionLibrary.attack_enemy],
 		xpValue: 5,
+		moneyValue: 3,
 		battle_dialogue: [noone],    //"Battle_Generic"],
 		AIscript: function()
 		{
@@ -362,6 +365,7 @@ global.enemies =
 		sprites: { idle: spr_malachi_idle_1, attack: spr_malachi_flee_1},
 		actions: [global.actionLibrary.attack],
 		xpValue: 66666,
+		moneyValue: 1,
 		battle_dialogue: ["Boss_Malachi0", "Boss_Malachi1", "Boss_Malachi2", "Boss_Malachi3", "Boss_Malachi4", "Boss_Malachi5", "Boss_Malachi6", "Boss_Malachi7", "Boss_Malachi8", "Boss_Malachi9", "Boss_Malachi10"],
 		AIscript: function()
 		{
