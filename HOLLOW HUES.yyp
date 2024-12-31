@@ -105,6 +105,7 @@
     {"id":{"name":"obj_rose_follower","path":"objects/obj_rose_follower/obj_rose_follower.yy",},},
     {"id":{"name":"obj_settings_menu","path":"objects/obj_settings_menu/obj_settings_menu.yy",},},
     {"id":{"name":"obj_settings","path":"objects/obj_settings/obj_settings.yy",},},
+    {"id":{"name":"obj_shop_keeper_parent","path":"objects/obj_shop_keeper_parent/obj_shop_keeper_parent.yy",},},
     {"id":{"name":"obj_shop_menu","path":"objects/obj_shop_menu/obj_shop_menu.yy",},},
     {"id":{"name":"obj_slider","path":"objects/obj_slider/obj_slider.yy",},},
     {"id":{"name":"obj_test_cut_verdantis","path":"objects/obj_test_cut_verdantis/obj_test_cut_verdantis.yy",},},

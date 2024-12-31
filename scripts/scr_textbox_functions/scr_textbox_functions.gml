@@ -196,5 +196,5 @@ function scr_textbox_cutscene_destroy() {
 		case 10:
 			//
 			break;
-	}	
+	}
 }

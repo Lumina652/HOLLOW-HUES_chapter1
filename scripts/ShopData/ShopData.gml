@@ -41,7 +41,9 @@ function scr_shop_buy_item(_inv ,_item) {
 	global.party_money -= _item.cost;
 	switch (_item) {
 		case global.shopLibrary.shop_burger:
+			//inventory
 			array_push(_inv, global.item_list.burger);
+			//battle
 			for (var i = 0; i < array_length(global.party); ++i) {
 				array_push(global.party[i].actions, global.actionItemsLibrary.items_burger);
 			}
@@ -59,4 +61,8 @@ function scr_shop_buy_item(_inv ,_item) {
 			}
 			break;
 	}
+}
+
+function scr_shop_make() {
+	instance_create_depth(x,y,-9999,obj_shop_menu);		
 }

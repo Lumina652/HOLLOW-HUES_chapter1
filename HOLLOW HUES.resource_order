@@ -67,6 +67,7 @@
     {"name":"obj_room_trans","order":17,"path":"objects/obj_room_trans/obj_room_trans.yy",},
     {"name":"obj_rose_follower","order":7,"path":"objects/obj_rose_follower/obj_rose_follower.yy",},
     {"name":"obj_settings_menu","order":1,"path":"objects/obj_settings_menu/obj_settings_menu.yy",},
+    {"name":"obj_shop_keeper_parent","order":1,"path":"objects/obj_shop_keeper_parent/obj_shop_keeper_parent.yy",},
     {"name":"obj_test_sign","order":6,"path":"objects/obj_test_sign/obj_test_sign.yy",},
     {"name":"obj_test_slime","order":1,"path":"objects/obj_test_slime/obj_test_slime.yy",},
     {"name":"obj_text_box","order":6,"path":"objects/obj_text_box/obj_text_box.yy",},

@@ -16,7 +16,3 @@ if (keyboard_check_pressed(ord("F"))) {
         window_set_fullscreen(true);
     }
 }
-
-if (keyboard_check_pressed(ord("L"))) {
-	instance_create_depth(x,y,depth,obj_shop_menu);	
-}

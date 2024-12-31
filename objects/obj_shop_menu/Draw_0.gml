@@ -1,6 +1,6 @@
 //DRAW ALL BOXES
 var _x = camera_get_view_x(view_camera[0]);
-var _y = camera_get_view_x(view_camera[0]);
+var _y = camera_get_view_y(view_camera[0]);
 //im a big dum dum and decided very late that I want these at the bottom of the screen instead of at the top
 var _move_down = 300;
 var _move_down_small = 80;
@@ -14,22 +14,57 @@ draw_sprite_ext(shop_box_sprite, shop_box_img ,shop_menubox_x + _x, shop_menubox
 
 //shop list
 scr_draw_set_text(c_white, global.font_main, fa_left, fa_top);
-if (array_length(shop_item_list) <= shop_item_list_max_on_screen) {
-	for (var i = 0; i < array_length(shop_item_list); i++) {
-	    draw_text_ext(shop_item_x + _x, ((shop_item_y * (i + 1) / 2) + shop_item_y/2) + _y  + _move_down, shop_item_list[i].name, 0, shop_item_w);
-		//shop_cursor_y = ((shop_cursor_y * (i + 1) / 2) + shop_cursor_y/2)
+var _scroll_push = max(0, shop_current_item_list - (shop_item_list_max_on_screen - 1));
+for (var i = 0; i < shop_item_list_max_on_screen; i++) {
+	if (i >= array_length(shop_item_list)) break;
+	var _option_to_show = i + _scroll_push;
+	if (shop_current_item_list == _option_to_show) {
+		draw_set_color(c_yellow);
 	}
+	else {
+		draw_set_color(c_white);	
+	}
+	draw_text_ext(shop_item_x + _x, ((shop_item_y * (i + 1) / 2) + shop_item_y/2) + _y  + _move_down, shop_item_list[_option_to_show].name, 0, shop_item_w); 
 }
 
+//CURSOR
 draw_sprite(spr_arrow_left_sal, 0, shop_cursor_x + _x, shop_cursor_y + _y + _move_down);
-shop_cursor_y = ((shop_cursor_y * (shop_current_item_list + 1) / 2) + shop_cursor_y/2)
+
+//option position
+switch (shop_current_item_list) {
+	case 0:
+		shop_cursor_y = shop_cursor_y_1;
+		break;
+	case 1:
+		shop_cursor_y = shop_cursor_y_2;
+		break;
+	case 2:
+		shop_cursor_y = shop_cursor_y_3;
+		break;
+	case 3:
+		shop_cursor_y = shop_cursor_y_4;
+		break;
+	case 4:
+		shop_cursor_y = shop_cursor_y_5;
+		break;
+}
 
 //icon of current item
 draw_sprite_ext(shop_item_list[shop_current_item_list].icon, 0, shop_icon_x + _x, shop_icon_y + _y + _move_down, shop_icon_width, shop_icon_height, 0, c_white, 1);
 
+draw_set_color(c_white);
 //TEXT
 draw_text_ext(shop_item_name_x + _x, shop_item_name_y + _y + _move_down + 4, string(shop_item_list[shop_current_item_list].name), 0, shop_item_name_w);
+
+if (shop_item_list[shop_current_item_list].cost > global.party_money) {
+	draw_set_color(c_gray);	
+}
+else {
+	draw_set_color(c_white);	
+}
+
 draw_text_ext(shop_cost_x + _x, shop_cost_y + _y + 4 + _move_down, "COST: " + string(shop_item_list[shop_current_item_list].cost) + "$", 0, shop_cost_w);
+draw_set_color(c_white);
 draw_text_ext(shop_description_x + _x, shop_description_y + _y + _move_down, string(shop_item_list[shop_current_item_list].description), 18, shop_description_w);
 draw_text_ext(shop_money_x + _x, shop_space_y + _y + 4 + _move_down_small, "MONEY: " + string(global.party_money) + "$", 0, shop_money_w);
 

@@ -75,7 +75,13 @@ function scr_game_script(_text_id){
 			scr_text("Hello! I am testing all the different ways of pausing text. You know? Maybe, it, will, work! :3");
 				scr_text_float(0, 95);
 			break;
-		
+		case "SHOP_TEST_ENTER":
+			scr_text("Hello! What a fine evening we're having.", "Malachi", 1);
+			scr_text("Don't you agree?", "Malachi", 1);
+			break;
+		case "SHOP_TEST_LEAVE":
+			scr_text("BYE BITCH!!!", "test character", 1);
+			break;
 		#endregion
 		#region Interacting
 		case "Ball":

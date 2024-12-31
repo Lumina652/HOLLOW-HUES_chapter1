@@ -9,3 +9,9 @@ else {
 		scr_textbox_cutscene_destroy();
 	}
 }
+
+if (obj_player_sal.in_shop) {
+	if (page >= page_number - 1) && (option_number <= 0) {
+		scr_shop_make();
+	}
+}

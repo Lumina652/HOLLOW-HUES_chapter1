@@ -1,9 +1,14 @@
 depth = -9999999;
 
+obj_player_sal.hasControl = false;
+
 #region SHOPBOX
 shop_item_list = [];
 
 //PUT IN SHOP KEEPER
+array_push(shop_item_list, global.shopLibrary.shop_burger);
+array_push(shop_item_list, global.shopLibrary.shop_cola);
+array_push(shop_item_list, global.shopLibrary.shop_mana_burg);
 array_push(shop_item_list, global.shopLibrary.shop_burger);
 array_push(shop_item_list, global.shopLibrary.shop_cola);
 array_push(shop_item_list, global.shopLibrary.shop_mana_burg);
@@ -78,5 +83,10 @@ shop_cursor_y = 47;
 //functionality
 shop_current_item_list = 0;
 shop_item_list_max_on_screen = 5;
+shop_cursor_y_1 = 47;
+shop_cursor_y_2 = 67;
+shop_cursor_y_3 = 87;
+shop_cursor_y_4 = 107;
+shop_cursor_y_5 = 127;
 
 #endregion

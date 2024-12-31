@@ -29,31 +29,15 @@ in_inv = 0;
 opened_inv = false;
 in_text = 0;
 canInv = true;
-
 global.follower_count = 0;
-party_position = 0;
-
-#region FIGHTING SYSTEM
-//UNUSED LMAO
-#endregion
-
-#region STATS
-
-weapon_selected = -1;
-
-weapon_equiped = noone;
-armor_equiped = noone;
-#endregion
-
+//party_position = 0;
+in_shop = false;
 #endregion
 #region OTHER
-alarm[0] = 1 * room_speed;
-
 instance_create_layer(x, y, "Player", obj_interact);
 //instance_create_layer(x, y, "Player", obj_rose_follower);
 //instance_create_layer(x, y, "Player", obj_hazel_follower);
 #endregion
-
 #region FOLLOWERS
 followers_array_size = 94;
 
