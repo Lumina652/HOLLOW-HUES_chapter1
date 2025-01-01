@@ -5,7 +5,7 @@ function scr_make_inventory_portraits() {
 	//portraits
 	switch (global.follower_count) {
 		case 0:
-			draw_sprite_ext(button_unselected, bg_img, portrait_sal_x_1 + _bgx, portrait_y + _bgy, portrait_scale, portrait_scale, 0, c_white, 1);
+			draw_sprite_ext(portrait_sal, bg_img, portrait_sal_x_1 + _bgx, portrait_y + _bgy, portrait_scale, portrait_scale, 0, c_white, 1);
 			draw_sprite(portrait_sal_sprite, 0, sal_x_1 + _bgx, portrait_people_y + _bgy);
 		
 			//WEAPON ICON
@@ -18,7 +18,7 @@ function scr_make_inventory_portraits() {
 			}
 			break;
 		case 1:
-			draw_sprite_ext(button_unselected, bg_img, portrait_sal_x_2 + _bgx, portrait_y + _bgy, portrait_scale, portrait_scale, 0, c_white, 1);
+			draw_sprite_ext(portrait_sal, bg_img, portrait_sal_x_2 + _bgx, portrait_y + _bgy, portrait_scale, portrait_scale, 0, c_white, 1);
 			draw_sprite_ext(portrait_rose, bg_img, portrait_other_x_2 + _bgx, portrait_y + _bgy, portrait_scale, portrait_scale, 0, c_white, 1);
 			draw_sprite(portrait_sal_sprite, 0, sal_x_2 + _bgx, portrait_people_y + _bgy);
 			draw_sprite(portrait_rose_sprite, 0, rose_x_2 + _bgx, portrait_people_y + _bgy);
@@ -44,7 +44,7 @@ function scr_make_inventory_portraits() {
 			}
 			break;
 		case 2:
-			draw_sprite_ext(button_unselected, bg_img, portrait_sal_x_3 + _bgx, portrait_y + _bgy, portrait_scale, portrait_scale, 0, c_white, 1);
+			draw_sprite_ext(portrait_sal, bg_img, portrait_sal_x_3 + _bgx, portrait_y + _bgy, portrait_scale, portrait_scale, 0, c_white, 1);
 			draw_sprite_ext(portrait_rose, bg_img, portrait_other_x_3 + _bgx, portrait_y + _bgy, portrait_scale, portrait_scale, 0, c_white, 1);
 			draw_sprite_ext(portrait_hazel, bg_img, portrait_other2_x_3 + _bgx, portrait_y + _bgy, portrait_scale, portrait_scale, 0, c_white, 1);
 			draw_sprite(portrait_sal_sprite, 0, sal_x_3 + _bgx, portrait_people_y + _bgy);

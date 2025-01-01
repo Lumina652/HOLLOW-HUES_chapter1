@@ -57,5 +57,7 @@ if (keyboard_check_pressed(global.controls_interact)) {
 if (keyboard_check_pressed(global.controls_back)) || (array_length(shop_item_list) <= 0) {
 	obj_player_sal.hasControl = true;
 	obj_player_sal.in_shop = false;
+	obj_shop_manager.once = 0;
+	obj_shop_manager.shop_keeper = 0;
 	instance_destroy();	
 }

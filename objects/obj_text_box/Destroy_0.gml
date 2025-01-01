@@ -10,8 +10,20 @@ else {
 	}
 }
 
-if (obj_player_sal.in_shop) {
-	if (page >= page_number - 1) && (option_number <= 0) {
-		scr_shop_make();
-	}
-}
+//if (obj_player_sal.in_shop) {
+//	switch (obj_player_sal.shop_keeper) {
+//		case obj_shop_keeper_parent:
+//			if (page >= page_number - 1) && (option_number <= 0) {
+//				scr_shop_make();
+//				with (obj_shop_menu) {
+//					array_push(shop_item_list, global.shopLibrary.shop_burger);
+//					array_push(shop_item_list, global.shopLibrary.shop_burger);
+//					array_push(shop_item_list, global.shopLibrary.shop_burger);
+//					array_push(shop_item_list, global.shopLibrary.shop_mana_burg);
+//					array_push(shop_item_list, global.shopLibrary.shop_mana_burg);
+//					array_push(shop_item_list, global.shopLibrary.shop_mana_burg);
+//				}
+//			}
+//			break;
+//	}
+//}

@@ -39,6 +39,28 @@ function battle_change_hp(_target, _amount, _critchance, _aliveDeadOrEither = 0)
 	if (!_failed) _target.hp = clamp(_target.hp + _amount, 0, _target.hpMax);
 }
 
+function battle_steal_item(_item1, _item2, _item3, _item4, _item5) {
+	var _what_item = round(random_range(1, 5));
+	//ITEMS SHOULD BE global.item_list.burger
+	switch (_what_item) {
+		case 1:
+			scr_item_add(_item1);
+			break;
+		case 2:
+			scr_item_add(_item2);
+			break;
+		case 3:
+			scr_item_add(_item3);
+			break;
+		case 4:
+			scr_item_add(_item4);
+			break;
+		case 5:
+			scr_item_add(_item5);
+			break;
+	}
+}
+
 function battle_change_mana(_target, _amount) {
 	var _failed = false;
 	if (_target.mana < manaCost) _failed = true
@@ -154,6 +176,16 @@ function battle_skillcheck_bar(_party, _diff, _hp, _counter) {
 	}
 }
 
+function battle_skillcheck_bar_party(_party, _diff, _hp, _enemy) {
+	instance_create_depth(_party.x - 50, _party.y - 60, -99999, obj_battle_skillcheck_bar_party);
+	with (obj_battle_skillcheck_bar_party) {
+		skillcheck_bar_enemy = _diff;
+		hp_enemy = _enemy;
+		hp_amount = _hp;
+		hp_party = _party;
+	}
+}
+
 function battle_skillcheck_circle(_party, _diff, _hp, _enemy) {
 	instance_create_depth(_party.x, _party.y, -99999, obj_battle_skillcheck_circle);
 	with (obj_battle_skillcheck_circle) {
@@ -172,5 +204,12 @@ function battle_skillcheck_circle_combo(_party, _diff, _loops, _hp, _enemy) {
 		hp_enemy = _enemy;
 		hp_amount = _hp;
 		hp_party = _party;
+	}
+}
+
+function battle_status_defenseup(_party) {
+	instance_create_depth(_party.x, _party.y, -99999, obj_battle_status_defenseup);
+	with (obj_battle_status_defenseup) {
+		party_member = _party;
 	}
 }

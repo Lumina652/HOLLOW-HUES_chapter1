@@ -1,6 +1,6 @@
 global.actionLibrary =
 {
-	attack:
+	action_attack:
 	{
 		name: "Attack",
 		description: "{0} attacks!",
@@ -9,6 +9,7 @@ global.actionLibrary =
 		targetRequired: true,
 		targetEnemyByDefault: true,
 		targetAll: MODE.NEVER,
+		whoTarget: CANTARGET.ENEMY,
 		userAnimation: "attack",
 		effectSprite: spr_hit_test,
 		effectOnTarget: MODE.ALWAYS,
@@ -23,7 +24,7 @@ global.actionLibrary =
 			battle_change_hp(_targets[0], -_damage, _crit, 0);
 		}
 	},
-	attack_enemy:
+	action_attack_enemy:
 	{
 		name: "Attack",
 		description: "{0} attacks!",
@@ -32,6 +33,7 @@ global.actionLibrary =
 		targetRequired: true,
 		targetEnemyByDefault: true,
 		targetAll: MODE.NEVER,
+		whoTarget: CANTARGET.PARTY,
 		userAnimation: "attack",
 		effectSprite: spr_hit_test,
 		effectOnTarget: MODE.ALWAYS,
@@ -41,10 +43,16 @@ global.actionLibrary =
 		{
 			//COUNTERABLE
 			var _damage = ceil(_user.attack + random_range(-_user.attack * 0.25, _user.attack * 0.25) / _targets[0].defense);
-			battle_skillcheck_bar(_targets[0], 3, _damage, _user);
+			var _counter_chance = round(random_range(0, 8));
+			if (_counter_chance == 5) {
+				battle_skillcheck_bar(_targets[0], 3, _damage, _user);	
+			}
+			else {
+				battle_change_hp(_targets[0], -_damage, 0, 0);
+			}
 		}
 	},
-	attack2test:
+	attack_circle:
 	{
 		name: "Sal Bomboclat",
 		description: "{0} attacks!",
@@ -53,6 +61,7 @@ global.actionLibrary =
 		targetRequired: true,
 		targetEnemyByDefault: true,
 		targetAll: MODE.NEVER,
+		whoTarget: CANTARGET.ENEMY,
 		userAnimation: "attack",
 		effectSprite: spr_hit_test,
 		effectOnTarget: MODE.ALWAYS,
@@ -71,7 +80,7 @@ global.actionLibrary =
 			}
 		}
 	},
-	attackcombo_test:
+	attack_combo:
 	{
 		name: "Wombo Combo",
 		description: "{0} attacks!",
@@ -80,6 +89,7 @@ global.actionLibrary =
 		targetRequired: true,
 		targetEnemyByDefault: true,
 		targetAll: MODE.NEVER,
+		whoTarget: CANTARGET.ENEMY,
 		userAnimation: "attack",
 		effectSprite: spr_hit_test,
 		effectOnTarget: MODE.ALWAYS,
@@ -107,6 +117,7 @@ global.actionLibrary =
 		targetRequired: true,
 		targetEnemyByDefault: false, //0: party/self, 1:enemy
 		targetAll: MODE.NEVER,
+		whoTarget: CANTARGET.PARTY,
 		userAnimation: "attack",
 		effectSprite: spr_hit_test,
 		effectOnTarget: MODE.ALWAYS,
@@ -126,6 +137,7 @@ global.actionLibrary =
 		targetRequired: true,
 		targetEnemyByDefault: true, //0: party/self, 1:enemy
 		targetAll: MODE.VARIES,
+		whoTarget: CANTARGET.ENEMY,
 		userAnimation: "attack",
 		effectSprite: spr_hit_test,
 		effectOnTarget: MODE.ALWAYS,
@@ -138,7 +150,121 @@ global.actionLibrary =
 				//battle_change_mana(_user, -manaCost);
 			}
 		}
-	}
+	},
+	action_home_run:
+	{
+		name: "Home Run",
+		description: "{0} hits a home run!",
+		subMenu: "Skills",
+		manaCost: 3,
+		targetRequired: true,
+		targetEnemyByDefault: true,
+		targetAll: MODE.NEVER,
+		whoTarget: CANTARGET.ENEMY,
+		userAnimation: "attack",
+		effectSprite: spr_hit_test,
+		effectOnTarget: MODE.ALWAYS,
+		damage_bool: DAMAGE.SUBTRACT,
+		func: function(_user, _targets)
+		{	
+			//CIRCLE SKILL CHECK
+			if (_user.mana >= manaCost) {
+				var _crit = ceil(random_range(0, 15));
+				var _crit_damage = 0;
+				if (_crit == 5) _crit_damage = round(_user.attack / 2);
+				var _damage = ceil(_user.attack * 3 / _targets[0].defense) + _crit_damage;
+				battle_skillcheck_circle(_user, 4, _damage, _targets[0]);
+				battle_change_mana(_user, -manaCost);
+			}
+			else {
+				battle_change_mana(_user, -manaCost);	
+			}
+		}
+	},
+	action_our_guild:
+	{
+		name: "Our Guild",
+		description: "{0} delivers a strong blow!",
+		subMenu: "Skills",
+		manaCost: 10,
+		targetRequired: true,
+		targetEnemyByDefault: true,
+		targetAll: MODE.NEVER,
+		whoTarget: CANTARGET.ENEMY,
+		userAnimation: "attack",
+		effectSprite: spr_hit_test,
+		effectOnTarget: MODE.ALWAYS,
+		damage_bool: DAMAGE.SUBTRACT,
+		func: function(_user, _targets)
+		{	
+			//CIRCLE SKILL CHECK
+			if (_user.mana >= manaCost) {
+				var _crit = round(random_range(0, 15));
+				var _crit_damage = 0;
+				if (_crit == 5) _crit_damage = round(_user.attack / 2);
+				var _damage = ceil(_user.attack * 20 / _targets[0].defense) + _crit_damage;
+				battle_skillcheck_circle_combo(_user, 5.3, 5, _damage, _targets[0]);
+				battle_change_mana(_user, -manaCost);
+			}
+			else {
+				battle_change_mana(_user, -manaCost);	
+			}
+		}
+	},
+	action_pickpocket:
+	{
+		name: "Pickpocket",
+		description: "{0} tries to sneakily steal\nfrom the enemy!",
+		subMenu: "Skills",
+		manaCost: 5,
+		targetRequired: true,
+		targetEnemyByDefault: true,
+		targetAll: MODE.NEVER,
+		whoTarget: CANTARGET.ENEMY,
+		userAnimation: "attack",
+		effectSprite: spr_hit_test,
+		effectOnTarget: MODE.ALWAYS,
+		damage_bool: DAMAGE.SUBTRACT,
+		func: function(_user, _targets)
+		{	
+			//CIRCLE SKILL CHECK
+			if (_user.mana >= manaCost) {
+				var _damage = round(random_range(1, 10) / _targets[0].defense);
+				battle_skillcheck_circle_combo(_user, 4.8, 3, _damage, _targets[0]);
+				battle_steal_item(global.item_list.burger, global.item_list.mana_burg, global.item_list.burger, global.item_list.burger, global.item_list.mana_burg);
+				battle_change_mana(_user, -manaCost);
+			}
+			else {
+				battle_change_mana(_user, -manaCost);	
+			}
+		}
+	},
+	action_vagrant_ditty:
+	{
+		name: "Vagrant Ditty",
+		description: "{0} calls for their party!\nTheir defense increased!",
+		subMenu: "Skills",
+		manaCost: 5,
+		targetRequired: true,
+		targetEnemyByDefault: false,
+		targetAll: MODE.ALWAYS,
+		whoTarget: CANTARGET.PARTY,
+		userAnimation: "attack",
+		effectSprite: spr_hit_test,
+		effectOnTarget: MODE.ALWAYS,
+		damage_bool: DAMAGE.ADD,
+		func: function(_user, _targets)
+		{	
+			if (_user.mana >= manaCost) {
+				for (var i = 0; i < array_length(_targets); ++i) {
+				    battle_status_defenseup(_targets[i]);
+				}
+			}
+			else {
+				battle_change_mana(_user, -manaCost);	
+			}
+		}
+	},
 }
 	
 global.actionItemsLibrary =
@@ -152,6 +278,7 @@ global.actionItemsLibrary =
 		targetRequired: true,
 		targetEnemyByDefault: false,
 		targetAll: MODE.NEVER,
+		whoTarget: CANTARGET.PARTY,
 		userAnimation: "attack",
 		effectSprite: spr_hit_test,
 		effectOnTarget: MODE.ALWAYS,
@@ -187,6 +314,7 @@ global.actionItemsLibrary =
 		targetRequired: true,
 		targetEnemyByDefault: false,
 		targetAll: MODE.NEVER,
+		whoTarget: CANTARGET.PARTY,
 		userAnimation: "attack",
 		effectSprite: spr_hit_test,
 		effectOnTarget: MODE.ALWAYS,
@@ -222,6 +350,7 @@ global.actionItemsLibrary =
 		targetRequired: true,
 		targetEnemyByDefault: false,
 		targetAll: MODE.NEVER,
+		whoTarget: CANTARGET.PARTY,
 		userAnimation: "attack",
 		effectSprite: spr_hit_test,
 		effectOnTarget: MODE.ALWAYS,
@@ -266,6 +395,12 @@ enum DAMAGE {
 	SUBTRACT = 0,
 	ADD = 1
 }
+	
+enum CANTARGET {
+	ENEMY = 0,
+	PARTY = 1,
+	BOTH = 2
+}
 
 global.party_money = 0;
 
@@ -273,10 +408,10 @@ global.party =
 [
 	{
 		name: "Sal",
-		hp: 90,
-		hpMax: 90,
-		mana: 100,
-		manaMax: 100,
+		hp: 50,
+		hpMax: 50,
+		mana: 30,
+		manaMax: 30,
 		attack: 1,
 		defense: 1,
 		weapon_equiped: noone,
@@ -286,16 +421,16 @@ global.party =
 		level: 1,
 		xp: 0,
 		sprites: { idle: spr_player_walk_down, attack: spr_player_walk_up, defend: spr_player_walk_left, down: spr_player_walk_right},
-		actions: [global.actionLibrary.attack, global.actionLibrary.attack2test, global.actionLibrary.healtest, global.actionLibrary.ice, global.actionLibrary.attackcombo_test]
+		actions: [global.actionLibrary.action_attack, global.actionLibrary.action_home_run, global.actionLibrary.action_pickpocket, global.actionLibrary.action_vagrant_ditty ,global.actionLibrary.action_our_guild]
 	}
 	,
 	{
 		name: "Rose",
-		hp: 80,
-		hpMax: 80,
-		mana: 100,
-		manaMax: 100,
-		attack: 1,
+		hp: 70,
+		hpMax: 70,
+		mana: 50,
+		manaMax: 50,
+		attack: 3,
 		defense: 3,
 		weapon_equiped: noone,
 		armor_equiped: noone,
@@ -304,16 +439,16 @@ global.party =
 		level: 1,
 		xp: 0,
 		sprites: { idle: spr_rose_walk_down, attack: spr_rose_walk_up, defend: spr_rose_walk_left, down: spr_rose_walk_right},
-		actions: [global.actionLibrary.attack, global.actionLibrary.healtest]
+		actions: [global.actionLibrary.action_attack]
 	}
 	,
 	{
 		name: "Hazel",
-		hp: 100,
-		hpMax: 100,
-		mana: 100,
-		manaMax: 100,
-		attack: 3,
+		hp: 80,
+		hpMax: 80,
+		mana: 50,
+		manaMax: 50,
+		attack: 5,
 		defense: 2,
 		weapon_equiped: noone,
 		armor_equiped: noone,
@@ -322,7 +457,7 @@ global.party =
 		level: 1,
 		xp: 0,
 		sprites: { idle: spr_hazel_walk_down, attack: spr_hazel_walk_up, defend: spr_hazel_walk_left, down: spr_hazel_walk_right},
-		actions: [global.actionLibrary.attack, global.actionLibrary.ice]	
+		actions: [global.actionLibrary.action_attack]	
 	}
 ];
 
@@ -338,7 +473,7 @@ global.enemies =
 		attack: 5,
 		defense: 2,
 		sprites: { idle: spr_malachi_idle_1, attack: spr_malachi_flee_1},
-		actions: [global.actionLibrary.attack_enemy],
+		actions: [global.actionLibrary.action_attack_enemy],
 		xpValue: 5,
 		moneyValue: 3,
 		battle_dialogue: [noone],    //"Battle_Generic"],
@@ -363,7 +498,7 @@ global.enemies =
 		attack: 12,
 		defense: 200,
 		sprites: { idle: spr_malachi_idle_1, attack: spr_malachi_flee_1},
-		actions: [global.actionLibrary.attack],
+		actions: [global.actionLibrary.action_attack],
 		xpValue: 66666,
 		moneyValue: 1,
 		battle_dialogue: ["Boss_Malachi0", "Boss_Malachi1", "Boss_Malachi2", "Boss_Malachi3", "Boss_Malachi4", "Boss_Malachi5", "Boss_Malachi6", "Boss_Malachi7", "Boss_Malachi8", "Boss_Malachi9", "Boss_Malachi10"],

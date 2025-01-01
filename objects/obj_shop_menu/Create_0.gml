@@ -6,12 +6,7 @@ obj_player_sal.hasControl = false;
 shop_item_list = [];
 
 //PUT IN SHOP KEEPER
-array_push(shop_item_list, global.shopLibrary.shop_burger);
-array_push(shop_item_list, global.shopLibrary.shop_cola);
-array_push(shop_item_list, global.shopLibrary.shop_mana_burg);
-array_push(shop_item_list, global.shopLibrary.shop_burger);
-array_push(shop_item_list, global.shopLibrary.shop_cola);
-array_push(shop_item_list, global.shopLibrary.shop_mana_burg);
+
 
 //x and y
 shop_menubox_x = 20;

@@ -64,5 +64,5 @@ function scr_shop_buy_item(_inv ,_item) {
 }
 
 function scr_shop_make() {
-	instance_create_depth(x,y,-9999,obj_shop_menu);		
+	instance_create_depth(x,y,-9999,obj_shop_menu);
 }

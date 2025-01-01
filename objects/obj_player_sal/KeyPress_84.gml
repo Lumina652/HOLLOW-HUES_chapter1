@@ -1,1 +1,0 @@
-global.party_money += 20;

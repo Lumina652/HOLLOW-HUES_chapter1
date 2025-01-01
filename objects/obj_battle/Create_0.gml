@@ -118,7 +118,7 @@ function battle_state_select_action() {
 	
 		//if unit is player controlled:
 		if (_unit.object_index == obj_battle_unit_pc) {
-			if (!instance_exists(obj_battle_skillcheck_bar)) && (!instance_exists(obj_battle_skillcheck_circle)) && (!instance_exists(obj_item_menu)) && (!instance_exists(obj_text_box)) && (!instance_exists(obj_pause_menu)) && (!instance_exists(obj_battle_skillcheck_circle_combo)) {
+			if (!instance_exists(obj_battle_event)) && (!instance_exists(obj_text_box)) && (!instance_exists(obj_pause_menu)) {
 				//compile the action menu
 				var _menu_options = [];
 				var _sub_menus = {};
@@ -162,7 +162,7 @@ function battle_state_select_action() {
 		else { //if unit is an enemy
 			var _enemy_action = _unit.AIscript();
 			if (_enemy_action != -1) {
-				if (!instance_exists(obj_battle_skillcheck_bar)) && (!instance_exists(obj_battle_skillcheck_circle)) && (!instance_exists(obj_item_menu)) && (!instance_exists(obj_text_box)) && (!instance_exists(obj_pause_menu)) && (!instance_exists(obj_battle_skillcheck_circle_combo)) {
+				if (!instance_exists(obj_battle_event)) && (!instance_exists(obj_text_box)) && (!instance_exists(obj_pause_menu)) {
 					battle_begin_action(_unit.id, _enemy_action[0], _enemy_action[1]);
 				}
 			}
@@ -186,7 +186,7 @@ function battle_begin_action(_user, _action, _targets) {
 			image_index = 0;
 		}
 	}
-	if (!instance_exists(obj_battle_skillcheck_bar)) && (!instance_exists(obj_battle_skillcheck_circle)) && (!instance_exists(obj_item_menu)) && (!instance_exists(obj_text_box)) && (!instance_exists(obj_pause_menu)) && (!instance_exists(obj_battle_skillcheck_circle_combo)) {
+	if (!instance_exists(obj_battle_event)) && (!instance_exists(obj_text_box)) && (!instance_exists(obj_pause_menu)) {
 		battle_state = battle_state_perform_action;	
 	}
 }
@@ -246,7 +246,7 @@ function battle_state_perform_action() {
 		}
 	}
 	else { //wait for the delay and then end the turn
-		if (!instance_exists(obj_battle_effect)) && (!instance_exists(obj_battle_skillcheck_bar)) && (!instance_exists(obj_battle_skillcheck_circle)) && (!instance_exists(obj_item_menu)) && (!instance_exists(obj_text_box)) && (!instance_exists(obj_pause_menu)) && (!instance_exists(obj_battle_skillcheck_circle_combo)) {
+		if (!instance_exists(obj_battle_effect)) && (!instance_exists(obj_battle_event)) && (!instance_exists(obj_text_box)) && (!instance_exists(obj_pause_menu)) {
 			battle_wait_time_remaining--;
 			//set the positions back
 			if (once_move_after == 0) {
@@ -286,10 +286,11 @@ function battle_state_victory_check () {
 	if (enemy_reached_death == 0) {
 		if (once == 0) {
 			//update full exp and full money
-		array_push(stupid_text_array, full_exp);
-		array_push(stupid_text_array, full_money);
+			array_push(stupid_text_array, full_exp);
+			array_push(stupid_text_array, full_money);
 			battle_won_time_actual = battle_won_time;
 			//battle_text = levelup_text;
+			global.party_money += full_money;
 			for (var i = 0; i < array_length(party_units); ++i) {
 				//hp and mana
 				global.party[i].hp = party_units[i].hp;
@@ -297,7 +298,6 @@ function battle_state_victory_check () {
 			
 				//add exp
 				global.party[i].xp += full_exp;
-				global.party_money += full_money;
 			
 				//levels
 				var _level = global.party[i].level;
@@ -340,6 +340,7 @@ function battle_state_turn_progression() {
 		turn_count++;
 		turn++;
 	}
+	
 	//loop turns
 	if (turn > array_length(unit_turn_order) - 1) {
 		turn = 0;

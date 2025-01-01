@@ -35,8 +35,8 @@ in_shop = false;
 #endregion
 #region OTHER
 instance_create_layer(x, y, "Player", obj_interact);
-//instance_create_layer(x, y, "Player", obj_rose_follower);
-//instance_create_layer(x, y, "Player", obj_hazel_follower);
+instance_create_layer(x, y, "Player", obj_rose_follower);
+instance_create_layer(x, y, "Player", obj_hazel_follower);
 #endregion
 #region FOLLOWERS
 followers_array_size = 94;

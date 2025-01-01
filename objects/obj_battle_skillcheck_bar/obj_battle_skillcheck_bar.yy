@@ -13,7 +13,10 @@
     "name":"BATTLE",
     "path":"folders/Objects/BATTLE.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_battle_event",
+    "path":"objects/obj_battle_event/obj_battle_event.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

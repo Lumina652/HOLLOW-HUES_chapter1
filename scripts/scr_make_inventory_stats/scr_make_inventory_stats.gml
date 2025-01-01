@@ -16,7 +16,7 @@ function scr_make_inventory_stats(){
 	//portraits
 	switch (global.follower_count) {
 		case 0:
-			draw_sprite_ext(button_unselected, bg_img, stats_portrait_sal_x + _bgx, stats_portrait_sal_y + _bgy, portrait_scale, portrait_scale, 0, c_white, 1);
+			draw_sprite_ext(portrait_sal, bg_img, stats_portrait_sal_x + _bgx, stats_portrait_sal_y + _bgy, portrait_scale, portrait_scale, 0, c_white, 1);
 			draw_sprite(portrait_sal_sprite, 0, stats_sal_x + _bgx, stats_sal_y + _bgy);
 		
 			//WEAPON ICON
@@ -37,7 +37,7 @@ function scr_make_inventory_stats(){
 			draw_sprite_ext(mana_sprite, 0, mana_x + _bgx, mana_sal_y + _bgy, (global.party[0].mana / global.party[0].manaMax) * mana_width, 1, 0, c_white, 1);
 		
 			//ATTACK AND DEFENSE MENU
-			draw_sprite_ext(button_unselected, bg_img, attdef_sal_x + _bgx, attdef_sal_y + _bgy, attdef_sal_width, attdef_sal_height, 0, c_white, 1);
+			draw_sprite_ext(portrait_sal, bg_img, attdef_sal_x + _bgx, attdef_sal_y + _bgy, attdef_sal_width, attdef_sal_height, 0, c_white, 1);
 			//ATTACK
 			draw_text_ext_transformed(attdef_sal_attack_x + _bgx, attdef_sal_attack_y + _bgy, "ATK", 0, 43, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
 			draw_text_ext_transformed(attdef_sal_attack_val_x + _bgx, attdef_sal_attack_val_y + _bgy, string(global.party[0].attack), 0, 43, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
@@ -46,22 +46,16 @@ function scr_make_inventory_stats(){
 			draw_text_ext_transformed(attdef_sal_attack_val_x + _bgx, attdef_sal_defense_val_y + _bgy, string(global.party[0].defense), 0, 43, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
 	
 			//HP AND MANA TEXT
-			// "/"
-			draw_text_ext_transformed(stats_slash_x + _bgx, stats_slash_sal_y + _bgy, "/", 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			draw_text_ext_transformed(stats_slash_x + _bgx, stats_slash_sal_y + stats_slash_mana_offset + _bgy, "/", 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			// MAX COUNTER
-			draw_text_ext_transformed(stats_maxcounter_x + _bgx, stats_slash_sal_y + _bgy, string(global.party[0].hpMax), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			draw_text_ext_transformed(stats_maxcounter_x + _bgx, stats_slash_sal_y + stats_slash_mana_offset + _bgy, string(global.party[0].manaMax), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			// CURRENT COUNTER
-			draw_text_ext_transformed(stats_currentcounter_x + _bgx, stats_slash_sal_y + _bgy, string(global.party[0].hp), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			draw_text_ext_transformed(stats_currentcounter_x + _bgx, stats_slash_sal_y + stats_slash_mana_offset + _bgy, string(global.party[0].mana), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
+			//REDO
+			draw_text_ext(stats_currentcounter_x + _bgx, stats_slash_sal_y + _bgy, string(global.party[0].hp) + "/" + string(global.party[0].hpMax), 0, stats_slash_w);
+			draw_text_ext(stats_currentcounter_x + _bgx, stats_slash_sal_y + stats_slash_mana_offset + _bgy, string(global.party[0].mana) + "/" + string(global.party[0].manaMax), 0, stats_slash_w);
 			
 			//EXP AND LEVEL
 			draw_text_ext_transformed(sallevel_x + _bgx, sallevel_y + _bgy, "LEVEL: " + string(global.party[0].level), 0, sallevel_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
 			draw_text_ext_transformed(salexp_x + _bgx, sallevel_y + _bgy, "EXP: " + string(global.party[0].xp), 0, sallevel_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
 			break;
 		case 1:
-			draw_sprite_ext(button_unselected, bg_img, stats_portrait_sal_x + _bgx, stats_portrait_sal_y + _bgy, portrait_scale, portrait_scale, 0, c_white, 1);
+			draw_sprite_ext(portrait_sal, bg_img, stats_portrait_sal_x + _bgx, stats_portrait_sal_y + _bgy, portrait_scale, portrait_scale, 0, c_white, 1);
 			draw_sprite_ext(portrait_rose, bg_img, stats_portrait_rose_x + _bgx, stats_portrait_rose_y + _bgy, portrait_scale, portrait_scale, 0, c_white, 1);
 			draw_sprite(portrait_sal_sprite, 0, stats_sal_x + _bgx, stats_sal_y + _bgy);
 			draw_sprite(portrait_rose_sprite, 0, stats_rose_x + _bgx, stats_rose_y + _bgy);
@@ -102,7 +96,7 @@ function scr_make_inventory_stats(){
 		
 			//SAL
 			//ATTACK AND DEFENSE MENU
-			draw_sprite_ext(button_unselected, bg_img, attdef_sal_x + _bgx, attdef_sal_y + _bgy, attdef_sal_width, attdef_sal_height, 0, c_white, 1);
+			draw_sprite_ext(portrait_sal, bg_img, attdef_sal_x + _bgx, attdef_sal_y + _bgy, attdef_sal_width, attdef_sal_height, 0, c_white, 1);
 			//ATTACK
 			draw_text_ext_transformed(attdef_sal_attack_x + _bgx, attdef_sal_attack_y + _bgy, "ATK", 0, 43, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
 			draw_text_ext_transformed(attdef_sal_attack_val_x + _bgx, attdef_sal_attack_val_y + _bgy, string(global.party[0].attack), 0, 43, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
@@ -123,26 +117,16 @@ function scr_make_inventory_stats(){
 			//HP AND MANA TEXT
 		
 			//SAL
-			// "/"
-			draw_text_ext_transformed(stats_slash_x + _bgx, stats_slash_sal_y + _bgy, "/", 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			draw_text_ext_transformed(stats_slash_x + _bgx, stats_slash_sal_y + stats_slash_mana_offset + _bgy, "/", 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			// MAX COUNTER
-			draw_text_ext_transformed(stats_maxcounter_x + _bgx, stats_slash_sal_y + _bgy, string(global.party[0].hpMax), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			draw_text_ext_transformed(stats_maxcounter_x + _bgx, stats_slash_sal_y + stats_slash_mana_offset + _bgy, string(global.party[0].manaMax), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			// CURRENT COUNTER
-			draw_text_ext_transformed(stats_currentcounter_x + _bgx, stats_slash_sal_y + _bgy, string(global.party[0].hp), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			draw_text_ext_transformed(stats_currentcounter_x + _bgx, stats_slash_sal_y + stats_slash_mana_offset + _bgy, string(global.party[0].mana), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
+			//HP AND MANA TEXT
+			//REDO
+			draw_text_ext(stats_currentcounter_x + _bgx, stats_slash_sal_y + _bgy, string(global.party[0].hp) + "/" + string(global.party[0].hpMax), 0, stats_slash_w);
+			draw_text_ext(stats_currentcounter_x + _bgx, stats_slash_sal_y + stats_slash_mana_offset + _bgy, string(global.party[0].mana) + "/" + string(global.party[0].manaMax), 0, stats_slash_w);
 		
 			//ROSE
-			// "/"
-			draw_text_ext_transformed(stats_slash_x + _bgx, stats_slash_rose_y + _bgy, "/", 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			draw_text_ext_transformed(stats_slash_x + _bgx, stats_slash_rose_y + stats_slash_mana_offset + _bgy, "/", 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			// MAX COUNTER
-			draw_text_ext_transformed(stats_maxcounter_x + _bgx, stats_slash_rose_y + _bgy, string(global.party[1].hpMax), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			draw_text_ext_transformed(stats_maxcounter_x + _bgx, stats_slash_rose_y + stats_slash_mana_offset + _bgy, string(global.party[1].manaMax), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			// CURRENT COUNTER
-			draw_text_ext_transformed(stats_currentcounter_x + _bgx, stats_slash_rose_y + _bgy, string(global.party[1].hp), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			draw_text_ext_transformed(stats_currentcounter_x + _bgx, stats_slash_rose_y + stats_slash_mana_offset + _bgy, string(global.party[1].mana), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
+			//HP AND MANA TEXT
+			//REDO
+			draw_text_ext(stats_currentcounter_x + _bgx, stats_slash_rose_y + _bgy, string(global.party[1].hp) + "/" + string(global.party[1].hpMax), 0, stats_slash_w);
+			draw_text_ext(stats_currentcounter_x + _bgx, stats_slash_rose_y + stats_slash_mana_offset + _bgy, string(global.party[1].mana) + "/" + string(global.party[1].manaMax), 0, stats_slash_w);
 			
 			//EXP AND LEVEL
 			draw_text_ext_transformed(sallevel_x + _bgx, sallevel_y + _bgy,  "LEVEL: " + string(global.party[0].level), 0, sallevel_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
@@ -153,7 +137,7 @@ function scr_make_inventory_stats(){
 			
 			break;
 		case 2:
-			draw_sprite_ext(button_unselected, bg_img, stats_portrait_sal_x + _bgx, stats_portrait_sal_y + _bgy, portrait_scale, portrait_scale, 0, c_white, 1);
+			draw_sprite_ext(portrait_sal, bg_img, stats_portrait_sal_x + _bgx, stats_portrait_sal_y + _bgy, portrait_scale, portrait_scale, 0, c_white, 1);
 			draw_sprite_ext(portrait_rose, bg_img, stats_portrait_rose_x + _bgx, stats_portrait_rose_y + _bgy, portrait_scale, portrait_scale, 0, c_white, 1);
 			draw_sprite_ext(portrait_hazel, bg_img, stats_portrait_hazel_x + _bgx, stats_portrait_hazel_y + _bgy, portrait_scale, portrait_scale, 0, c_white, 1);
 			draw_sprite(portrait_sal_sprite, 0, stats_sal_x + _bgx, stats_sal_y + _bgy);
@@ -212,7 +196,7 @@ function scr_make_inventory_stats(){
 		
 			//SAL
 			//ATTACK AND DEFENSE MENU
-			draw_sprite_ext(button_unselected, bg_img, attdef_sal_x + _bgx, attdef_sal_y + _bgy, attdef_sal_width, attdef_sal_height, 0, c_white, 1);
+			draw_sprite_ext(portrait_sal, bg_img, attdef_sal_x + _bgx, attdef_sal_y + _bgy, attdef_sal_width, attdef_sal_height, 0, c_white, 1);
 			//ATTACK
 			draw_text_ext_transformed(attdef_sal_attack_x + _bgx, attdef_sal_attack_y + _bgy, "ATK", 0, 43, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
 			draw_text_ext_transformed(attdef_sal_attack_val_x + _bgx, attdef_sal_attack_val_y + _bgy, string(global.party[0].attack), 0, 43, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
@@ -243,37 +227,21 @@ function scr_make_inventory_stats(){
 			//HP AND MANA TEXT
 		
 			//SAL
-			// "/"
-			draw_text_ext_transformed(stats_slash_x + _bgx, stats_slash_sal_y + _bgy, "/", 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			draw_text_ext_transformed(stats_slash_x + _bgx, stats_slash_sal_y + stats_slash_mana_offset + _bgy, "/", 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			// MAX COUNTER
-			draw_text_ext_transformed(stats_maxcounter_x + _bgx, stats_slash_sal_y + _bgy, string(global.party[0].hpMax), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			draw_text_ext_transformed(stats_maxcounter_x + _bgx, stats_slash_sal_y + stats_slash_mana_offset + _bgy, string(global.party[0].manaMax), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			// CURRENT COUNTER
-			draw_text_ext_transformed(stats_currentcounter_x + _bgx, stats_slash_sal_y + _bgy, string(global.party[0].hp), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			draw_text_ext_transformed(stats_currentcounter_x + _bgx, stats_slash_sal_y + stats_slash_mana_offset + _bgy, string(global.party[0].mana), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
+			//HP AND MANA TEXT
+			//REDO
+			draw_text_ext(stats_currentcounter_x + _bgx, stats_slash_sal_y + _bgy, string(global.party[0].hp) + "/" + string(global.party[0].hpMax), 0, stats_slash_w);
+			draw_text_ext(stats_currentcounter_x + _bgx, stats_slash_sal_y + stats_slash_mana_offset + _bgy, string(global.party[0].mana) + "/" + string(global.party[0].manaMax), 0, stats_slash_w);
 		
 			//ROSE
-			// "/"
-			draw_text_ext_transformed(stats_slash_x + _bgx, stats_slash_rose_y + _bgy, "/", 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			draw_text_ext_transformed(stats_slash_x + _bgx, stats_slash_rose_y + stats_slash_mana_offset + _bgy, "/", 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			// MAX COUNTER
-			draw_text_ext_transformed(stats_maxcounter_x + _bgx, stats_slash_rose_y + _bgy, string(global.party[1].hpMax), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			draw_text_ext_transformed(stats_maxcounter_x + _bgx, stats_slash_rose_y + stats_slash_mana_offset + _bgy, string(global.party[1].manaMax), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			// CURRENT COUNTER
-			draw_text_ext_transformed(stats_currentcounter_x + _bgx, stats_slash_rose_y + _bgy, string(global.party[1].hp), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			draw_text_ext_transformed(stats_currentcounter_x + _bgx, stats_slash_rose_y + stats_slash_mana_offset + _bgy, string(global.party[1].mana), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
+			//HP AND MANA TEXT
+			//REDO
+			draw_text_ext(stats_currentcounter_x + _bgx, stats_slash_rose_y + _bgy, string(global.party[1].hp) + "/" + string(global.party[1].hpMax), 0, stats_slash_w);
+			draw_text_ext(stats_currentcounter_x + _bgx, stats_slash_rose_y + stats_slash_mana_offset + _bgy, string(global.party[1].mana) + "/" + string(global.party[1].manaMax), 0, stats_slash_w);
 		
 			//HAZEL
-			// "/"
-			draw_text_ext_transformed(stats_slash_x + _bgx, stats_slash_hazel_y + _bgy, "/", 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			draw_text_ext_transformed(stats_slash_x + _bgx, stats_slash_hazel_y + stats_slash_mana_offset + _bgy, "/", 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			// MAX COUNTER
-			draw_text_ext_transformed(stats_maxcounter_x + _bgx, stats_slash_hazel_y + _bgy, string(global.party[2].hpMax), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			draw_text_ext_transformed(stats_maxcounter_x + _bgx, stats_slash_hazel_y + stats_slash_mana_offset + _bgy, string(global.party[2].manaMax), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			// CURRENT COUNTER
-			draw_text_ext_transformed(stats_currentcounter_x + _bgx, stats_slash_hazel_y + _bgy, string(global.party[2].hp), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
-			draw_text_ext_transformed(stats_currentcounter_x + _bgx, stats_slash_hazel_y + stats_slash_mana_offset + _bgy, string(global.party[2].mana), 0, stats_slash_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);
+			//REDO
+			draw_text_ext(stats_currentcounter_x + _bgx, stats_slash_hazel_y + _bgy, string(global.party[2].hp) + "/" + string(global.party[2].hpMax), 0, stats_slash_w);
+			draw_text_ext(stats_currentcounter_x + _bgx, stats_slash_hazel_y + stats_slash_mana_offset + _bgy, string(global.party[2].mana) + "/" + string(global.party[2].manaMax), 0, stats_slash_w);
 			
 			//EXP AND LEVEL
 			draw_text_ext_transformed(sallevel_x + _bgx, sallevel_y + _bgy, "LEVEL: " + string(global.party[0].level), 0, sallevel_w, attdef_sal_attack_scale, attdef_sal_attack_scale, 0);

@@ -41,7 +41,7 @@ description_bg_width = 10.5;
 description_bg_height = 2.5;
 
 button_selected = spr_text_box_selected;
-button_unselected = spr_text_box_sal;
+button_unselected = spr_text_box_inv;
 button_bg_item = button_unselected;
 button_bg_weapon = button_unselected;
 button_bg_armor = button_unselected;
@@ -61,6 +61,7 @@ button_key_icon = spr_inv_icon_key;
 
 portrait_hazel = spr_text_box_hazel;
 portrait_rose = spr_text_box_rose;
+portrait_sal = spr_text_box_sal;
 
 portrait_sal_sprite = spr_inv_portrait_sal;
 portrait_hazel_sprite = spr_inv_portrait_hazel;

@@ -21,12 +21,22 @@ if (cursor.active) {
 			_key_confirm = keyboard_check_pressed(global.controls_interact);
 			_key_cancel = keyboard_check_pressed(global.controls_back);
 		}
-		
-		var _move_h = _key_right - _key_left;
 		var _move_v = _key_down - _key_up;
 		
-		if (_move_h == -1) target_side = obj_battle.party_units;
-		if (_move_h == 1) target_side = obj_battle.enemy_units;
+		if (active_action.whoTarget == CANTARGET.BOTH) {
+			var _move_h = _key_right - _key_left;
+		
+			if (_move_h == -1) target_side = obj_battle.party_units;
+			if (_move_h == 1) target_side = obj_battle.enemy_units;	
+		}
+		
+		if (active_action.whoTarget == CANTARGET.ENEMY) {
+			target_side = obj_battle.enemy_units;
+		}
+		
+		if (active_action.whoTarget == CANTARGET.PARTY) {
+			target_side = obj_battle.party_units;
+		}
 		
 		//verify target list
 		if (target_side == obj_battle.enemy_units) {
