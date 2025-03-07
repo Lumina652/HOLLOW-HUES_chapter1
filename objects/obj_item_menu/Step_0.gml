@@ -137,12 +137,22 @@ switch (menu_button) {
 			}
 	
 			//drop the item
-			if (keyboard_check_pressed(global.controls_esc)) && (global.inv_item[item_move_vertical].can_drop == true) && (obj_player_sal.in_text == 0) && (pressed_interact_timer == 0) {
-				audio_play_sound(snd_throw_away_item, 2, false, global.sound_volume * global.master_volume);
-				array_delete(global.inv_item, global.inv_item[item_move_vertical], 1);
-				scr_add_interaction_delay()
-				picking_item_for_party = 0;
-			}
+			//if (keyboard_check_pressed(global.controls_esc)) && (global.inv_item[item_move_vertical].can_drop == true) && (obj_player_sal.in_text == 0) && (pressed_interact_timer == 0) {
+			//	audio_play_sound(snd_throw_away_item, 2, false, global.sound_volume * global.master_volume);
+			//	array_delete(global.inv_item, item_move_vertical, 1);
+				
+			//	for (var i = 0; i < array_length(global.party); ++i) {
+			//	    //var _item_to_drop = global.inv_item[item_move_vertical]
+			//		var _find = function(_element) {
+			//			return (_element == global.actionItemsLibrary); //CHANGE ITEMS_X
+			//		}
+			//		var _index_action = array_find_index(global.party[i].actions, _find);
+			//		array_delete(global.party[i].actions, _index_action, 1);
+			//	}
+				
+			//	scr_add_interaction_delay()
+			//	picking_item_for_party = 0;
+			//}
 		}
 	
 		if (picking_item_for_party == 1) {
@@ -189,12 +199,20 @@ switch (menu_button) {
 			}
 	
 			//drop the item
-			if (keyboard_check_pressed(global.controls_esc)) && (obj_player_sal.in_text == 0) && (pressed_interact_timer == 0) {
-				audio_play_sound(snd_throw_away_item, 2, false, global.sound_volume * global.master_volume);
-				array_delete(global.inv_weapon, global.inv_weapon[item_move_vertical], 1);
-				scr_add_interaction_delay()
-				picking_weapon_for_party = 0;
-			}
+			//if (keyboard_check_pressed(global.controls_esc)) && (obj_player_sal.in_text == 0) && (pressed_interact_timer == 0) {
+			//	audio_play_sound(snd_throw_away_item, 2, false, global.sound_volume * global.master_volume);
+			//	array_delete(global.inv_item, item_move_vertical, 1);
+			//	for (var i = 0; i < array_length(global.party); ++i) {
+			//	    //var _item_to_drop = global.inv_item[item_move_vertical]
+			//		var _find = function(_element) {
+			//			return (_element == global.actionItemsLibrary); //CHANGE ITEMS_X
+			//		}
+			//		var _index_action = array_find_index(global.party[i].actions, _find);
+			//		array_delete(global.party[i].actions, _index_action, 1);
+			//	}
+			//	scr_add_interaction_delay()
+			//	picking_weapon_for_party = 0;
+			//}
 		}
 	
 		if (picking_weapon_for_party == 1) {
@@ -241,12 +259,20 @@ switch (menu_button) {
 			}
 	
 			//drop the item
-			if (keyboard_check_pressed(global.controls_esc)) && (obj_player_sal.in_text == 0) && (pressed_interact_timer == 0) {
-				audio_play_sound(snd_throw_away_item, 2, false, global.sound_volume * global.master_volume);
-				array_delete(global.inv_armor, global.inv_armor[item_move_vertical], 1);
-				scr_add_interaction_delay()
-				picking_armor_for_party = 0;
-			}
+			//if (keyboard_check_pressed(global.controls_esc)) && (obj_player_sal.in_text == 0) && (pressed_interact_timer == 0) {
+			//	audio_play_sound(snd_throw_away_item, 2, false, global.sound_volume * global.master_volume);
+			//	array_delete(global.inv_item, item_move_vertical, 1);
+			//	for (var i = 0; i < array_length(global.party); ++i) {
+			//	    //var _item_to_drop = global.inv_item[item_move_vertical]
+			//		var _find = function(_element) {
+			//			return (_element == global.actionItemsLibrary); //CHANGE ITEMS_X
+			//		}
+			//		var _index_action = array_find_index(global.party[i].actions, _find);
+			//		array_delete(global.party[i].actions, _index_action, 1);
+			//	}
+			//	scr_add_interaction_delay()
+			//	picking_armor_for_party = 0;
+			//}
 		}
 	
 		if (picking_armor_for_party == 1) {

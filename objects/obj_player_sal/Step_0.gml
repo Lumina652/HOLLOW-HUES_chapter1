@@ -1,7 +1,7 @@
 ////DEBUG
-//if (instance_exists(obj_battle)) {
-//	show_debug_message(obj_battle.party_units[0].hp);
-//}
+if (keyboard_check_pressed(ord("P"))) {
+	global.party_money += 10;	
+}
 
 #region INPUT
 if (hasControl) && (in_inv == 0) && (!instance_exists(obj_battle)) {
