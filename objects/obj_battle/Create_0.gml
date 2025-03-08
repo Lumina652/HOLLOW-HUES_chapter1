@@ -39,6 +39,7 @@ battle_wait_time_remaining = 0;
 battle_won_time = 6 * 60;
 battle_won_time_actual = 0;
 battle_text = "";
+mana_cost_text = "";
 won_text = "You won! You got {0} EXP and {1}$!";
 levelup_text = "You won! You got {0} EXP and {1}$!\n\nYou leveled up!";
 current_user = 0;
@@ -128,7 +129,7 @@ function battle_state_select_action() {
 					var _action = _action_list[i];
 					var _available = true; //check mana cost here
 					var _name_and_count = _action.name; //
-				
+					
 					if (_action.subMenu == -1) {
 						array_push(_menu_options, [_name_and_count, battle_menu_select_action, [_unit, _action], _available]);
 					}
@@ -155,7 +156,7 @@ function battle_state_select_action() {
 					//add submenu into main menu
 					array_push(_menu_options, [_sub_menus_array[i], battle_sub_menu, [_sub_menus[$ _sub_menus_array[i]]], true]);
 				}
-			
+				//battle_text = string(_action.preDescription);
 				battle_make_menu(x, y+320, _menu_options,,20*9, 20*8);
 			}
 		}
@@ -175,6 +176,7 @@ function battle_begin_action(_user, _action, _targets) {
 	current_action = _action;
 	current_targets = _targets;
 	battle_text = string_ext(_action.description, [_user.name]);
+	mana_cost_text = "";
 	
 	if (!is_array(current_targets)) current_targets = [current_targets];
 	battle_wait_time_remaining = battle_wait_time_frames;
@@ -336,6 +338,7 @@ function battle_state_victory_check () {
 
 function battle_state_turn_progression() {
 	battle_text = ""; //reset battle text
+	mana_cost_text = "";
 	if (once == 0) {
 		turn_count++;
 		turn++;

@@ -23,6 +23,8 @@ if (cursor.active) {
 		}
 		var _move_v = _key_down - _key_up;
 		
+		obj_battle.battle_text = string(active_action.preDescription);
+		
 		if (active_action.whoTarget == CANTARGET.BOTH) {
 			var _move_h = _key_right - _key_left;
 		
@@ -36,6 +38,13 @@ if (cursor.active) {
 		
 		if (active_action.whoTarget == CANTARGET.PARTY) {
 			target_side = obj_battle.party_units;
+		}
+		
+		if (active_action.manaCost > 0) {
+			obj_battle.mana_cost_text = string(active_action.manaCost);	
+		}
+		else {
+			obj_battle.mana_cost_text = "";
 		}
 		
 		//verify target list
@@ -87,6 +96,8 @@ if (cursor.active) {
 		
 		//cancel action
 		if (_key_cancel) && !(_key_confirm) {
+			obj_battle.battle_text = "";
+			obj_battle.mana_cost_text = "";
 			audio_play_sound(snd_cancel, 6, false, global.sound_volume * global.master_volume);	
 			with (obj_battle_menu) active = true;
 			active = false;

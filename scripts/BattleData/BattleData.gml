@@ -3,6 +3,7 @@ global.actionLibrary =
 	action_attack:
 	{
 		name: "Attack",
+		preDescription: "Basic attack",
 		description: "{0} attacks!",
 		subMenu: -1,
 		manaCost: 0,
@@ -154,6 +155,7 @@ global.actionLibrary =
 	action_home_run:
 	{
 		name: "Home Run",
+		preDescription: "Strong attack\n\n! Skill check !",
 		description: "{0} hits a home run!",
 		subMenu: "Skills",
 		manaCost: 3,
@@ -184,6 +186,7 @@ global.actionLibrary =
 	action_our_guild:
 	{
 		name: "Our Guild",
+		preDescription: "Combo attack\n\n! Skill check !",
 		description: "{0} delivers a strong blow!",
 		subMenu: "Skills",
 		manaCost: 10,
@@ -214,6 +217,7 @@ global.actionLibrary =
 	action_pickpocket:
 	{
 		name: "Pickpocket",
+		preDescription: "Steal an item from the enemy",
 		description: "{0} tries to sneakily steal\nfrom the enemy!",
 		subMenu: "Skills",
 		manaCost: 5,
@@ -242,6 +246,7 @@ global.actionLibrary =
 	action_vagrant_ditty:
 	{
 		name: "Vagrant Ditty",
+		preDescription: "Increase defense",
 		description: "{0} calls for their party!\nTheir defense increased!",
 		subMenu: "Skills",
 		manaCost: 5,
@@ -272,6 +277,7 @@ global.actionItemsLibrary =
 	items_burger:
 	{
 		name: "Burger",
+		preDescription: "Heals 10 HP",
 		description: "{0} used a burger!",
 		subMenu: "Inventory",
 		manaCost: 0,
@@ -308,6 +314,7 @@ global.actionItemsLibrary =
 	items_manaburg:
 	{
 		name: "Mana burger",
+		preDescription: "Increases mana by 50",
 		description: "{0} used a mana burger!",
 		subMenu: "Inventory",
 		manaCost: 0,
@@ -344,6 +351,7 @@ global.actionItemsLibrary =
 	items_cocacola:
 	{
 		name: "Cola",
+		preDescription: "Decrease HP by 10",
 		description: "{0} used a COKE!",
 		subMenu: "Inventory",
 		manaCost: 0,
@@ -420,6 +428,8 @@ global.party =
 		last_equiped_armor: -1,
 		level: 1,
 		xp: 0,
+		portrait_sprite: spr_text_box_sal,
+		portrait_sprite_char: spr_inv_portrait_sal,
 		sprites: { idle: spr_player_walk_down, attack: spr_player_walk_up, defend: spr_player_walk_left, down: spr_player_walk_right},
 		actions: [global.actionLibrary.action_attack, global.actionLibrary.action_home_run, global.actionLibrary.action_pickpocket, global.actionLibrary.action_vagrant_ditty ,global.actionLibrary.action_our_guild]
 	}
@@ -438,6 +448,8 @@ global.party =
 		last_equiped_armor: -1,
 		level: 1,
 		xp: 0,
+		portrait_sprite: spr_text_box_rose,
+		portrait_sprite_char: spr_inv_portrait_rose,
 		sprites: { idle: spr_rose_walk_down, attack: spr_rose_walk_up, defend: spr_rose_walk_left, down: spr_rose_walk_right},
 		actions: [global.actionLibrary.action_attack]
 	}
@@ -456,6 +468,8 @@ global.party =
 		last_equiped_armor: -1,
 		level: 1,
 		xp: 0,
+		portrait_sprite: spr_text_box_hazel,
+		portrait_sprite_char: spr_inv_portrait_hazel,
 		sprites: { idle: spr_hazel_walk_down, attack: spr_hazel_walk_up, defend: spr_hazel_walk_left, down: spr_hazel_walk_right},
 		actions: [global.actionLibrary.action_attack]	
 	}
@@ -476,6 +490,8 @@ global.enemies =
 		actions: [global.actionLibrary.action_attack_enemy],
 		xpValue: 5,
 		moneyValue: 3,
+		portrait_sprite: spr_text_box_malachi,
+		portrait_sprite_char: spr_inv_portrait_sal,
 		battle_dialogue: [noone],    //"Battle_Generic"],
 		AIscript: function()
 		{
@@ -501,6 +517,8 @@ global.enemies =
 		actions: [global.actionLibrary.action_attack],
 		xpValue: 66666,
 		moneyValue: 1,
+		portrait_sprite: spr_text_box_malachi,
+		portrait_sprite_char: spr_inv_portrait_sal,
 		battle_dialogue: ["Boss_Malachi0", "Boss_Malachi1", "Boss_Malachi2", "Boss_Malachi3", "Boss_Malachi4", "Boss_Malachi5", "Boss_Malachi6", "Boss_Malachi7", "Boss_Malachi8", "Boss_Malachi9", "Boss_Malachi10"],
 		AIscript: function()
 		{

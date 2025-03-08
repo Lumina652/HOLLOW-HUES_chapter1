@@ -18,12 +18,12 @@ for (var i = 0; i < (visible_options_max + _desc); i++) {
 			draw_set_color(c_yellow);
 		}
 		if (options[_option_to_show][3] == false) draw_set_color(c_gray);
-		draw_text(x + xymargin, y + xymargin + i * height_line, _str); 
+		draw_text(x + xymargin, y + xymargin + i * height_line, _str);
 	}
 }
 
 //selector sprite
 draw_sprite(spr_arrow_left_sal, 0, x+xymargin + 2, y+xymargin + ((hover - _scroll_push) * height_line) + 7);
 if (visible_options_max < array_length(options)) && (hover < array_length(options) - 1) {
-	draw_sprite(spr_arrow_down_sal, 0, x+width_full * 0.5, y+height_full - 7);	
+	draw_sprite(spr_arrow_down_sal, 0, x+width_full * 0.5, y+height_full - 7);
 }

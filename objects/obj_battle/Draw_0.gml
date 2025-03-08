@@ -55,9 +55,32 @@ for (var i = 0; i < array_length(party_units); i++) {
 	draw_set_color(c_white);
 	if (_char.mana < (_char.manaMax * 0.5)) draw_set_color(c_orange);
 	if (_char.mana <= 0) draw_set_color(c_red);
+	if (_char.id == _unit_with_current_turn) {
+		if (cursor.active) {
+			with (cursor) {
+				if (active_action.manaCost > 0) {
+					draw_set_color(c_yellow);	
+				}
+			}
+		}
+	}
 	draw_text(x+text_mana_x, y+text_enemy_name_y+(i*20), string(_char.mana) + "/" + string(_char.manaMax));
 }
 
+var _char_portrait =_unit_with_current_turn;
+if (_char_portrait != obj_battle_unit_enemy) {
+	//stats rims
+	draw_sprite_ext(spr_inv_frame, 0, 260 + x, 420 + y, 5.7, 0.7, 0, c_white, 1);
+	draw_sprite_ext(spr_inv_frame, 0, 260 + x, 450 + y, 5.7, 0.7, 0, c_white, 1);
+		
+	//HP AND MANA
+	draw_sprite_ext(spr_health, 0, 260 + 2 + x, 420 + 2 + y, (_char_portrait.hp / _char_portrait.hpMax) * 110, 1, 0, c_white, 1);
+	draw_sprite_ext(spr_mana, 0, 260 + 2 + x, 450 + 2 + y, (_char_portrait.mana / _char_portrait.manaMax) * 110, 1, 0, c_white, 1);
+
+	//portrait
+	draw_sprite_ext(_char_portrait.portrait_sprite, anim_run, x + 200, y + 420, 2.5, 2.5, 0, c_white, 1);
+	draw_sprite(_char_portrait.portrait_sprite_char, 0, x + 212, y + 423);
+}
 //draw the cursor :0 :3 :D
 if (cursor.active) {
 	with (cursor) {
@@ -101,4 +124,10 @@ if (battle_text != "") {
 	draw_sprite_stretched(spr_text_box_inv, anim_run, x + 180, y+8,20*14,20*3.5);
 	scr_draw_set_text(c_white, global.font_main, fa_center, fa_center);
 	draw_text((x+200) + 120, (y+8) + 35 , battle_text);
+}
+
+if (mana_cost_text != "") {
+	draw_sprite_stretched(spr_text_box_inv, anim_run, x, y+280, 20*5, 20*2);
+	scr_draw_set_text(c_white, global.font_main, fa_left, fa_top);
+	draw_text(x + 7, y + 294, "MANA: " + mana_cost_text);
 }
